@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FileDisplay Rendering Render FileDisplay with all props 1`] = `
+<div
+  className="FileDisplay test-class-A test-class-B FileDisplay--withDelete FileDisplay--withDownload"
+>
+  <IconButton
+    className="FileDisplay__download"
+    icon={
+      Object {
+        "icon": Array [
+          512,
+          512,
+          Array [],
+          "f019",
+          "M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z",
+        ],
+        "iconName": "download",
+        "prefix": "fas",
+      }
+    }
+    id="test-id-for-file-display-download"
+    onClick={[Function]}
+    size="medium"
+    tooltipPlacement="top"
+    tooltipText="test-tooltip-for-download-button"
+    type="ghost"
+  />
+  <div
+    className="FileDisplay__fileName"
+  >
+    test-file-name
+  </div>
+  <IconButton
+    className="FileDisplay__delete"
+    disabled={true}
+    icon={
+      Object {
+        "icon": Array [
+          384,
+          512,
+          Array [
+            128473,
+            10005,
+            10006,
+            10060,
+            215,
+            "close",
+            "multiply",
+            "remove",
+            "times",
+          ],
+          "f00d",
+          "M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z",
+        ],
+        "iconName": "xmark",
+        "prefix": "fas",
+      }
+    }
+    id="test-id-for-file-display-delete"
+    onClick={[Function]}
+    size="medium"
+    tooltipPlacement="top"
+    tooltipText="test-tooltip-for-delete-button"
+    type="ghost"
+  />
+</div>
+`;
+
+exports[`FileDisplay Rendering Render FileDisplay with default props 1`] = `
+<div
+  className="FileDisplay"
+>
+  <div
+    className="FileDisplay__fileName"
+  />
+</div>
+`;
+
+exports[`FileDisplay Rendering Render FileDisplay with props, but without onDelete 1`] = `
+<div
+  className="FileDisplay test-class-A test-class-B"
+>
+  <div
+    className="FileDisplay__fileName"
+  >
+    test-file-name
+  </div>
+</div>
+`;
+
+exports[`FileDisplay Rendering Render FileDisplay with props, including onDelete and tooltip 1`] = `
+<div
+  className="FileDisplay test-class-A test-class-B FileDisplay--withDelete"
+>
+  <div
+    className="FileDisplay__fileName"
+  >
+    test-file-name
+  </div>
+  <IconButton
+    className="FileDisplay__delete"
+    disabled={true}
+    icon={
+      Object {
+        "icon": Array [
+          384,
+          512,
+          Array [
+            128473,
+            10005,
+            10006,
+            10060,
+            215,
+            "close",
+            "multiply",
+            "remove",
+            "times",
+          ],
+          "f00d",
+          "M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z",
+        ],
+        "iconName": "xmark",
+        "prefix": "fas",
+      }
+    }
+    id="test-id-for-file-display-delete"
+    onClick={[Function]}
+    size="medium"
+    tooltipPlacement="top"
+    tooltipText="test-tooltip-for-delete-button"
+    type="ghost"
+  />
+</div>
+`;
+
+exports[`FileDisplay Rendering Render FileDisplay with props, including onDelete, but no tooltip 1`] = `
+<div
+  className="FileDisplay test-class-A test-class-B FileDisplay--withDelete"
+>
+  <div
+    className="FileDisplay__fileName"
+  >
+    test-file-name
+  </div>
+  <IconButton
+    className="FileDisplay__delete"
+    disabled={false}
+    icon={
+      Object {
+        "icon": Array [
+          384,
+          512,
+          Array [
+            128473,
+            10005,
+            10006,
+            10060,
+            215,
+            "close",
+            "multiply",
+            "remove",
+            "times",
+          ],
+          "f00d",
+          "M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z",
+        ],
+        "iconName": "xmark",
+        "prefix": "fas",
+      }
+    }
+    id="test-id-for-file-display-delete"
+    onClick={[Function]}
+    size="medium"
+    tooltipPlacement="top"
+    type="ghost"
+  />
+</div>
+`;
+
+exports[`FileDisplay Rendering Render FileDisplay with props, including onDownload and no tooltip 1`] = `
+<div
+  className="FileDisplay test-class-A test-class-B FileDisplay--withDownload"
+>
+  <IconButton
+    className="FileDisplay__download"
+    icon={
+      Object {
+        "icon": Array [
+          512,
+          512,
+          Array [],
+          "f019",
+          "M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z",
+        ],
+        "iconName": "download",
+        "prefix": "fas",
+      }
+    }
+    id="test-id-for-file-display-download"
+    onClick={[Function]}
+    size="medium"
+    tooltipPlacement="top"
+    type="ghost"
+  />
+  <div
+    className="FileDisplay__fileName"
+  >
+    test-file-name
+  </div>
+</div>
+`;
+
+exports[`FileDisplay Rendering Render FileDisplay with props, including onDownload and tooltip 1`] = `
+<div
+  className="FileDisplay test-class-A test-class-B FileDisplay--withDownload"
+>
+  <IconButton
+    className="FileDisplay__download"
+    icon={
+      Object {
+        "icon": Array [
+          512,
+          512,
+          Array [],
+          "f019",
+          "M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z",
+        ],
+        "iconName": "download",
+        "prefix": "fas",
+      }
+    }
+    id="test-id-for-file-display-download"
+    onClick={[Function]}
+    size="medium"
+    tooltipPlacement="top"
+    tooltipText="test-tooltip-for-download-button"
+    type="ghost"
+  />
+  <div
+    className="FileDisplay__fileName"
+  >
+    test-file-name
+  </div>
+</div>
+`;

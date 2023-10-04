@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormLayout Rendering Renders the component 1`] = `
+<div
+  className="FormLayout test_cn"
+>
+  <h1>
+    Hello render this component.
+  </h1>
+</div>
+`;
+
+exports[`FormLayout Rendering Renders the component with multiple children 1`] = `
+<div
+  className="FormLayout test_cn"
+>
+  <h1>
+    First child
+  </h1>
+  <h2>
+    Second child
+  </h2>
+</div>
+`;

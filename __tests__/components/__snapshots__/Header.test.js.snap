@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Rendering Render Header component with default props 1`] = `
+<React.Fragment>
+  <div
+    className="Header"
+  >
+    <Layer
+      className="Header__topNav"
+      data-theme="dark"
+    >
+      <div
+        className="Header__leftSideMenu"
+      >
+        <SideNavMenuSwitcher />
+        <HeaderHomeNav />
+      </div>
+      <HeaderLogo />
+      <div
+        className="Header__rightSideMenu"
+      >
+        <HeaderBAM />
+        <HeaderHelpMenu />
+        <HeaderSystemMenu />
+        <HeaderAccountMenu />
+      </div>
+    </Layer>
+    <SideNavMenu />
+  </div>
+</React.Fragment>
+`;
+
+exports[`Header Rendering Render Header component with props 1`] = `
+<React.Fragment>
+  <div
+    className="Header customClassName"
+  >
+    <Layer
+      className="Header__topNav"
+      data-theme="dark"
+    >
+      <div
+        className="Header__leftSideMenu"
+      >
+        <SideNavMenuSwitcher />
+        <HeaderHomeNav />
+      </div>
+      <HeaderLogo />
+      <div
+        className="Header__rightSideMenu"
+      >
+        <HeaderBAM />
+        <HeaderHelpMenu />
+        <HeaderSystemMenu />
+        <HeaderAccountMenu />
+      </div>
+    </Layer>
+    <SideNavMenu />
+  </div>
+</React.Fragment>
+`;

@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderAccountMenu Rendering Render HeaderAccountMenu component with default props 1`] = `
+<div
+  className="HeaderAccountMenu"
+>
+  <button
+    aria-controls={null}
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="HeaderAccountMenu__button"
+    id="accountMenuBtn"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <HeaderIcon
+      icon={
+        Object {
+          "icon": Array [
+            448,
+            512,
+            Array [
+              128100,
+              62144,
+            ],
+            "f007",
+            "M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z",
+          ],
+          "iconName": "user",
+          "prefix": "fas",
+        }
+      }
+      label="Account"
+    />
+  </button>
+</div>
+`;
+
+exports[`HeaderAccountMenu Rendering Render HeaderAccountMenu component with props  1`] = `
+<div
+  className="HeaderAccountMenu varClassName"
+>
+  <button
+    aria-controls={null}
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="HeaderAccountMenu__button"
+    id="accountMenuBtn"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <HeaderIcon
+      icon={
+        Object {
+          "icon": Array [
+            448,
+            512,
+            Array [
+              128100,
+              62144,
+            ],
+            "f007",
+            "M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z",
+          ],
+          "iconName": "user",
+          "prefix": "fas",
+        }
+      }
+      label="Account"
+    />
+  </button>
+</div>
+`;
+
+exports[`HeaderAccountMenu Rendering Render HeaderAccountMenu component with pseudo translated text 1`] = `
+<div
+  className="HeaderAccountMenu"
+>
+  <button
+    aria-controls={null}
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="HeaderAccountMenu__button"
+    id="accountMenuBtn"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <HeaderIcon
+      icon={
+        Object {
+          "icon": Array [
+            448,
+            512,
+            Array [
+              128100,
+              62144,
+            ],
+            "f007",
+            "M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z",
+          ],
+          "iconName": "user",
+          "prefix": "fas",
+        }
+      }
+      label="ÂÂççççôôùùnt"
+    />
+  </button>
+</div>
+`;

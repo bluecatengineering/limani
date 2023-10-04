@@ -1,0 +1,98 @@
+{/* Copyright 2023 BlueCat Networks Inc */}
+{/*  */}
+{/* Permission is hereby granted, free of charge, to any person obtaining a copy */}
+{/* of this software and associated documentation files (the "Software"), to deal */}
+{/* in the Software without restriction, including without limitation the rights */}
+{/* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell */}
+{/* copies of the Software, and to permit persons to whom the Software is */}
+{/* furnished to do so, subject to the following conditions: */}
+{/*  */}
+{/* The above copyright notice and this permission notice shall be included in all */}
+{/* copies or substantial portions of the Software. */}
+{/*  */}
+{/* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR */}
+{/* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, */}
+{/* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE */}
+{/* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER */}
+{/* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, */}
+{/* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE */}
+{/* SOFTWARE. */}
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title='hooks/usePageMessages' />
+
+# usePageMessages
+
+Provides a context with toast messages that gets displayed in Gateway UI.
+Depending on the value in the context the page will display a toast message of `Success`, `Info`, `Warning` or `Error`.
+The hook also provides properties that can be used to add messages in the UI. It has the following methods `addSuccessMessage`, `addInfoMessage`, `addWarningMessage` and `addErrorMessage`.
+`addMessages` is a common function for all and the user will have to specify the type of message.
+
+## Returns
+
+`usePageMessages~Return` - Returns the page messages context and other methods including `addSuccessMessage`,
+`addInfoMessage`, `addWarningMessage`, `addErrorMessage` and `addMessages`.
+
+## Example 1
+
+Send a url request and using `addMessages` show a toast message that matches the response
+
+```js
+import { Button } from '@bluecateng/pelagos';
+import { SimplePage, usePageMessages } from '@bluecat/limani';
+
+function Example() {
+    const { addMessages } = usePageMessages();
+
+    const handleButtonClick = () => {
+        // Change the `url` to get an error message
+        const url = 'https://jsonplaceholder.typicode.com/users/1';
+        doGet(url)
+            .then((json) =>
+                addMessages([{ 'type': 'success', 'text': json.name }]),
+            )
+            .catch((error) =>
+                addMessages([{ 'type': 'error', 'text': error.message }]),
+            );
+    };
+    return <Button text='Get name' onClick={handleButtonClick} />;
+}
+
+export default function App() {
+    return (
+        <SimplePage>
+            <Example />
+        </SimplePage>
+    );
+}
+```
+
+## Example 2
+
+Send a url request and using `addErrorMessage` and `addSuccessMessage` show a toast message that matches the `error` or `success` response
+
+```js
+import { Button } from '@bluecateng/pelagos';
+import { doGet, SimplePage, usePageMessages } from '@bluecat/limani';
+
+function Example() {
+    const { addErrorMessage, addSuccessMessage } = usePageMessages();
+
+    const handleButtonClick = () => {
+        // Change the `url` to get an error message
+        const url = 'https://jsonplaceholder.typicode.com/users/1';
+        doGet(url)
+            .then((json) => addSuccessMessage(json.name))
+            .catch((error) => addErrorMessage(error.message));
+    };
+    return <Button text='Get name' onClick={handleButtonClick} />;
+}
+
+export default function App() {
+    return (
+        <SimplePage>
+            <Example />
+        </SimplePage>
+    );
+}
+```

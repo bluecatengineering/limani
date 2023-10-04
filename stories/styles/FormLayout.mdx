@@ -1,0 +1,138 @@
+{/* Copyright 2023 BlueCat Networks Inc */}
+{/*  */}
+{/* Permission is hereby granted, free of charge, to any person obtaining a copy */}
+{/* of this software and associated documentation files (the "Software"), to deal */}
+{/* in the Software without restriction, including without limitation the rights */}
+{/* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell */}
+{/* copies of the Software, and to permit persons to whom the Software is */}
+{/* furnished to do so, subject to the following conditions: */}
+{/*  */}
+{/* The above copyright notice and this permission notice shall be included in all */}
+{/* copies or substantial portions of the Software. */}
+{/*  */}
+{/* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR */}
+{/* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, */}
+{/* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE */}
+{/* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER */}
+{/* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, */}
+{/* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE */}
+{/* SOFTWARE. */}
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title='Styles/Form layout' />
+
+# Achieving a standard form layout
+
+A standard layout for forms consists of the form fields above a row of buttons
+for actions about the form. The buttons are always displayed and a placed at the
+bottom of the parent element, which is expanded vertically to fill the allowed
+height, depending on its container. In case the fields take more vertical space
+that is container by the "form", then a scrollbar appears. The buttons are never
+part of the scrolled content.
+
+Achieving the arrangement described above is possible through some of the
+components in this library. Nonetheless, as a pattern it is not limited to them.
+Hence, the following LESS variables can be used in the styles of the elements
+involved in such a layout.
+
+## LESS variables
+
+<table>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Target for application</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>`layout-form`</td>
+            <td>The wrapping container, usually the `<form>`</td>
+            <td>
+                Sets the layout model for the element to be `flexbox`.
+                This is required for the other styles to work.
+            </td>
+        </tr>
+        <tr>
+            <td>`layout-form-fields`</td>
+            <td>The contained element, whose children are the fields of the form.</td>
+            <td>
+                The element will expand to fill the available vertical space.
+                In case of insufficient height, the overflow is reachable through
+                a scrollbar.
+            </td>
+        </tr>
+        <tr>
+            <td>`layout-form-buttons`</td>
+            <td>The contained element, that should be positioned as "buttons".</td>
+            <td>
+                The element will be always visible and renderd at the lower end
+                of its parent container.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+## Example
+
+The following example focused on the documented LESS utilities. It does not
+represent the recommended patterns to handle form state or build whole pages.
+
+```css
+import '~@bluecat/limani/less/layout-form.less';
+
+.App_form {
+    @layout-form();
+}
+
+.App_fields {
+    @layout-form-fields();
+}
+
+.App_buttons {
+    @layout-form-buttons();
+}
+```
+
+```js
+import { useState } from 'react';
+import { Button, TextInputField } from '@bluecateng/pelagos';
+
+function App() {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleCancel = () => {
+        /* Implementation */
+    };
+    const handleSave = () => {
+        /* Implementation */
+    };
+
+    return (
+        <div className='App_form'>
+            <div className='App_fields'>
+                <TextInputField
+                    label='Username'
+                    type='text'
+                    name='username'
+                    value={username}
+                    onChange={(value) => setUsername(value)}
+                />
+                <TextInputField
+                    label='Password'
+                    type='password'
+                    name='password'
+                    value={password}
+                    onChange={(value) => setPassword(value)}
+                />
+            </div>
+            <div className='App_buttons'>
+                <Button text='Cancel' onClick={handleCancel} />
+                <Button text='Save' onClick={handleSave} />
+            </div>
+        </div>
+    );
+}
+```

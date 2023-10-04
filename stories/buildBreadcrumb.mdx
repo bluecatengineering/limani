@@ -1,0 +1,100 @@
+{/* Copyright 2023 BlueCat Networks Inc */}
+{/*  */}
+{/* Permission is hereby granted, free of charge, to any person obtaining a copy */}
+{/* of this software and associated documentation files (the "Software"), to deal */}
+{/* in the Software without restriction, including without limitation the rights */}
+{/* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell */}
+{/* copies of the Software, and to permit persons to whom the Software is */}
+{/* furnished to do so, subject to the following conditions: */}
+{/*  */}
+{/* The above copyright notice and this permission notice shall be included in all */}
+{/* copies or substantial portions of the Software. */}
+{/*  */}
+{/* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR */}
+{/* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, */}
+{/* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE */}
+{/* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER */}
+{/* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, */}
+{/* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE */}
+{/* SOFTWARE. */}
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title='functions/buildBreadcrumb' />
+
+# buildBreadcrumb
+
+A breadcrumb shows the user their current location and how to navigate back to the main content. <br />
+In cases where breadcrumb does not want to be displayed, the title shouldn't be passed in the
+`SimplePage`. The title can be inside the `SimplePage` with `<h1>Title</h1>` tag.
+
+## Parameters
+
+<table>
+    <thead>
+        <tr>
+            <th>Param</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>title</td>
+            <td>`string`</td>
+            <td>Title to display on the page</td>
+        </tr>
+        <tr>
+            <td>items</td>
+            <td>`Array.<object>`</td>
+            <td>It is list of objects and each object represents a child in the navigation.</td>
+        </tr>
+        <tr>
+            <td>includeHome</td>
+            <td>`boolean`</td>
+            <td>Start the navigation with Home as the first link</td>
+        </tr>
+    </tbody>
+</table>
+
+## Returns
+
+Return a breadcrumbs that shows the user's current location and the path they took to get there
+
+## Example 1
+
+`includeHome` is a parameter that determines whether to contain `Home` as a part of the navigation options <br />
+By default, `includeHome` is `true`, so Home is the first navigation option.
+
+```js
+import { buildBreadcrumb, SimplePage } from '@bluecat/limani';
+
+function App() {
+    return (
+        <SimplePage>
+            {buildBreadcrumb('Monitors', [
+                { title: 'Computers', href: '/electronics/computers' },
+            ])}
+        </SimplePage>
+    );
+}
+```
+
+## Example 2
+
+`includeHome` is `false`, so Home is not contained as a part of the navigation options.
+
+```js
+import { buildBreadcrumb, SimplePage } from '@bluecat/limani';
+
+function App() {
+    return (
+        <SimplePage>
+            {buildBreadcrumb(
+                'Monitors',
+                [{ title: 'Computers', href: '/electronics/computers' }],
+                false,
+            )}
+        </SimplePage>
+    );
+}
+```

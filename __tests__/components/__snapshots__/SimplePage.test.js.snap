@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SimplePage Rendering Render SimplePage component with children 1`] = `
+<PageToolkit>
+  <PageBody>
+    <PageContent>
+      <h1>
+        Test Child
+      </h1>
+    </PageContent>
+  </PageBody>
+</PageToolkit>
+`;
+
+exports[`SimplePage Rendering Render SimplePage component with children as argument 1`] = `
+<PageToolkit>
+  <PageBody>
+    <PageContent>
+      <h1>
+        Test Child
+      </h1>
+    </PageContent>
+  </PageBody>
+</PageToolkit>
+`;
+
+exports[`SimplePage Rendering Render SimplePage component with default props 1`] = `
+<PageToolkit>
+  <PageBody>
+    <PageContent />
+  </PageBody>
+</PageToolkit>
+`;
+
+exports[`SimplePage Rendering Render SimplePage component with onLanguageChange Function 1`] = `
+<PageToolkit
+  onLanguageChange={[MockFunction]}
+>
+  <PageBody>
+    <PageContent />
+  </PageBody>
+</PageToolkit>
+`;
+
+exports[`SimplePage Rendering Render SimplePage component with title 1`] = `
+<PageToolkit>
+  <PageBody>
+    <PageContent
+      pageTitle="Custom Title"
+    />
+  </PageBody>
+</PageToolkit>
+`;
+
+exports[`SimplePage Rendering Render SimplePage component with title and children 1`] = `
+<PageToolkit>
+  <PageBody>
+    <PageContent
+      pageTitle="Custom Title"
+    >
+      <h1>
+        My Children
+      </h1>
+    </PageContent>
+  </PageBody>
+</PageToolkit>
+`;

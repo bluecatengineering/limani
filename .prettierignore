@@ -1,0 +1,11 @@
+# Folders
+node_modules/
+dist/
+storybook-static/
+assets/
+# Files
+.prettierrc
+package.json
+package-lock.json
+.babelrc
+.gitlab-ci.yml

@@ -1,0 +1,98 @@
+{/* Copyright 2023 BlueCat Networks Inc */}
+{/*  */}
+{/* Permission is hereby granted, free of charge, to any person obtaining a copy */}
+{/* of this software and associated documentation files (the "Software"), to deal */}
+{/* in the Software without restriction, including without limitation the rights */}
+{/* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell */}
+{/* copies of the Software, and to permit persons to whom the Software is */}
+{/* furnished to do so, subject to the following conditions: */}
+{/*  */}
+{/* The above copyright notice and this permission notice shall be included in all */}
+{/* copies or substantial portions of the Software. */}
+{/*  */}
+{/* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR */}
+{/* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, */}
+{/* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE */}
+{/* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER */}
+{/* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, */}
+{/* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE */}
+{/* SOFTWARE. */}
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title='hooks/usePageError' />
+
+# usePageError
+
+Provides error context with given error details. When used with Error component, you can render the error.
+
+## Returns
+
+`usePageError~Return` - Returns a error context with given error details.
+
+## Example 1
+
+Use it using SimplePage component.
+Using this method, the standard base page will handle the rendering of
+the error component when child component has an error
+
+```js
+import { SimplePage, usePageError } from '@bluecat/limani';
+import { Button } from '@bluecateng/pelagos';
+
+function Example() {
+    const { setError } = usePageError();
+    const handleButtonClick = () => {
+        const message = {
+            'message':
+                'The request cannot be processed due to problems with its content.',
+            'code': 'BadRequest',
+            'status': 400,
+        };
+        setError(message);
+    };
+    return <Button text='Trigger Error' onClick={handleButtonClick} />;
+}
+
+export default function App() {
+    return (
+        <SimplePage>
+            <Example />
+        </SimplePage>
+    );
+}
+```
+
+## Example 2
+
+Use the component on its own. However, this will require it to be wrapped around the PageError component as
+shown on example below.
+
+```js
+import { Error, usePageError } from '@bluecat/limani';
+
+export default function ErrorExamplePage() {
+    const { error, setError } = usePageError();
+
+    const handleButtonClick = () => {
+        const message = {
+            'message':
+                'The request cannot be processed due to problems with its content.',
+            'code': 'BadRequest',
+            'status': 400,
+        };
+        setError(message);
+    };
+    /* This component has to be wrapped around a <PageError><ErrorExamplePage/></PageError> since
+    this will give access to the PageErrorContext for the subsequent children components.
+     */
+    return (
+        <>
+            {error ? (
+                <Error error={error} />
+            ) : (
+                <button onClick={handleButtonClick}>Click Me</button>
+            )}
+        </>
+    );
+}
+```

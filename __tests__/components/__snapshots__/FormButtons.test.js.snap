@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormButtons Rendering Render the FormButtons component with default props 1`] = `
+<div
+  className="FormButtons"
+>
+  <Button
+    id="formCancel"
+    onClick={[Function]}
+    size="medium"
+    text="Cancel"
+    type="tertiary"
+  />
+  <FormSubmit
+    id="formSubmit"
+    text="Save"
+  />
+</div>
+`;
+
+exports[`FormButtons Rendering Render the FormButtons component with props, children position at the beginning 1`] = `
+<div
+  className="FormButtons test_cn"
+>
+  <Button
+    onClick={[Function]}
+    size="medium"
+    text="Button at start"
+    type="tertiary"
+  />
+  <Button
+    id="formCancel"
+    onClick={[Function]}
+    size="medium"
+    text="Abort"
+    type="tertiary"
+  />
+  <FormSubmit
+    id="formSubmit"
+    text="Submit"
+  />
+</div>
+`;
+
+exports[`FormButtons Rendering Render the FormButtons component with props, children position at the beginning 2`] = `
+<div
+  className="FormButtons test_cn"
+>
+  <Button
+    onClick={[Function]}
+    size="medium"
+    text="Button at start"
+    type="tertiary"
+  />
+  <Button
+    id="formCancel"
+    onClick={[Function]}
+    size="medium"
+    text="Abort"
+    type="tertiary"
+  />
+  <FormSubmit
+    id="formSubmit"
+    text="Submit"
+  />
+</div>
+`;
+
+exports[`FormButtons Rendering Render the FormButtons component with props, children position at the end 1`] = `
+<div
+  className="FormButtons test_cn"
+>
+  <Button
+    id="formCancel"
+    onClick={[Function]}
+    size="medium"
+    text="Abort"
+    type="tertiary"
+  />
+  <FormSubmit
+    id="formSubmit"
+    text="Submit"
+  />
+  <Button
+    onClick={[Function]}
+    size="medium"
+    text="Button at start"
+    type="tertiary"
+  />
+</div>
+`;

@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error Rendering Render the Error component 1`] = `
+<div
+  className="Error"
+>
+  <div
+    className="Error__left"
+  >
+    <div
+      className="Error__logo"
+    >
+      <img
+        alt="BlueCat logo"
+        src="test-file-stub"
+      />
+    </div>
+  </div>
+  <main
+    className="Error__right"
+  >
+    <div>
+      <div
+        className="Error__status"
+      >
+        test error status. 
+        Error
+      </div>
+      <div
+        className="Error__message"
+      >
+        test error message.
+      </div>
+      <div
+        className="Error__code"
+      >
+        [
+        404
+        ]
+      </div>
+      <Button
+        className="Error__goBack"
+        onClick={[Function]}
+        size="medium"
+        text="Go back"
+        type="primary"
+      />
+    </div>
+  </main>
+</div>
+`;

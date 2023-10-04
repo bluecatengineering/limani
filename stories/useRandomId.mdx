@@ -1,0 +1,69 @@
+{/* Copyright 2023 BlueCat Networks Inc */}
+{/*  */}
+{/* Permission is hereby granted, free of charge, to any person obtaining a copy */}
+{/* of this software and associated documentation files (the "Software"), to deal */}
+{/* in the Software without restriction, including without limitation the rights */}
+{/* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell */}
+{/* copies of the Software, and to permit persons to whom the Software is */}
+{/* furnished to do so, subject to the following conditions: */}
+{/*  */}
+{/* The above copyright notice and this permission notice shall be included in all */}
+{/* copies or substantial portions of the Software. */}
+{/*  */}
+{/* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR */}
+{/* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, */}
+{/* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE */}
+{/* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER */}
+{/* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, */}
+{/* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE */}
+{/* SOFTWARE. */}
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title='hooks/useRandomId' />
+
+# useRandomId
+
+Returns either the specified string or a stable random string.
+Random string is returned when no argument is passed.
+Specified string is returned when it's passed as an argument.
+
+## Parameters
+
+<table>
+    <thead>
+        <tr>
+            <th>Param</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>`string`</td>
+            <td>Input Id to use.</td>
+        </tr>
+    </tbody>
+</table>
+
+## Returns
+
+`useRandomId~Return` - Returns either the specified string or a stable random string.
+
+## Example
+
+```js
+import {useRandmonId} from '@bluecat/limani';
+
+/** Generates a stable random string */
+const RandomIdExample = () => (
+	const randomId = useRandmonId()
+    ...
+);
+
+/** Returns the specified string */
+const ConstantIdExample = (id) => (
+	const specifiedId = useRandmonId(id)
+    ...
+);
+```

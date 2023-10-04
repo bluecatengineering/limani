@@ -1,0 +1,149 @@
+{/* Copyright 2023 BlueCat Networks Inc */}
+{/*  */}
+{/* Permission is hereby granted, free of charge, to any person obtaining a copy */}
+{/* of this software and associated documentation files (the "Software"), to deal */}
+{/* in the Software without restriction, including without limitation the rights */}
+{/* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell */}
+{/* copies of the Software, and to permit persons to whom the Software is */}
+{/* furnished to do so, subject to the following conditions: */}
+{/*  */}
+{/* The above copyright notice and this permission notice shall be included in all */}
+{/* copies or substantial portions of the Software. */}
+{/*  */}
+{/* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR */}
+{/* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, */}
+{/* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE */}
+{/* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER */}
+{/* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, */}
+{/* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE */}
+{/* SOFTWARE. */}
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title='functions/fetchFunctions' />
+
+# fetchFunctions
+
+Provides GET, POST, PUT, DELETE, and FETCH functionalities depending on the respective parameters.
+Also provides processErrorMessages function to organize error messages.
+
+## Parameters for doGet, doPost, doPut, doDelete, doFetch
+
+<table>
+    <thead>
+        <tr>
+            <th>Param</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>method</td>
+            <td>`string`</td>
+            <td>GET, POST, PUT, DELETE</td>
+        </tr>
+        <tr>
+            <td>path</td>
+            <td>`string`</td>
+            <td>Path of the respective endpoint</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>`string`</td>
+            <td>Data string to process</td>
+        </tr>
+        <tr>
+            <td>content-type</td>
+            <td>`string`</td>
+            <td>
+                The representation used to indicate the media type of the
+                resource
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+## Returns
+
+Returns a JSON response if the content type was JSON or returns the text.
+If an error was caught it returns an object of FetchError.
+
+# processErrorMessages
+
+Organizes the error messages from FetchError object retrieved by fetchFunctions errors.
+
+## Parameters processErrorMessages
+
+<table>
+    <thead>
+        <tr>
+            <th>Param</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>error</td>
+            <td>`exception`</td>
+            <td>Error exception object</td>
+        </tr>
+        <tr>
+            <td>fields</td>
+            <td>`list`</td>
+            <td>List of known fields for errors</td>
+        </tr>
+        <tr>
+            <td>flatten</td>
+            <td>`boolean`</td>
+            <td>
+                Boolean to flatten error response to string array of strings
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+## Returns
+
+JSON response containing error from page text, and errors from the given field parameters.
+
+# FetchError
+
+Object used to organize error data caught from fetchFunctions.
+It contains data such as error status, code, details, response text, and response.
+This is used by processErrorMessages to retrieve organized error data from fetchFunctions.
+It can also be used in isolation from error response returned by fetchFunctions directly.
+
+## Example
+
+```js
+import { doPost, doGet, processErrorMessages } from '@bluecat/limani';
+
+const groupFields = {
+    'group': 'groupName',
+    'landing_page': 'landingPage',
+    'show_bam': 'showBAM',
+    'show_help': 'showHelp',
+};
+doGet('/admin/group_settings/get_group_settings').then((data) => {
+    const payload = new FormData();
+    payload.append('group_settings', JSON.stringify(data));
+    payload.append('group', 'test-group');
+    payload.append(
+        'new_group_settings',
+        JSON.stringify({
+            'landing_page': 'landing_page',
+            'show_bam': true,
+            'show_help': true,
+        }),
+    );
+    doPost('/admin/add_group', payload)
+        .then((response) => {
+            return JSON.stringify(response);
+        })
+        .catch((error) => {
+            const { page: pageErrors, fields: fieldsErrors } =
+                processErrorMessages(error, Object.keys(groupFields), true);
+        });
+});
+```

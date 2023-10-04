@@ -1,0 +1,83 @@
+// Copyright 2023 BlueCat Networks Inc.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+@import '~@bluecateng/pelagos/less/spacing';
+@import '~@bluecateng/pelagos/less/fonts';
+
+.Card {
+    display: flex;
+    flex-direction: column;
+    gap: @sp-08;
+    background-color: var(--layer-01);
+    width: 272px;
+    height: 150px;
+    padding: @sp-16;
+    text-decoration: none;
+
+    &__title {
+        color: var(--link-primary);
+        font-size: @sp-16;
+        line-height: @sp-32;
+        width: 184px;
+        text-align: left;
+        text-decoration: underline;
+    }
+
+    &__description {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        color: var(--text-placeholder);
+        font-size: @sp-12;
+        line-height: @sp-16;
+        max-width: 235px;
+        text-align: left;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &:hover {
+        background-color: var(--layer-hover-01);
+        outline: 1.5px solid var(--border-interactive);
+        box-shadow: 0 0 5px @sp-02 var(--border-subtle-selected-01);
+        text-decoration: none;
+        .Card__title {
+            color: var(--link-primary-hover);
+        }
+    }
+    &:active {
+        background-color: var(--layer-active-01);
+    }
+
+    &__path {
+        display: block;
+        color: var(--text-primary);
+        font-size: @sp-16;
+        line-height: @sp-24;
+        text-align: left;
+    }
+
+    &__pathTitle {
+        display: block;
+        color: var(--text-secondary);
+        font-size: @sp-12;
+        line-height: @sp-16;
+        text-align: left;
+    }
+}

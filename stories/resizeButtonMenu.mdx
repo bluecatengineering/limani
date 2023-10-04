@@ -1,0 +1,93 @@
+{/* Copyright 2023 BlueCat Networks Inc */}
+{/*  */}
+{/* Permission is hereby granted, free of charge, to any person obtaining a copy */}
+{/* of this software and associated documentation files (the "Software"), to deal */}
+{/* in the Software without restriction, including without limitation the rights */}
+{/* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell */}
+{/* copies of the Software, and to permit persons to whom the Software is */}
+{/* furnished to do so, subject to the following conditions: */}
+{/*  */}
+{/* The above copyright notice and this permission notice shall be included in all */}
+{/* copies or substantial portions of the Software. */}
+{/*  */}
+{/* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR */}
+{/* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, */}
+{/* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE */}
+{/* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER */}
+{/* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, */}
+{/* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE */}
+{/* SOFTWARE. */}
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title='functions/resizeButtonMenu' />
+
+# resizeButtonMenu
+
+This is used to resize the button menu, in cases where the top nav have dynamic buttons which can be hidden.\
+The component should always be wrapped inside parent element that has an `id=root`, all the pages in Gateway is wrapped with a top-level parent element that has an `id=root`.
+
+## Parameters
+
+<table>
+    <thead>
+        <tr>
+            <th>Param</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>expanded</td>
+            <td>`boolean`</td>
+            <td>The expanded value from useMenuHandler.</td>
+        </tr>
+        <tr>
+            <td>buttonId</td>
+            <td>`string`</td>
+            <td>The ID of the button to be clicked to show the menu.</td>
+        </tr>
+        <tr>
+            <td>menuId</td>
+            <td>`string`</td>
+            <td>The ID of the Layer in which menu is displayed.</td>
+        </tr>
+    </tbody>
+</table>
+
+## Returns
+
+`usePageMessages~Return` Resize the button menu, in cases where the top nav have dynamic buttons which can be hidden.
+
+## Example
+
+```js
+import { useState } from 'react';
+import { resizeButtonMenu } from '../utils/display';
+import usePlatformData from '../hooks/usePlatformData';
+
+const TestMenu = () => {
+    const { data } = usePlatformData();
+    const userData = {
+        userName: data?.user.username,
+    };
+    const [expanded, setExpanded] = useState(false);
+    resizeButtonMenu(expanded, 'testMenuBtn', 'testMenu');
+
+    return (
+        <div className={TestAccountMenu}>
+            <button
+                id='testMenuBtn'
+                onClick={() => setExpanded(!expanded)}
+                type='button'></button>
+            {expanded && (
+                <Layer id='testMenu' role='menu'>
+                    <div id='user-profile'>
+                        <span>{userData.userName}</span>
+                    </div>
+                </Layer>
+            )}
+        </div>
+    );
+};
+```

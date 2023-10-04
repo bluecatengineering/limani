@@ -1,0 +1,145 @@
+{
+    "name": "@bluecat/limani",
+    "version": "1.1.6-dev",
+    "description": "Gateway shared components",
+    "usage": "dev",
+    "scripts": {
+        "pre-publish-setup": "npm config set ${NPM_REGISTRY_REPLACE_THIS_VALUE}",
+        "set-token": "npm config set ${NPM_REGISTRY_REPLACE_THIS_VALUE} ${NPM_TOKEN}",
+        "publish-package": "npm publish --registry ${NPM_REGISTRY_REPLACE_THIS_VALUE}",
+        "publish-dev-package": "npm publish --registry ${NPM_REGISTRY_REPLACE_THIS_VALUE} --tag dev",
+        "build": "rm -rf dist && babel src -d dist --env-name production && npm run copy-resources dist",
+        "copy-resources": "node scripts/copy-resources",
+        "prepare": "husky install .husky",
+        "test": "jest",
+        "test-ci": "jest --ci --silent",
+        "lint-styles": "stylelint src/**/*.less",
+        "reformat": "prettier --write --config ./.prettierrc . --ignore-path ./.prettierignore",
+        "storybook-live": "storybook dev -p 6006",
+        "storybook-build-static": "storybook build",
+        "storybook-run-static": "http-server ./storybook-static/ --port 9001 --silent &",
+        "storybook-stop-static": "pkill -f http-server"
+    },
+    "files": [
+        "dist",
+        "less",
+        "assets"
+    ],
+    "sideEffects": [
+        "*.less"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:bluecatengineering/limani.git"
+    },
+    "keywords": [
+        "react"
+    ],
+    "exports": {
+        ".": "./dist/index.js",
+        "./less/*": "./less/*",
+        "./assets/*": "./assets/*"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "@fortawesome/free-regular-svg-icons": "^6.2.0",
+        "@fortawesome/free-solid-svg-icons": "^6.2.0",
+        "prop-types": "^15.8.1"
+    },
+    "peerDependencies": {
+        "@bluecateng/pelagos": "^12.4.0",
+        "@bluecateng/pelagos-forms": "^5.0.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.17.10",
+        "@babel/core": "^7.18.5",
+        "@babel/preset-env": "^7.18.2",
+        "@babel/preset-react": "^7.17.12",
+        "@bluecateng/commitlint-config-bluecateng": "^1.0.1",
+        "@bluecateng/git-check-push": "^1.0.0",
+        "@bluecateng/jest-helpers": "^3.0.0",
+        "@bluecateng/l10n-cli": "^0.1.8",
+        "@bluecateng/l10n-core": "^0.2.0",
+        "@bluecateng/l10n-icu2obj": "^0.1.5",
+        "@bluecateng/l10n-jest": "^0.3.0",
+        "@bluecateng/l10n-loader": "^0.1.5",
+        "@bluecateng/l10n.macro": "^0.1.6",
+        "@bluecateng/stylelint-config": "^4.0.1",
+        "@commitlint/cli": "^17.0.2",
+        "@storybook/addon-a11y": "^7.0.7",
+        "@storybook/addon-essentials": "^7.0.7",
+        "@storybook/react": "^7.0.7",
+        "@storybook/react-webpack5": "^7.0.7",
+        "babel-loader": "^8.3.0",
+        "babel-plugin-macros": "^3.1.0",
+        "css-loader": "^6.7.3",
+        "enzyme": "^3.11.0",
+        "eslint": "^8.36.0",
+        "eslint-plugin-react": "^7.32.2",
+        "husky": "^8.0.3",
+        "jest": "^28.1.2",
+        "less-loader": "^11.1.0",
+        "lint-staged": "^13.2.0",
+        "msw": "^1.2.2",
+        "msw-storybook-addon": "^1.8.0",
+        "postcss-less": "^6.0.0",
+        "prettier": "^2.7.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "storybook": "^7.0.7",
+        "style-loader": "^3.3.1",
+        "stylelint": "^14.9.1",
+        "stylelint-config-prettier": "^9.0.3",
+        "stylelint-config-standard": "^26.0.0"
+    },
+    "bc-l10n": {
+        "hashLength": 4,
+        "module": "src/l10n",
+        "catalogPath": "src/l10n/{locale}",
+        "locales": [
+            "en",
+            "zz"
+        ]
+    },
+    "lint-staged": {
+        "*.{js,ts,tsx}": [
+            "eslint",
+            "prettier --check --config ./.prettierrc . --ignore-path ./.prettierignore"
+        ],
+        "*.less": [
+            "prettier --check --config ./.prettierrc . --ignore-path ./.prettierignore"
+        ]
+    },
+    "stylelint": {
+        "extends": [
+            "@bluecateng/stylelint-config"
+        ],
+        "customSyntax": "postcss-less"
+    },
+    "jest": {
+        "clearMocks": true,
+        "moduleNameMapper": {
+            "^react$": "@bluecateng/jest-helpers/mock-react",
+            "^react-dom$": "@bluecateng/jest-helpers/mock-react",
+            "^react/jsx-runtime$": "@bluecateng/jest-helpers/mock-react",
+            "\\.(png|jpg|gif|svg|ttf|woff2)$": "@bluecateng/jest-helpers/file-mapper",
+            "\\.(less)$": "@bluecateng/jest-helpers/style-mapper"
+        },
+        "setupFiles": [
+            "<rootDir>/jest-helpers/setup-globals"
+        ],
+        "setupFilesAfterEnv": [
+            "@bluecateng/jest-helpers/setup-enzyme"
+        ],
+        "transform": {
+            "\\.[jt]sx?$": "babel-jest",
+            "\\.po$": "@bluecateng/l10n-jest"
+        },
+        "transformIgnorePatterns": [
+            "node_modules/(?!(lodash-es|@bluecat|@bluecateng)/)"
+        ]
+    },
+    "msw": {
+        "workerDirectory": ".storybook/mswpublic"
+    }
+}

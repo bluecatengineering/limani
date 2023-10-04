@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageToolkit with ThemeSwitch Rendering Render PageToolkit component to verify ThemeSwitch Component 1`] = `
+<PageToolkitBase>
+  <PlatformData>
+    <SideNav>
+      <ThemeSwitch />
+      <L10N />
+    </SideNav>
+  </PlatformData>
+</PageToolkitBase>
+`;
+
+exports[`PageToolkit with ThemeSwitch Rendering Render ThemeSwitch component to test dark theme 1`] = `null`;
+
+exports[`PageToolkit with ThemeSwitch Rendering Render ThemeSwitch component to test light theme 1`] = `null`;
+
+exports[`PageToolkit with ThemeSwitch Rendering Render ThemeSwitch component to verify default 1`] = `null`;

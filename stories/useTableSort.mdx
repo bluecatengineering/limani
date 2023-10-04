@@ -1,0 +1,196 @@
+{/* Copyright 2023 BlueCat Networks Inc */}
+{/*  */}
+{/* Permission is hereby granted, free of charge, to any person obtaining a copy */}
+{/* of this software and associated documentation files (the "Software"), to deal */}
+{/* in the Software without restriction, including without limitation the rights */}
+{/* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell */}
+{/* copies of the Software, and to permit persons to whom the Software is */}
+{/* furnished to do so, subject to the following conditions: */}
+{/*  */}
+{/* The above copyright notice and this permission notice shall be included in all */}
+{/* copies or substantial portions of the Software. */}
+{/*  */}
+{/* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR */}
+{/* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, */}
+{/* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE */}
+{/* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER */}
+{/* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, */}
+{/* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE */}
+{/* SOFTWARE. */}
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title='hooks/useTableSort' />
+
+# useTableSort
+
+Returns React refs which enables us to display sorted data in a table based on the input values.
+
+## Parameters
+
+<table>
+    <thead>
+        <tr>
+            <th>Param</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>initialSortKey</td>
+            <td>`String`</td>
+            <td>Sort key using which the initial data will be sorted.</td>
+        </tr>
+        <tr>
+            <td>initialSortOrder</td>
+            <td>`String`</td>
+            <td>Initial Sort Order. It can have 2 values. <strong>a</strong> for ascending order and <strong>b</strong> for descending order.</td>
+        </tr>
+        <tr>
+            <td>getComparator</td>
+            <td>`function`</td>
+            <td>Function to get the comparator from <strong>columns</strong> object, as shown in example.</td>
+        </tr>
+        <tr>
+            <td>data</td>
+            <td>`Array.<object>`</td>
+            <td>Input data for the table. It is list of objects and each object represents a row for the table.</td>
+        </tr>
+    </tbody>
+</table>
+
+## Returns
+
+`Array` - Returns the array of elements which can be used to display and change the ordering of table rows.
+
+## Example
+
+```js
+import { useCallback } from 'react';
+import { useTableSort } from '@bluecat/limani';
+
+const data = [
+  {
+    "id": 0,
+    "firstName": "John",
+    "lastName": "Doe",
+    "age": 1
+  },
+  {
+    "id": 1,
+    "firstName": "Foo",
+    "lastName": "Bar",
+    "age": 2
+  },
+  {
+    "id": 2,
+    "firstName": "Bluecat",
+    "lastName": "Networks",
+    "age": 23
+  }
+]
+
+function Example {
+	const columns = [
+    {
+        id: 'firstName',
+        header: 'First Name',
+        value: (data) => data.firstName,
+        comparator: (a, b) => a.firstName.localeCompare(b.firstName),
+    },
+    {
+        id: 'lastName',
+        header: 'Last Name',
+        value: (data) => data.workflow,
+        comparator: (a, b) => a.lastName.localeCompare(b.lastName),
+    },
+    // Sorting is not required for age values, hence no comparator
+    {
+        id: 'age',
+        header: 'Age',
+        value: (data) => data.age,
+    },
+  ];
+
+  const getComparator = useCallback(
+    (key) => columns.find(({ id }) => id === key).comparator,
+    [columns],
+  );
+
+  const [_sortKey, _sortOrder, sortedData, handleHeaderClick] = useTableSort(
+    'firstName',
+    'a',
+    getComparator,
+    data,
+  );
+
+  return (
+    <div>
+        <table>
+            <thead>
+                <tr onClick={handleHeaderClick}>
+                    {columns.map(({ id, header }) => (
+                        <th
+                        key={id}
+                        data-column={id}>
+                        {header}
+                        </th>
+                    ))}
+                </tr>
+            </thead>
+            <tbody>
+                {sortedData.map((val, key) => {
+                    return (
+                        <tr key={key}>
+                        <td>{val.firstName}</td>
+                        <td>{val.lastName}</td>
+                        <td>{val.age}</td>
+                        </tr>
+                    )
+                })}
+            </tbody>
+        </table>
+    </div>
+  );
+}
+```
+
+## Other types
+
+### useTableSort~Return
+
+`Array` - return type for `useTableSort`.
+
+#### Properties
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>sortKey</td>
+            <td>`String`</td>
+            <td>Current Sort key using which the returned data is sorted.</td>
+        </tr>
+        <tr>
+            <td>initialSortOrder</td>
+            <td>`String`</td>
+            <td>Current Sort Order. It can have 2 values. <strong>a</strong> for ascending order and <strong>b</strong> for descending order.</td>
+        </tr>
+        <tr>
+            <td>sortedData</td>
+            <td>`Array.<object>`</td>
+            <td>Sorted data in the format of input data</td>
+        </tr>
+        <tr>
+            <td>handleHeaderClick</td>
+            <td>`function`</td>
+            <td>Function to change the sort order and sort key. This function should be called by clicking the header.</td>
+        </tr>
+    </tbody>
+</table>

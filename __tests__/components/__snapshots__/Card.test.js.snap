@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Rendering Render the Card component with default props 1`] = `
+<a
+  className="Card"
+>
+  <span
+    className="Card__title"
+  >
+    Add Host record
+  </span>
+</a>
+`;
+
+exports[`Card Rendering Render the Card component with props 1`] = `
+<a
+  className="Card test_cn"
+  href="#"
+>
+  <span
+    className="Card__title"
+  >
+    Add Host Record
+  </span>
+  <span
+    className="Card__description"
+  >
+    Add a host record on BAM
+  </span>
+  <span>
+    <span
+      className="Card__pathTitle"
+    >
+       
+      Path
+       
+    </span>
+    <span
+      className="Card__path"
+    >
+      Host Record
+    </span>
+  </span>
+</a>
+`;
+
+exports[`Card Rendering Render the Card component with pseudo translated text 1`] = `
+<a
+  className="Card test_cn"
+  href="#"
+>
+  <span
+    className="Card__title"
+  >
+    Add Host Record
+  </span>
+  <span
+    className="Card__description"
+  >
+    Add a host record on BAM
+  </span>
+  <span>
+    <span
+      className="Card__pathTitle"
+    >
+       
+      Pââth
+       
+    </span>
+    <span
+      className="Card__path"
+    >
+      Host Record
+    </span>
+  </span>
+</a>
+`;

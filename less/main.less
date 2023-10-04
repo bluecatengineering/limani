@@ -1,0 +1,173 @@
+/*
+Copyright 2023 BlueCat Networks Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+@import '@bluecateng/pelagos/less/core';
+@import '@bluecateng/pelagos/less/inputs';
+@import '@bluecateng/pelagos/less/scrollbar';
+@import '@bluecateng/pelagos/less/spinner';
+@import '@bluecateng/pelagos/less/themes';
+@import 'font';
+
+/*
+ * CSS Reset
+ */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+html,
+body,
+p {
+    @root-font();
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Remove all animations, transitions and smooth
+scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    // stylelint-disable declaration-no-important
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/*
+ * Theme
+ */
+[data-theme='light'] {
+    .theme-light();
+}
+
+[data-theme='dark'] {
+    .theme-dark();
+}
+
+/*
+ * Placeholder
+ */
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--text-placeholder);
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: var(--text-placeholder);
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: var(--text-placeholder);
+}
+
+/*
+ * Root
+ */
+#root {
+    flex: 1;
+}
+
+/*
+ * Gateway UI components
+ */
+#footer {
+    position: static;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: @sp-24 0 @sp-08;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: @sp-12;
+    color: var(--text-secondary);
+}
+
+/*
+ * Pelagos
+ */
+a {
+    /* Active link override */
+    &:active {
+        color: var(--link-visited);
+    }
+}
+.CssSpinner {
+    .css-spinner();
+
+    [data-theme='dark'] & {
+        animation-name: spinner-dark;
+    }
+
+    [data-theme='light'] & {
+        animation-name: spinner-light;
+    }
+}
+
+.FormFields--standardPadding {
+    padding-right: @sp-32;
+}
+
+.Footer__link {
+    color: var(--link-primary);
+}
+.FormArea {
+    &--indentLevel1 {
+        margin-left: 32px;
+    }
+
+    &--indentLevel2 {
+        margin-left: 64px;
+    }
+
+    &--indentLevel3 {
+        margin-left: 96px;
+    }
+
+    &--indentLevel4 {
+        margin-left: 128px;
+    }
+}

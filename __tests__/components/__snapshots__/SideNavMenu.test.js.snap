@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideNavMenu Rendering Render SideNavMenu component with menu closed 1`] = `null`;
+
+exports[`SideNavMenu Rendering Render SideNavMenu component with menu closed without nav context 1`] = `null`;
+
+exports[`SideNavMenu Rendering Render SideNavMenu component with menu open 1`] = `
+<SideNav
+  active={true}
+  className="SideNavMenu__nav"
+  id="sideNav"
+  onClick={[Function]}
+>
+  <SideNavItems>
+    <SideNavMenu
+      className="SideNavMenu__item--level1"
+      data-state-key="///Administration"
+      expanded={false}
+      sideNavActive={true}
+      title="Administration"
+    >
+      <SideNavLink
+        className="SideNavMenu__item--level2"
+        current={false}
+        href="/admin/workflow_export_import"
+        sideNavActive={true}
+      >
+        Workflow Management
+      </SideNavLink>
+      <SideNavLink
+        className="SideNavMenu__item--level2"
+        current={false}
+        href="/create_workflow/page"
+        sideNavActive={true}
+      >
+        Create Workflow
+      </SideNavLink>
+    </SideNavMenu>
+  </SideNavItems>
+</SideNav>
+`;
+
+exports[`SideNavMenu Rendering Render SideNavMenu component with menu open and active highlight 1`] = `
+<SideNav
+  active={true}
+  className="SideNavMenu__nav"
+  id="sideNav"
+  onClick={[Function]}
+>
+  <SideNavItems>
+    <SideNavMenu
+      className="SideNavMenu__item--level1"
+      data-state-key="///Administration"
+      expanded={false}
+      sideNavActive={true}
+      title="Administration"
+    >
+      <SideNavLink
+        className="SideNavMenu__item--level2"
+        current={true}
+        href="/admin/workflow_export_import"
+        sideNavActive={true}
+      >
+        Workflow Management
+      </SideNavLink>
+      <SideNavLink
+        className="SideNavMenu__item--level2"
+        current={false}
+        href="/create_workflow/page"
+        sideNavActive={true}
+      >
+        Create Workflow
+      </SideNavLink>
+    </SideNavMenu>
+  </SideNavItems>
+</SideNav>
+`;

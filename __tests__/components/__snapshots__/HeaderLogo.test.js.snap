@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderLogo Rendering Render HeaderLogo component with default props 1`] = `
+<a
+  className="HeaderLogo__logo"
+  href="/"
+>
+  <img
+    alt="Gateway logo"
+    src="/parent/testpath"
+  />
+</a>
+`;
+
+exports[`HeaderLogo Rendering Render HeaderLogo component with props 1`] = `
+<a
+  className="HeaderLogo__logo varClassName"
+  href="/"
+>
+  <img
+    alt="Gateway logo"
+    src="/parent/testpath"
+  />
+</a>
+`;

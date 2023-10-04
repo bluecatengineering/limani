@@ -1,0 +1,89 @@
+# Copyright 2023 BlueCat Networks Inc.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-13T14:44:45.416Z\n"
+"PO-Revision-Date: 2023-06-30T18:24:38.888039+00:00\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zz\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Mime-Version: 1.0\n"
+"X-Generator: BlueCat pseudo-translation tool v0.0.2\n"
+
+#: 85df
+msgid "Account"
+msgstr "ÂÂççççôôùùnt"
+
+#: 77df
+msgid "Cancel"
+msgstr "ÇÇâânççéél"
+
+#: 3752
+msgid "Download logs"
+msgstr "Dôôwnlôôââd lôôgs"
+
+#: 543f
+msgid "Error response does not match expected format."
+msgstr "ÉÉrrôôr rééspôônséé dôôéés nôôt mââtççh ééxpééççtééd fôôrmâât."
+
+#: 099d
+msgid "Error while communicating with server."
+msgstr "ÉÉrrôôr whîîléé ççôômmùùnîîççââtîîng wîîth séérvéér."
+
+#: e847
+msgid "Go back"
+msgstr "Gôô bââççk"
+
+#: c47a
+msgid "Help"
+msgstr "Héélp"
+
+#: 268b
+msgid "Help Menu"
+msgstr "Héélp Méénùù"
+
+#: 70f8
+msgid "Home"
+msgstr "Hôôméé"
+
+#: e43d
+msgid "Logout"
+msgstr "Lôôgôôùùt"
+
+#: 519e
+msgid "Path"
+msgstr "Pââth"
+
+#: efc0
+msgid "Save"
+msgstr "Sââvéé"
+
+#: bc07
+msgid "System"
+msgstr "Systéém"
+
+#: 825c
+msgid "Workflows"
+msgstr "Wôôrkflôôws"
