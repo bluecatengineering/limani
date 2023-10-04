@@ -25,9 +25,16 @@
     flex: 1;
     overflow: hidden;
 
-    padding: @sp-24 @sp-04 @sp-24 @sp-40;
+    padding: @sp-24 @sp-04 @sp-80 @sp-40;
 }
 
 .PageContent--noPadding {
     padding: 0;
+}
+
+.PageContent--scrolling {
+    flex: 1;
+    flex-basis: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
