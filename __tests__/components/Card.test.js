@@ -51,8 +51,8 @@ describe('Card', () => {
                 const wrapper = shallow(
                     <Card
                         href='#'
-                        title='Broken'
-                        description='Broken'
+                        title='Add Host Record'
+                        description='Add a host record on BAM'
                         path={['Host Record']}
                         className='test_cn'
                     />,
