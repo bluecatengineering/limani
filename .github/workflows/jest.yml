@@ -1,5 +1,5 @@
-name: jest_tests
-run-name: ${{ github.actor }} is running jest tests
+name: jest
+run-name: ${{ github.actor }} is running Jest check on code
 on:
     push:
         branches: ['*']
@@ -14,10 +14,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
-              uses: actions/checkout@v4
+              uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # tag=v4.1.0
 
             - name: Setup node
-              uses: actions/setup-node@v3
+              uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # tag=3.8.1
               with:
                   node-version: 18
 
