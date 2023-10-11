@@ -1,4 +1,4 @@
-name: jest
+name: Jest
 run-name: ${{ github.actor }} is running Jest check on code
 on:
     push:
@@ -10,7 +10,7 @@ on:
 permissions: read-all
 jobs:
     test:
-        name: Test
+        name: Running Jest test cases
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
