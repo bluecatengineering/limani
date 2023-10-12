@@ -112,8 +112,6 @@ const Error = ({ error }) => {
 };
 
 Error.propTypes = {
-    /** Error object is expected to contain the following fields:
-     *  message, code, status */
     error: PropTypes.object,
 };
 
