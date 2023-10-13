@@ -23,7 +23,5 @@ jobs:
 
             - name: Run Prettier analysis
               run: |
-                  npm ci
-                  echo Branch
-                  git branch
+                  npm install
                   npm run prettier-check
