@@ -2,7 +2,7 @@ name: Conventional Commit Messages
 run-name: ${{ github.actor }} is running commitlint check on pull request title.
 on:
     pull_request:
-        types: [opened, reopened, edited]
+        types: [opened, reopened, edited, synchronize]
         branches: ['*']
 
 permissions: read-all
