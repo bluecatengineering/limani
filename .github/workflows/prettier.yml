@@ -11,7 +11,7 @@ permissions: read-all
 jobs:
     test:
         name: Running Prettier
-        runs-on: ubuntu-latest
+        runs-on: macos-latest
         steps:
             - name: Checkout code
               uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # tag=v4.1.0
@@ -24,5 +24,4 @@ jobs:
             - name: Run Prettier analysis
               run: |
                   npm ci
-                  npx prettier --version
                   npm run prettier-check
