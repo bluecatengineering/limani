@@ -23,5 +23,5 @@ jobs:
 
             - name: Run Prettier analysis
               run: |
-                  npm install
+                  npm ci
                   npm run prettier-check
