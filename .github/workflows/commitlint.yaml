@@ -1,4 +1,4 @@
-name: Conventional Commit Messages
+name: Commitlint
 run-name: ${{ github.actor }} is running commitlint check on pull request title.
 on:
     pull_request:
