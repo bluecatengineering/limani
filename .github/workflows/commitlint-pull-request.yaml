@@ -1,4 +1,4 @@
-name: Commitlint
+name: Commitlint pull request title check
 run-name: ${{ github.actor }} is running commitlint check on pull request title.
 on:
     pull_request:
