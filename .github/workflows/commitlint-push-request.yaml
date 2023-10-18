@@ -1,0 +1,25 @@
+name: Commitlint commit message check
+run-name: ${{ github.actor }} is running commitlint check on commit message
+on:
+    push:
+        branches: ['*']
+
+permissions: read-all
+jobs:
+    pushRequestcommitMessageCheck:
+        name: Running commitlint check on commit message
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # tag=v4.1.0
+
+            - name: Setup node
+              uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # tag=3.8.1
+              with:
+                  node-version: 18
+
+            - name: Run commitlint check for push request commit message
+              run: |
+                  npm ci
+                  echo "${{ github.event.head_commit.message }}" | npx commitlint --verbose
