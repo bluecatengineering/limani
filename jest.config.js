@@ -22,7 +22,7 @@ module.exports = {
     coveragePathIgnorePatterns: ['/dist/', '/node_modules/', '/jest-helpers/'],
     coverageThreshold: {
         global: {
-            branches: 40,
+            branches: 50,
             functions: 29,
             lines: 46,
             statements: 45,
