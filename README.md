@@ -55,22 +55,21 @@ import { FormLayout } from '@bluecateng/limani'
 BlueCat gratefully acknowledges the following teams and individuals for their contributions to the Limani project.
 
 #### The Team:
-- Anita Cheng
-- Martin Minkov
-- Brian Shorland
-- Edwin Christie
-- Mike Leaver
-- Nishant Malhotra
-- Lily Wickham
-- Ajay Basnet
-- Alexander Bartella
-- Roy Fisher
+
+-   Anita Cheng
+-   Martin Minkov
+-   Brian Shorland
+-   Edwin Christie
+-   Mike Leaver
+-   Nishant Malhotra
+-   Lily Wickham
+-   Ajay Basnet
+-   Alexander Bartella
+-   Roy Fisher
 
 ### Special Thanks:
-- Andreas Avramidis
-- Raymond Trinh
-- Stephen Le
-- Hai Nguyen Huynh
 
-
-
+-   Andreas Avramidis
+-   Raymond Trinh
+-   Stephen Le
+-   Hai Nguyen Huynh
