@@ -25,3 +25,11 @@ jobs:
               run: |
                   npm ci
                   npm run test-ci
+
+            - name: Code coverage threshold not met
+              run: |
+                  echo "Looks like the new changes are not meeting the code coverage threshold."
+                  echo "View the code coverage details in the previous step."
+                  echo "For a more detailed view of the reports run npm run test-ci locally."
+                  echo "This will produce a detailed HTMl report, which will be present at coverage/src/index.html."
+              if: failure()

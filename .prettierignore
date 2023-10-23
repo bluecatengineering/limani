@@ -3,6 +3,7 @@ node_modules/
 dist/
 storybook-static/
 assets/
+coverage/
 # Files
 .prettierrc
 package.json

@@ -12,7 +12,7 @@
         "copy-resources": "node scripts/copy-resources",
         "prepare": "husky install .husky",
         "test": "jest",
-        "test-ci": "jest --ci --silent",
+        "test-ci": "jest --ci",
         "lint-styles": "stylelint src/**/*.less",
         "prettier-check": "prettier --check --config ./.prettierrc . --ignore-path ./.prettierignore",
         "eslint-ci": "eslint .",
@@ -119,29 +119,6 @@
             "@bluecateng/stylelint-config"
         ],
         "customSyntax": "postcss-less"
-    },
-    "jest": {
-        "clearMocks": true,
-        "moduleNameMapper": {
-            "^react$": "@bluecateng/jest-helpers/mock-react",
-            "^react-dom$": "@bluecateng/jest-helpers/mock-react",
-            "^react/jsx-runtime$": "@bluecateng/jest-helpers/mock-react",
-            "\\.(png|jpg|gif|svg|ttf|woff2)$": "@bluecateng/jest-helpers/file-mapper",
-            "\\.(less)$": "@bluecateng/jest-helpers/style-mapper"
-        },
-        "setupFiles": [
-            "<rootDir>/jest-helpers/setup-globals"
-        ],
-        "setupFilesAfterEnv": [
-            "@bluecateng/jest-helpers/setup-enzyme"
-        ],
-        "transform": {
-            "\\.[jt]sx?$": "babel-jest",
-            "\\.po$": "@bluecateng/l10n-jest"
-        },
-        "transformIgnorePatterns": [
-            "node_modules/(?!(lodash-es|@bluecat|@bluecateng)/)"
-        ]
     },
     "msw": {
         "workerDirectory": ".storybook/mswpublic"
