@@ -56,19 +56,12 @@ BlueCat gratefully acknowledges the following teams and individuals for their co
 
 #### The Team:
 
--   Anita Cheng
 -   Martin Minkov
--   Brian Shorland
 -   Edwin Christie
--   Mike Leaver
 -   Nishant Malhotra
 -   Lily Wickham
 -   Ajay Basnet
 -   Alexander Bartella
--   Roy Fisher
-
-### Special Thanks:
-
 -   Andreas Avramidis
 -   Raymond Trinh
 -   Stephen Le
