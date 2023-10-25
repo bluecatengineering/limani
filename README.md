@@ -12,7 +12,7 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE. -->
 
-# @bluecat/limani
+# @bluecateng/limani
 
 ## Getting started
 
@@ -22,7 +22,7 @@ These components are expected to only work with Gateway.
 
 ## Prerequisites
 
--   Make sure to use this package along with `@bluecateng/pelagos`. Installing `@bluecat/limani` will automatically install `@bluecateng/pelagos` as it is a peer dependency of Limani.
+-   Make sure to use this package along with `@bluecateng/pelagos`. Installing `@bluecateng/limani` will automatically install `@bluecateng/pelagos` as it is a peer dependency of Limani.
 -   When using Limani we depend on components from `@bluecateng/pelagos`. For proper CSS to be applied for the component please make sure to add the following in your main Less style sheet file
 
     ```
@@ -44,8 +44,25 @@ These components are expected to only work with Gateway.
 
 ```
 # Install the limani package
-npm install @bluecat/limani
+npm install @bluecateng/limani
 
 # Import components
-import { FormLayout } from '@bluecat/limani'
+import { FormLayout } from '@bluecateng/limani'
 ```
+
+## Contributors
+
+BlueCat gratefully acknowledges the following teams and individuals for their contributions to the Limani project.
+
+#### The Team:
+
+-   Martin Minkov
+-   Edwin Christie
+-   Nishant Malhotra
+-   Lily Wickham
+-   Ajay Basnet
+-   Alexander Bartella
+-   Andreas Avramidis
+-   Raymond Trinh
+-   Stephen Le
+-   Hai Nguyen Huynh
