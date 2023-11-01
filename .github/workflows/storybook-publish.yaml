@@ -1,0 +1,43 @@
+name: Build and deploy Storybook
+run-name: ${{ github.actor }} is running build and deploy Storybook
+on:
+    push:
+        branches: ['main']
+
+permissions: read-all
+jobs:
+    build:
+        name: Running build Storybook
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # tag=v4.1.0
+
+            - name: Build Storybook
+              run: |
+                  npm ci
+                  npm run storybook-build-static
+
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@a753861a5debcf57bf8b404356158c8e1e33150c # tag=v2.0.0
+              with:
+                  path: storybook-static
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        name: Running deploy Storybook
+
+        permissions:
+            pages: write
+            id-token: write
+
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@9dbe3824824f8a1377b8e298bafde1a50ede43e5 # tag=v2.0.4
