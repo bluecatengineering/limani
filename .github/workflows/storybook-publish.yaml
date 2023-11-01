@@ -1,5 +1,5 @@
-name: Build and deploy storybook
-run-name: ${{ github.actor }} is running build and deploy storybook
+name: Build and deploy Storybook
+run-name: ${{ github.actor }} is running build and deploy Storybook
 on:
     push:
         branches: ['main']
@@ -7,14 +7,14 @@ on:
 permissions: read-all
 jobs:
     build:
-        name: Running build storybook
+        name: Running build Storybook
         runs-on: ubuntu-latest
 
         steps:
             - name: Checkout code
               uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # tag=v4.1.0
 
-            - name: Build storybook
+            - name: Build Storybook
               run: |
                   npm ci
                   npm run storybook-build-static
@@ -27,7 +27,7 @@ jobs:
     deploy:
         needs: build
         runs-on: ubuntu-latest
-        name: Running deploy storybook
+        name: Running deploy Storybook
 
         permissions:
             pages: write
