@@ -50,13 +50,11 @@ const PageContent = ({ className, pageTitle, appTitle, children }) => {
 
     return (
         <div className={classNames.join(' ')}>
-            {pageTitle ? (
-                <>
-                    {buildBreadcrumb(pageTitle)}
-                    <h1 id='pageTitle'>{pageTitle}</h1>
-                </>
-            ) : null}
-            {children}
+            {pageTitle ? <>{buildBreadcrumb(pageTitle)}</> : null}
+            <div className={classNames.join(' ') + '--scrolling'}>
+                <h1 id='pageTitle'>{pageTitle}</h1>
+                {children}
+            </div>
         </div>
     );
 };
