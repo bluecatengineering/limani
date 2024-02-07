@@ -29,9 +29,10 @@ limani:
 
 blackduck:
   stage: scan
-  image: openjdk:latest
+  image: debian:bullseye-slim
   before_script:
-    - apt-get update && apt-get install bash curl
+    - apt-get update && apt-get install -y bash curl
+    - apt-get install -y openjdk-11-jdk
   script:
     - bash <(curl -s -L https://detect.synopsys.com/detect8.sh)
       --blackduck.url=${BLACKDUCK_URL}
