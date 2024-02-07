@@ -26,3 +26,26 @@ limani:
       - main
     changes:
       - src/**/*
+
+blackduck:
+  stage: scan
+  image: debian:bullseye-slim
+  before_script:
+    - apt-get update && apt-get install -y bash curl
+    - apt-get install -y openjdk-11-jdk
+  script:
+    - bash <(curl -s -L https://detect.synopsys.com/detect8.sh)
+      --blackduck.url=${BLACKDUCK_URL}
+      --blackduck.api.token=${BLACKDUCK_TOKEN}
+      --blackduck.trust.cert=true
+      --blackduck.offline.mode=false
+      --detect.project.codelocation.unmap=true
+      --detect.project.name="limani"
+      --detect.project.version.name="24.2.0"
+      --detect.tools=SIGNATURE_SCAN,IMPACT_ANALYSIS,DETECTOR,DOCKER
+      --detect.blackduck.signature.scanner.individual.file.matching=ALL
+      --detect.blackduck.signature.scanner.license.search=true
+      --detect.impact.analysis.enabled=true
+      --detect.diagnostic=false
+      --detect.timeout=600
+      --logging.level.com.synopsys.integration=DEBUG
