@@ -43,7 +43,7 @@ const HeaderBAM = ({ className }) => {
                         className ? ' ' + className : ''
                     }`}>
                     <span>
-                        BAM &nbsp;
+                        BAM Make change here &nbsp;
                         <SvgIcon id='link-icon' icon={faLink} />
                         &nbsp;
                         <a
