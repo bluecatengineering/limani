@@ -40,6 +40,7 @@ module.exports = {
         '__tests__/**',
         '__mocks__/**',
         'jest-helpers/setup-globals.js',
+        'dist/**',
     ],
     'rules': {
         // enable additional rules
