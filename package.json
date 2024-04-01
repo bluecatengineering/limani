@@ -45,8 +45,8 @@
     },
     "license": "MIT",
     "dependencies": {
-        "@fortawesome/free-regular-svg-icons": "^6.2.0",
-        "@fortawesome/free-solid-svg-icons": "^6.2.0",
+        "@fortawesome/free-regular-svg-icons": "^6.5.1",
+        "@fortawesome/free-solid-svg-icons": "^6.5.1",
         "prop-types": "^15.8.1"
     },
     "peerDependencies": {
