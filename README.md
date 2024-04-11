@@ -23,8 +23,8 @@ These components are expected to only work with Gateway.
 ## Prerequisites
 
 -   Make sure to use this package along with `@bluecateng/pelagos`. Installing `@bluecateng/limani` will automatically install `@bluecateng/pelagos` as it is a peer dependency of Limani.
--   When using Limani we depend on components from `@bluecateng/pelagos`. 
--   It is recommended to use SimplePage component as it encapsualtes navigation and styling/themes. 
+-   When using Limani we depend on components from `@bluecateng/pelagos`.
+-   It is recommended to use SimplePage component as it encapsualtes navigation and styling/themes.
 -   However, for independently customizing the style or theme, proper CSS needs to be applied. Please make sure to add the following in your main Less style sheet file:-
 
     ```
@@ -41,14 +41,13 @@ These components are expected to only work with Gateway.
       .theme-dark();
     }
     ```
-    
--   For themes to take effect, the HTML DOM `dataset.theme` has to be modified. 
+
+-   For themes to take effect, the HTML DOM `dataset.theme` has to be modified.
 -   Below is an example of how that can be achieved for `light` or `dark` themes.
     ```
     document.documentElement.dataset.theme = 'dark';
     document.documentElement.dataset.theme = 'light';
     ```
-
 
 ## How to use Limani
 
