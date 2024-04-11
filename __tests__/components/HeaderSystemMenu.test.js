@@ -30,13 +30,21 @@ jest.mock('../../src/hooks/usePlatformData', () =>
     jest
         .fn()
         .mockReturnValueOnce({
-            data: { user: { permissions: { download_logs: false } } },
+            data: {
+                user: {
+                    permissions: { download_logs: false, view_logs: false },
+                },
+            },
         })
         .mockReturnValueOnce({
-            data: { user: { permissions: { download_logs: true } } },
+            data: {
+                user: { permissions: { download_logs: true, view_logs: true } },
+            },
         })
         .mockReturnValueOnce({
-            data: { user: { permissions: { download_logs: true } } },
+            data: {
+                user: { permissions: { download_logs: true, view_logs: true } },
+            },
         }),
 );
 
@@ -44,7 +52,10 @@ describe('HeaderSystemMenu', () => {
     describe('Rendering', () => {
         it('Render HeaderSystemMenu component with default props', () => {
             const wrapper = shallow(
-                <HeaderSystemMenu canDownloadLogs={false} />,
+                <HeaderSystemMenu
+                    canDownloadLogs={false}
+                    canViewLogs={false}
+                />,
             );
             expect(wrapper.getElement()).toMatchSnapshot();
         });
@@ -54,6 +65,7 @@ describe('HeaderSystemMenu', () => {
                 <HeaderSystemMenu
                     className='customSystemMenu'
                     canDownloadLogs={true}
+                    canViewLogs={true}
                 />,
             );
             expect(wrapper.getElement()).toMatchSnapshot();
@@ -64,6 +76,7 @@ describe('HeaderSystemMenu', () => {
                     <HeaderSystemMenu
                         className='customSystemMenu'
                         canDownloadLogs={true}
+                        canViewLogs={true}
                     />,
                 );
                 expect(wrapper.getElement()).toMatchSnapshot();

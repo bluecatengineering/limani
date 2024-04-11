@@ -84,6 +84,10 @@ msgstr "Sââvéé"
 msgid "System"
 msgstr "Systéém"
 
+#: 4c39
+msgid "View logs"
+msgstr "Vîîééw lôôgss"
+
 #: 825c
 msgid "Workflows"
 msgstr "Wôôrkflôôws"

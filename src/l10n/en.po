@@ -84,6 +84,10 @@ msgstr ""
 msgid "System"
 msgstr ""
 
+#: 4c39
+msgid "View logs"
+msgstr ""
+
 #: 825c
 msgid "Workflows"
 msgstr ""
