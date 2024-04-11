@@ -78,6 +78,7 @@ const platformMockValue = {
         ],
         permissions: {
             download_logs: true,
+            view_logs: true,
         },
         user_type: 'user_type',
         username: 'username',
