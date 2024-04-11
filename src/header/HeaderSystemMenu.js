@@ -48,8 +48,10 @@ import './HeaderSystemMenu.less';
 const HeaderSystemMenu = ({ className }) => {
     const { data } = usePlatformData();
     const canDownloadLogs = data?.user?.permissions.download_logs;
+    const canViewLogs = data?.user?.permissions.view_logs;
     const downloadLogs = () =>
         window.open('/admin/logs/download', '_blank').focus();
+    const viewLogs = () => window.open('admin/logs/view', '_blank').focus();
 
     const { expanded, buttonProps, menuProps, guardProps } = useMenuHandler();
 
@@ -57,7 +59,7 @@ const HeaderSystemMenu = ({ className }) => {
 
     return (
         <>
-            {canDownloadLogs && (
+            {(canDownloadLogs || canViewLogs) && (
                 <div className={className}>
                     <button
                         id='systemMenuButton'
@@ -81,11 +83,20 @@ const HeaderSystemMenu = ({ className }) => {
                             aria-label={`System Menu`}>
                             <div tabIndex={0} {...guardProps} />
                             <Menu {...menuProps}>
-                                <MenuItem
-                                    id='systemMenu-dl_logs'
-                                    onClick={
-                                        downloadLogs
-                                    }>{t`Download logs`}</MenuItem>
+                                {canDownloadLogs && (
+                                    <MenuItem
+                                        id='systemMenu-dl_logs'
+                                        onClick={
+                                            downloadLogs
+                                        }>{t`Download logs`}</MenuItem>
+                                )}
+                                {canViewLogs && (
+                                    <MenuItem
+                                        id='systemMenu-vw_logs'
+                                        onClick={
+                                            viewLogs
+                                        }>{t`View logs`}</MenuItem>
+                                )}
                             </Menu>
                             <div tabIndex={0} {...guardProps} />
                         </Layer>
