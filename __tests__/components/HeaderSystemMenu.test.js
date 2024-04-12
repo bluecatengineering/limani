@@ -45,6 +45,16 @@ jest.mock('../../src/hooks/usePlatformData', () =>
             data: {
                 user: { permissions: { download_logs: true, view_logs: true } },
             },
+        })
+        .mockReturnValueOnce({
+            data: {
+                user: { permissions: { download_logs: true, view_logs: true } },
+            },
+        })
+        .mockReturnValueOnce({
+            data: {
+                user: { permissions: { download_logs: true, view_logs: true } },
+            },
         }),
 );
 
@@ -80,6 +90,78 @@ describe('HeaderSystemMenu', () => {
                     />,
                 );
                 expect(wrapper.getElement()).toMatchSnapshot();
+            });
+        });
+        describe('Menu items', () => {
+            it('download logs', () => {
+                const mockWindowOpen = jest.fn();
+                global.window.open = mockWindowOpen;
+
+                // Mock window url
+                delete global.window.location;
+                global.window.location = { href: '' };
+
+                const wrapper = shallow(
+                    <HeaderSystemMenu
+                        canDownloadLogs={true}
+                        canViewLogs={true}
+                    />,
+                );
+
+                // Click system menu button
+                wrapper.find('#systemMenuButton').simulate('click');
+
+                setTimeout(() => {
+                    // Wait until system menu is clickable
+                    expect(wrapper.find('#systemMenu-dl_logs').exists()).toBe(
+                        true,
+                    );
+                }, 500);
+
+                // Click download logs
+                wrapper.find('#systemMenu-dl_logs').simulate('click'); //cant click this ?
+
+                setTimeout(() => {
+                    // Assert new window was opened
+                    expect(mockWindowOpen).toHaveBeenCalledTimes(1);
+                    // Assert new window was redirected to download logs url
+                    expect(mockWindowOpen).toHaveBeenCalledWith(
+                        '/admin/logs/download',
+                        '_blank',
+                    );
+                }, 500);
+            });
+            it('view logs', () => {
+                // Mock window url
+                delete global.window.location;
+                global.window.location = { href: '' };
+
+                const wrapper = shallow(
+                    <HeaderSystemMenu
+                        canDownloadLogs={true}
+                        canViewLogs={true}
+                    />,
+                );
+
+                // Click system menu
+                wrapper.find('#systemMenuButton').simulate('click');
+
+                setTimeout(() => {
+                    // Wait until download logs exists
+                    expect(wrapper.find('#systemMenu-vw_logs').exists()).toBe(
+                        true,
+                    );
+                }, 500);
+
+                // Click view logs
+                wrapper.find('#systemMenu-vw_logs').simulate('click'); // Cant click this
+
+                setTimeout(() => {
+                    // Assert window was redirected to view logs
+                    expect(global.window.location.href).toBe(
+                        '/admin/view_logs',
+                    );
+                }, 500);
             });
         });
     });

@@ -51,7 +51,7 @@ const HeaderSystemMenu = ({ className }) => {
     const canViewLogs = data?.user?.permissions.view_logs;
     const downloadLogs = () =>
         window.open('/admin/logs/download', '_blank').focus();
-    const viewLogs = () => window.open('/admin/view_logs', '_blank').focus();
+    const viewLogs = () => window.location.replace('/admin/view_logs');
 
     const { expanded, buttonProps, menuProps, guardProps } = useMenuHandler();
 
