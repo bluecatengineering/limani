@@ -24,7 +24,10 @@ These components are expected to only work with Gateway.
 
 -   Make sure to use this package along with `@bluecateng/pelagos`. Installing `@bluecateng/limani` will automatically install `@bluecateng/pelagos` as it is a peer dependency of Limani.
 -   When using Limani we depend on components from `@bluecateng/pelagos`.
--   It is recommended to use SimplePage component as it encapsualtes navigation and styling/themes.
+
+### Light and dark theme support
+
+-   It is recommended to use SimplePage component as it encapsulates navigation and styling/themes.
 -   However, for independently customizing the style or theme, proper CSS needs to be applied. Please make sure to add the following in your main Less style sheet file:-
 
     ```
