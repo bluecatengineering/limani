@@ -23,6 +23,7 @@ SOFTWARE.
 import { shallow } from 'enzyme';
 import HeaderSystemMenu from '../../src/header/HeaderSystemMenu';
 import setLanguage from '../../src/functions/setLanguage';
+import { useMenuHandler } from '@bluecateng/pelagos';
 
 jest.unmock('../../src/header/HeaderSystemMenu');
 
@@ -55,12 +56,25 @@ jest.mock('../../src/hooks/usePlatformData', () =>
             data: {
                 user: { permissions: { download_logs: true, view_logs: true } },
             },
+        })
+        .mockReturnValueOnce({
+            data: {
+                user: { permissions: { download_logs: true, view_logs: true } },
+            },
         }),
 );
+
+jest.mock('@bluecateng/pelagos');
 
 describe('HeaderSystemMenu', () => {
     describe('Rendering', () => {
         it('Render HeaderSystemMenu component with default props', () => {
+            useMenuHandler.mockReturnValueOnce({
+                expanded: true,
+                buttonProps: null,
+                menuProps: null,
+                guardProps: null,
+            });
             const wrapper = shallow(
                 <HeaderSystemMenu
                     canDownloadLogs={false}
@@ -71,6 +85,12 @@ describe('HeaderSystemMenu', () => {
         });
 
         it('Render HeaderSystemMenu component with props', () => {
+            useMenuHandler.mockReturnValueOnce({
+                expanded: false,
+                buttonProps: { onClick: () => {}, onKeyDown: () => {} },
+                menuProps: null,
+                guardProps: null,
+            });
             const wrapper = shallow(
                 <HeaderSystemMenu
                     className='customSystemMenu'
@@ -81,6 +101,12 @@ describe('HeaderSystemMenu', () => {
             expect(wrapper.getElement()).toMatchSnapshot();
         });
         it('Render HeaderSystemMenu component with pseudo translated text', () => {
+            useMenuHandler.mockReturnValueOnce({
+                expanded: false,
+                buttonProps: { onClick: () => {}, onKeyDown: () => {} },
+                menuProps: null,
+                guardProps: null,
+            });
             setLanguage('zz').finally(() => {
                 const wrapper = shallow(
                     <HeaderSystemMenu
@@ -92,77 +118,65 @@ describe('HeaderSystemMenu', () => {
                 expect(wrapper.getElement()).toMatchSnapshot();
             });
         });
-        describe('Menu items', () => {
-            it('download logs', () => {
-                const mockWindowOpen = jest.fn();
-                global.window.open = mockWindowOpen;
+        it('Test the view logs click functionality', () => {
+            // Mock the current window location
+            const mockWindow = jest.fn();
+            global.window.location = { replace: mockWindow };
 
-                // Mock window url
-                delete global.window.location;
-                global.window.location = { href: '' };
-
-                const wrapper = shallow(
-                    <HeaderSystemMenu
-                        canDownloadLogs={true}
-                        canViewLogs={true}
-                    />,
-                );
-
-                // Click system menu button
-                wrapper.find('#systemMenuButton').simulate('click');
-
-                setTimeout(() => {
-                    // Wait until system menu is clickable
-                    expect(wrapper.find('#systemMenu-dl_logs').exists()).toBe(
-                        true,
-                    );
-                }, 500);
-
-                // Click download logs
-                wrapper.find('#systemMenu-dl_logs').simulate('click'); //cant click this ?
-
-                setTimeout(() => {
-                    // Assert new window was opened
-                    expect(mockWindowOpen).toHaveBeenCalledTimes(1);
-                    // Assert new window was redirected to download logs url
-                    expect(mockWindowOpen).toHaveBeenCalledWith(
-                        '/admin/logs/download',
-                        '_blank',
-                    );
-                }, 500);
+            // Mock the system menu button's menu handler
+            useMenuHandler.mockReturnValueOnce({
+                expanded: true,
+                buttonProps: null,
+                menuProps: null,
+                guardProps: null,
             });
-            it('view logs', () => {
-                // Mock window url
-                delete global.window.location;
-                global.window.location = { href: '' };
+            // Render the HeaderSystemMenu element
+            const wrapper = shallow(
+                <HeaderSystemMenu
+                    className='customSystemMenu'
+                    canDownloadLogs={true}
+                    canViewLogs={true}
+                />,
+            );
 
-                const wrapper = shallow(
-                    <HeaderSystemMenu
-                        canDownloadLogs={true}
-                        canViewLogs={true}
-                    />,
-                );
+            // Click the view logs menu option
+            wrapper.find('#systemMenu-vw_logs').simulate('click');
 
-                // Click system menu
-                wrapper.find('#systemMenuButton').simulate('click');
+            // Check redirect to view_logs URL
+            expect(mockWindow).toHaveBeenCalledWith('/admin/view_logs');
+        });
+        it('Test the download logs click functionality', () => {
+            // Mock the opening of a new window
+            const mockWindowOpen = jest
+                .fn()
+                .mockReturnValue({ focus: jest.fn() });
+            global.window.open = mockWindowOpen;
 
-                setTimeout(() => {
-                    // Wait until download logs exists
-                    expect(wrapper.find('#systemMenu-vw_logs').exists()).toBe(
-                        true,
-                    );
-                }, 500);
-
-                // Click view logs
-                wrapper.find('#systemMenu-vw_logs').simulate('click'); // Cant click this
-
-                setTimeout(() => {
-                    // Assert window was redirected to view logs
-                    expect(global.window.location.href).toBe(
-                        '/admin/view_logs',
-                    );
-                }, 500);
+            // Mock the system menu button's menu handler
+            useMenuHandler.mockReturnValueOnce({
+                expanded: true,
+                buttonProps: null,
+                menuProps: null,
+                guardProps: null,
             });
+            // Render the HeaderSystemMenu element
+            const wrapper = shallow(
+                <HeaderSystemMenu
+                    className='customSystemMenu'
+                    canDownloadLogs={true}
+                    canViewLogs={true}
+                />,
+            );
+            // Click the download logs button
+            wrapper.find('#systemMenu-dl_logs').simulate('click');
+
+            // Check a new window was opened and redirected to download logs URL
+            expect(mockWindowOpen).toHaveBeenCalledWith(
+                '/admin/logs/download',
+                '_blank',
+            );
+            // Check download logs window was put into focus
+            expect(mockWindowOpen().focus).toHaveBeenCalled();
         });
     });
 });
