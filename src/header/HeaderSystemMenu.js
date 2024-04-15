@@ -36,8 +36,10 @@ import './HeaderSystemMenu.less';
 /**
  * HeaderSystemMenu component is a button when clicked this button reveals the
  * links to System menu options. <br>
- * With user access permission, Download logs is an available option to retrieve
- * all logs as a single file. <br>
+ * With user access permission, two options for retrieving logs are available.
+ * "Download logs" retrieves all logs as a single file, and "View logs" shows
+ * the last 1000 lines of relevant Gateway logs, providing searching and
+ * filtering options. <br/>
  * This component is intended to be nested inside the PlatformDataContext as
  * it will require access to PlatformData. <br>
  * The component should always be wrapped inside parent element that
@@ -48,8 +50,10 @@ import './HeaderSystemMenu.less';
 const HeaderSystemMenu = ({ className }) => {
     const { data } = usePlatformData();
     const canDownloadLogs = data?.user?.permissions.download_logs;
+    const canViewLogs = data?.user?.permissions.view_logs;
     const downloadLogs = () =>
         window.open('/admin/logs/download', '_blank').focus();
+    const viewLogs = () => window.location.replace('/admin/view_logs');
 
     const { expanded, buttonProps, menuProps, guardProps } = useMenuHandler();
 
@@ -57,7 +61,7 @@ const HeaderSystemMenu = ({ className }) => {
 
     return (
         <>
-            {canDownloadLogs && (
+            {(canDownloadLogs || canViewLogs) && (
                 <div className={className}>
                     <button
                         id='systemMenuButton'
@@ -81,11 +85,20 @@ const HeaderSystemMenu = ({ className }) => {
                             aria-label={`System Menu`}>
                             <div tabIndex={0} {...guardProps} />
                             <Menu {...menuProps}>
-                                <MenuItem
-                                    id='systemMenu-dl_logs'
-                                    onClick={
-                                        downloadLogs
-                                    }>{t`Download logs`}</MenuItem>
+                                {canDownloadLogs && (
+                                    <MenuItem
+                                        id='systemMenu-dl_logs'
+                                        onClick={
+                                            downloadLogs
+                                        }>{t`Download logs`}</MenuItem>
+                                )}
+                                {canViewLogs && (
+                                    <MenuItem
+                                        id='systemMenu-vw_logs'
+                                        onClick={
+                                            viewLogs
+                                        }>{t`View logs`}</MenuItem>
+                                )}
                             </Menu>
                             <div tabIndex={0} {...guardProps} />
                         </Layer>
