@@ -37,9 +37,9 @@ import './HeaderSystemMenu.less';
  * HeaderSystemMenu component is a button when clicked this button reveals the
  * links to System menu options. <br>
  * With user access permission, two options for retrieving logs are available.
- * "Download logs" retrieves all logs as a single file, and "View logs" allows
- * the 1000 lines of the log to be viewed in the UI, where they can be
- * searched and filtered interactively. <br/>
+ * "Download logs" retrieves all logs as a single file, and "View logs" shows
+ * the last 1000 lines of relevant Gateway logs, providing searching and
+ * filtering options. <br/>
  * This component is intended to be nested inside the PlatformDataContext as
  * it will require access to PlatformData. <br>
  * The component should always be wrapped inside parent element that
