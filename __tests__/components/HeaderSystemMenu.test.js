@@ -92,11 +92,7 @@ describe('HeaderSystemMenu', () => {
                 guardProps: null,
             });
             const wrapper = shallow(
-                <HeaderSystemMenu
-                    className='customSystemMenu'
-                    canDownloadLogs={true}
-                    canViewLogs={true}
-                />,
+                <HeaderSystemMenu className='customSystemMenu' />,
             );
             expect(wrapper.getElement()).toMatchSnapshot();
         });
@@ -109,11 +105,7 @@ describe('HeaderSystemMenu', () => {
             });
             setLanguage('zz').finally(() => {
                 const wrapper = shallow(
-                    <HeaderSystemMenu
-                        className='customSystemMenu'
-                        canDownloadLogs={true}
-                        canViewLogs={true}
-                    />,
+                    <HeaderSystemMenu className='customSystemMenu' />,
                 );
                 expect(wrapper.getElement()).toMatchSnapshot();
             });
@@ -132,11 +124,7 @@ describe('HeaderSystemMenu', () => {
             });
             // Render the HeaderSystemMenu element
             const wrapper = shallow(
-                <HeaderSystemMenu
-                    className='customSystemMenu'
-                    canDownloadLogs={true}
-                    canViewLogs={true}
-                />,
+                <HeaderSystemMenu className='customSystemMenu' />,
             );
 
             // Click the view logs menu option
@@ -161,11 +149,7 @@ describe('HeaderSystemMenu', () => {
             });
             // Render the HeaderSystemMenu element
             const wrapper = shallow(
-                <HeaderSystemMenu
-                    className='customSystemMenu'
-                    canDownloadLogs={true}
-                    canViewLogs={true}
-                />,
+                <HeaderSystemMenu className='customSystemMenu' />,
             );
             // Click the download logs button
             wrapper.find('#systemMenu-dl_logs').simulate('click');
