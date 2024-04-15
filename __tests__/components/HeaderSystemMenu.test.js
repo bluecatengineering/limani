@@ -56,11 +56,6 @@ jest.mock('../../src/hooks/usePlatformData', () =>
             data: {
                 user: { permissions: { download_logs: true, view_logs: true } },
             },
-        })
-        .mockReturnValueOnce({
-            data: {
-                user: { permissions: { download_logs: true, view_logs: true } },
-            },
         }),
 );
 
@@ -75,12 +70,7 @@ describe('HeaderSystemMenu', () => {
                 menuProps: null,
                 guardProps: null,
             });
-            const wrapper = shallow(
-                <HeaderSystemMenu
-                    canDownloadLogs={false}
-                    canViewLogs={false}
-                />,
-            );
+            const wrapper = shallow(<HeaderSystemMenu />);
             expect(wrapper.getElement()).toMatchSnapshot();
         });
 
