@@ -35,7 +35,7 @@ const loaders = {
  * @returns {*|Promise<never>}
  *
  * @example
- * import {setLanguage} from '@bluecat/limani';
+ * import {setLanguage} from '@bluecateng/limani';
  *
  * setLanguage('es').catch((error) => {
  *     // handle error
