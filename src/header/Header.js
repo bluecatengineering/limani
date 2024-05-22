@@ -23,7 +23,7 @@ import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { Layer } from '@bluecateng/pelagos';
 import HeaderAccountMenu from './HeaderAccountMenu';
-import HeaderBAM from './HeaderBAM';
+import HeaderAuthentication from './HeaderAuthentication';
 import HeaderHelpMenu from './HeaderHelpMenu';
 import HeaderLogo from './HeaderLogo';
 import HeaderSystemMenu from './HeaderSystemMenu';
@@ -64,7 +64,7 @@ const Header = ({ className }) => {
                         </div>
                         <HeaderLogo />
                         <div className='Header__rightSideMenu'>
-                            <HeaderBAM />
+                            <HeaderAuthentication />
                             <HeaderHelpMenu />
                             <HeaderSystemMenu />
                             <HeaderAccountMenu />

@@ -19,7 +19,7 @@ exports[`Header Rendering Render Header component with default props 1`] = `
       <div
         className="Header__rightSideMenu"
       >
-        <HeaderBAM />
+        <HeaderAuthentication />
         <HeaderHelpMenu />
         <HeaderSystemMenu />
         <HeaderAccountMenu />
@@ -49,7 +49,7 @@ exports[`Header Rendering Render Header component with props 1`] = `
       <div
         className="Header__rightSideMenu"
       >
-        <HeaderBAM />
+        <HeaderAuthentication />
         <HeaderHelpMenu />
         <HeaderSystemMenu />
         <HeaderAccountMenu />

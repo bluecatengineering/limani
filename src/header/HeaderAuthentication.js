@@ -23,35 +23,37 @@ import PropTypes from 'prop-types';
 import usePlatformData from '../hooks/usePlatformData';
 import { SvgIcon } from '@bluecateng/pelagos';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
-import './HeaderBAM.less';
+import './HeaderAuthentication.less';
 
 /**
- * HeaderBAM component displays the connected BAM alias and URL. <br>
+ * HeaderAuthentication component displays the connected Authentication
+ * service alias and URL. <br>
  * This component is intended to be nested inside the PlatformDataContext
  * as it will require access to PlatformData.
  */
-const HeaderBAM = ({ className }) => {
+const HeaderAuthentication = ({ className }) => {
     const { data } = usePlatformData();
-    const bamAlias = data?.user?.bam_info?.alias;
-    const bamLink = data?.user?.bam_info?.url;
+    const authenticationAlias = data?.user?.authentication_info?.alias;
+    const authenticationLink = data?.user?.authentication_info?.url;
+    const authenticationService = data?.user?.authentication_info?.service;
 
     return (
         <>
-            {bamAlias ? (
+            {authenticationAlias ? (
                 <div
-                    className={`HeaderBAM__bam${
+                    className={`HeaderAuthentication__authentication${
                         className ? ' ' + className : ''
                     }`}>
                     <span>
-                        BAM &nbsp;
+                        {authenticationService} &nbsp;
                         <SvgIcon id='link-icon' icon={faLink} />
                         &nbsp;
                         <a
-                            href={bamLink}
+                            href={authenticationLink}
                             target='_blank'
                             rel='noreferrer'
-                            title={bamAlias}>
-                            {bamAlias}
+                            title={authenticationAlias}>
+                            {authenticationAlias}
                         </a>
                     </span>
                 </div>
@@ -60,9 +62,9 @@ const HeaderBAM = ({ className }) => {
     );
 };
 
-HeaderBAM.propTypes = {
+HeaderAuthentication.propTypes = {
     /** The component class name(s). */
     className: PropTypes.string,
 };
 
-export default HeaderBAM;
+export default HeaderAuthentication;
