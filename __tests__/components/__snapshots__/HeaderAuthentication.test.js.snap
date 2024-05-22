@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HeaderBAM Rendering Render HeaderBAM component with default props 1`] = `
+exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with default props 1`] = `
 <React.Fragment>
   <div
-    className="HeaderBAM__bam"
+    className="HeaderAuthentication__authentication"
   >
     <span>
-      BAM  
+        
       <SvgIcon
         icon={
           Object {
@@ -40,13 +40,13 @@ exports[`HeaderBAM Rendering Render HeaderBAM component with default props 1`] =
 </React.Fragment>
 `;
 
-exports[`HeaderBAM Rendering Render HeaderBAM component with props 1`] = `
+exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with props 1`] = `
 <React.Fragment>
   <div
-    className="HeaderBAM__bam varClassName"
+    className="HeaderAuthentication__authentication varClassName"
   >
     <span>
-      BAM  
+        
       <SvgIcon
         icon={
           Object {
