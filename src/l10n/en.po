@@ -41,7 +41,7 @@ msgid "Cancel"
 msgstr ""
 
 #: 3752
-msgid "Download logs"
+msgid "Download all logs"
 msgstr ""
 
 #: 543f

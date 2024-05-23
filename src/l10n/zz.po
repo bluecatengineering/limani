@@ -41,8 +41,8 @@ msgid "Cancel"
 msgstr "ÇÇâânççéél"
 
 #: 3752
-msgid "Download logs"
-msgstr "Dôôwnlôôââd lôôgs"
+msgid "Download all logs"
+msgstr "Dôôwnlôôââd ââll lôôgs"
 
 #: 543f
 msgid "Error response does not match expected format."

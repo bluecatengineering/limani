@@ -123,7 +123,7 @@ describe('HeaderSystemMenu', () => {
             // Check redirect to view_logs URL
             expect(mockWindow).toHaveBeenCalledWith('/admin/view_logs');
         });
-        it('Test the download logs click functionality', () => {
+        it('Test the download all logs click functionality', () => {
             // Mock the opening of a new window
             const mockWindowOpen = jest
                 .fn()
@@ -141,7 +141,7 @@ describe('HeaderSystemMenu', () => {
             const wrapper = shallow(
                 <HeaderSystemMenu className='customSystemMenu' />,
             );
-            // Click the download logs button
+            // Click the download all logs button
             wrapper.find('#systemMenu-dl_logs').simulate('click');
 
             // Check a new window was opened and redirected to download logs URL
@@ -149,7 +149,7 @@ describe('HeaderSystemMenu', () => {
                 '/admin/logs/download',
                 '_blank',
             );
-            // Check download logs window was put into focus
+            // Check download all logs window was put into focus
             expect(mockWindowOpen().focus).toHaveBeenCalled();
         });
     });
