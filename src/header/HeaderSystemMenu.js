@@ -37,8 +37,8 @@ import './HeaderSystemMenu.less';
  * HeaderSystemMenu component is a button when clicked this button reveals the
  * links to System menu options. <br>
  * With user access permission, two options for retrieving logs are available.
- * "Download logs" retrieves all logs as a single file, and "View logs" shows
- * the last 1000 lines of relevant Gateway logs, providing searching and
+ * "Download all logs" retrieves all logs as a single file, and "View logs"
+ * shows the last 1000 lines of relevant Gateway logs, providing searching and
  * filtering options. <br/>
  * This component is intended to be nested inside the PlatformDataContext as
  * it will require access to PlatformData. <br>
@@ -90,7 +90,7 @@ const HeaderSystemMenu = ({ className }) => {
                                         id='systemMenu-dl_logs'
                                         onClick={
                                             downloadLogs
-                                        }>{t`Download logs`}</MenuItem>
+                                        }>{t`Download all logs`}</MenuItem>
                                 )}
                                 {canViewLogs && (
                                     <MenuItem
