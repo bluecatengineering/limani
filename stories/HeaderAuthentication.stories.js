@@ -19,14 +19,14 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import HeaderBAM from '../src/header/HeaderBAM';
 import PlatformDataContext from '../src/components/PlatformDataContext';
+import HeaderAuthentication from '../src/header/HeaderAuthentication';
 
 const mockValue = {
     data: {
         user: {
             // eslint-disable-next-line camelcase
-            bam_info: {
+            authentication_info: {
                 alias: 'BAM-9.5.0',
                 url: '#',
             },
@@ -35,8 +35,8 @@ const mockValue = {
 };
 
 export default {
-    title: 'Components/HeaderBAM',
-    component: HeaderBAM,
+    title: 'Components/HeaderAuthentication',
+    component: HeaderAuthentication,
     decorators: [
         (Story) => (
             <PlatformDataContext.Provider value={mockValue}>
@@ -48,6 +48,6 @@ export default {
 
 export const Normal = {
     args: {
-        className: 'TestHeaderBAM',
+        className: 'TestHeaderAuthentication',
     },
 };

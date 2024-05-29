@@ -15,7 +15,7 @@ module.exports = {
         '\\.po$': '@bluecateng/l10n-jest',
     },
     transformIgnorePatterns: [
-        'node_modules/(?!(lodash-es|@bluecat|@bluecateng)/)',
+        'node_modules/(?!(lodash-es|@bluecat|@bluecateng|@carbon)/)',
     ],
     collectCoverage: true,
     coverageReporters: ['text', 'html'],
