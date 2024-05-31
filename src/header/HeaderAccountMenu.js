@@ -19,18 +19,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import PropTypes from 'prop-types';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { t } from '@bluecateng/l10n.macro';
 import {
     HeaderIcon,
     Layer,
-    useMenuHandler,
     Menu,
     MenuItem,
+    useMenuHandler,
 } from '@bluecateng/pelagos';
-import { resizeButtonMenu } from '../utils/display';
-import { t } from '@bluecateng/l10n.macro';
+import { UserFilled } from '@carbon/icons-react';
+import PropTypes from 'prop-types';
 import usePlatformData from '../hooks/usePlatformData';
+import { resizeButtonMenu } from '../utils/display';
 import './HeaderAccountMenu.less';
 
 const doLogout = () => window.open('/logout', '_self');
@@ -66,7 +66,7 @@ const HeaderAccountMenu = ({ className }) => {
                 aria-haspopup='true'
                 aria-expanded={expanded}
                 {...buttonProps}>
-                <HeaderIcon icon={faUser} label={t`Account`} />
+                <HeaderIcon icon={UserFilled} label={t`Account`} />
             </button>
             {expanded && (
                 <Layer
