@@ -27,7 +27,7 @@ import {
     MenuItem,
     useMenuHandler,
 } from '@bluecateng/pelagos';
-import { HelpFilled } from '@carbon/icons-react';
+import { Help } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import usePlatformData from '../hooks/usePlatformData';
 import { resizeButtonMenu } from '../utils/display';
@@ -90,7 +90,7 @@ const HeaderHelpMenu = ({ className }) => {
                         {...buttonProps}>
                         <HeaderIcon
                             className='button'
-                            icon={HelpFilled}
+                            icon={Help}
                             label={t`Help`}
                         />
                     </button>

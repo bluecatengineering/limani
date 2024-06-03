@@ -7,8 +7,7 @@ exports[`HeaderBAM Rendering Render HeaderBAM component with default props 1`] =
   >
     <span>
       BAM  
-      <SvgIcon
-        icon={[Function]}
+      <Link
         id="link-icon"
       />
        
@@ -32,8 +31,7 @@ exports[`HeaderBAM Rendering Render HeaderBAM component with props 1`] = `
   >
     <span>
       BAM  
-      <SvgIcon
-        icon={[Function]}
+      <Link
         id="link-icon"
       />
        

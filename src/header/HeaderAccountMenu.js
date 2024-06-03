@@ -27,7 +27,7 @@ import {
     MenuItem,
     useMenuHandler,
 } from '@bluecateng/pelagos';
-import { UserFilled } from '@carbon/icons-react';
+import { UserAvatar } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import usePlatformData from '../hooks/usePlatformData';
 import { resizeButtonMenu } from '../utils/display';
@@ -66,7 +66,7 @@ const HeaderAccountMenu = ({ className }) => {
                 aria-haspopup='true'
                 aria-expanded={expanded}
                 {...buttonProps}>
-                <HeaderIcon icon={UserFilled} label={t`Account`} />
+                <HeaderIcon icon={UserAvatar} label={t`Account`} />
             </button>
             {expanded && (
                 <Layer

@@ -19,7 +19,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import { SvgIcon } from '@bluecateng/pelagos';
 import { Link } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import usePlatformData from '../hooks/usePlatformData';
@@ -44,7 +43,7 @@ const HeaderBAM = ({ className }) => {
                     }`}>
                     <span>
                         BAM &nbsp;
-                        <SvgIcon id='link-icon' icon={Link} />
+                        <Link id='link-icon' />
                         &nbsp;
                         <a
                             href={bamLink}
