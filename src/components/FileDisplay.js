@@ -19,9 +19,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import PropTypes from 'prop-types';
-import { faDownload, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { IconButton } from '@bluecateng/pelagos';
+import { Close, Download } from '@carbon/icons-react';
+import PropTypes from 'prop-types';
 import useRandomId from '../hooks/useRandomId';
 import './FileDisplay.less';
 
@@ -56,7 +56,7 @@ const FileDisplay = ({
                 <IconButton
                     id={downloadId}
                     className='FileDisplay__download'
-                    icon={faDownload}
+                    icon={Download}
                     tooltipText={downloadTooltipText}
                     tooltipPlacement='top'
                     onClick={onDownload}
@@ -67,7 +67,7 @@ const FileDisplay = ({
                 <IconButton
                     id={deleteId}
                     className='FileDisplay__delete'
-                    icon={faXmark}
+                    icon={Close}
                     tooltipText={deleteTooltipText}
                     tooltipPlacement='top'
                     disabled={disabled}

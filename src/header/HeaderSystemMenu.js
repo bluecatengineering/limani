@@ -19,18 +19,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import PropTypes from 'prop-types';
-import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { t } from '@bluecateng/l10n.macro';
 import {
     HeaderIcon,
-    useMenuHandler,
     Layer,
     Menu,
     MenuItem,
+    useMenuHandler,
 } from '@bluecateng/pelagos';
+import { Settings } from '@carbon/icons-react';
+import PropTypes from 'prop-types';
 import usePlatformData from '../hooks/usePlatformData';
 import { resizeButtonMenu } from '../utils/display';
-import { t } from '@bluecateng/l10n.macro';
 import './HeaderSystemMenu.less';
 
 /**
@@ -69,7 +69,7 @@ const HeaderSystemMenu = ({ className }) => {
                         {...buttonProps}>
                         <HeaderIcon
                             className='button'
-                            icon={faCog}
+                            icon={Settings}
                             label={t`System`}
                         />
                     </button>

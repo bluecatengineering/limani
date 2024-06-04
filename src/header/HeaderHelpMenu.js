@@ -19,19 +19,19 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import PropTypes from 'prop-types';
+import { t } from '@bluecateng/l10n.macro';
 import {
     HeaderIcon,
-    useMenuHandler,
     Layer,
     Menu,
     MenuItem,
+    useMenuHandler,
 } from '@bluecateng/pelagos';
-import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
-import './HeaderHelpMenu.less';
-import { resizeButtonMenu } from '../utils/display';
-import { t } from '@bluecateng/l10n.macro';
+import { Help } from '@carbon/icons-react';
+import PropTypes from 'prop-types';
 import usePlatformData from '../hooks/usePlatformData';
+import { resizeButtonMenu } from '../utils/display';
+import './HeaderHelpMenu.less';
 
 /**
  * HeaderHelpMenu component is a button when clicked this button reveals the
@@ -90,7 +90,7 @@ const HeaderHelpMenu = ({ className }) => {
                         {...buttonProps}>
                         <HeaderIcon
                             className='button'
-                            icon={faQuestionCircle}
+                            icon={Help}
                             label={t`Help`}
                         />
                     </button>
