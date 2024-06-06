@@ -1,11 +1,15 @@
 name: Jest
 run-name: ${{ github.actor }} is running Jest check on code
 on:
-    push:
-        branches: ['*']
-    pull_request:
-        types: [opened, reopened]
-        branches: ['*']
+  push:
+    branches:
+      - '*'
+  pull_request:
+    types:
+      - opened
+      - reopened
+    branches:
+      - '*'
 
 permissions: read-all
 jobs:
