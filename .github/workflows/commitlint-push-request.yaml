@@ -1,9 +1,9 @@
 name: Commitlint commit message check
 run-name: ${{ github.actor }} is running commitlint check on commit message
 on:
-  check_run:
+    check_run:
         branches: ['*']
-  push:
+    push:
         branches: ['*']
 
 permissions: read-all
