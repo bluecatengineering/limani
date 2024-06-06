@@ -27,8 +27,10 @@ const mockValue = {
     data: {
         user: {
             permissions: {
-                // eslint-disable-next-line camelcase
+                /* eslint-disable camelcase */
                 download_logs: true,
+                view_logs: true,
+                /* eslint-enable camelcase */
             },
         },
     },
