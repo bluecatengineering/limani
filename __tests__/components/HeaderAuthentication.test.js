@@ -21,16 +21,16 @@ SOFTWARE.
 */
 
 import { shallow } from 'enzyme';
-import HeaderBAM from '../../src/header/HeaderBAM';
+import HeaderAuthentication from '../../src/header/HeaderAuthentication';
 
-jest.unmock('../../src/header/HeaderBAM');
+jest.unmock('../../src/header/HeaderAuthentication');
 
 jest.mock('../../src/hooks/usePlatformData', () =>
     jest.fn(() => {
         return {
             data: {
                 user: {
-                    bam_info: {
+                    authentication_info: {
                         alias: 'Bam1',
                         url: '192.168.10.2',
                     },
@@ -40,15 +40,17 @@ jest.mock('../../src/hooks/usePlatformData', () =>
     }),
 );
 
-describe('HeaderBAM', () => {
+describe('HeaderAuthentication', () => {
     describe('Rendering', () => {
-        it('Render HeaderBAM component with default props', () => {
-            const wrapper = shallow(<HeaderBAM />);
+        it('Render HeaderAuthentication component with default props', () => {
+            const wrapper = shallow(<HeaderAuthentication />);
             expect(wrapper.getElement()).toMatchSnapshot();
         });
 
-        it('Render HeaderBAM component with props', () => {
-            const wrapper = shallow(<HeaderBAM className='varClassName' />);
+        it('Render HeaderAuthentication component with props', () => {
+            const wrapper = shallow(
+                <HeaderAuthentication className='varClassName' />,
+            );
             expect(wrapper.getElement()).toMatchSnapshot();
         });
     });
