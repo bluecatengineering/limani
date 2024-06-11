@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2024 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,3 +29,4 @@ export { default as PageToolkitBase } from './PageToolkitBase';
 export { default as usePageMessages } from './usePageMessages';
 export { default as usePageModalSpinner } from './usePageModalSpinner';
 export { default as ThemeSwitch } from './ThemeSwitch';
+export { default as SidePanel } from './SidePanel';

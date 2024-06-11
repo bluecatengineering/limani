@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidePanel Rendering Render SidePanel component when expanded and show its content 1`] = `
+<React.Fragment>
+  <React.Portal
+    container="body"
+  >
+    <div
+      aria-expanded={true}
+      className="SidePanel SidePanel--visible"
+      id="SidePanel"
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    >
+      <div
+        className="SidePanel__header"
+      >
+        <p
+          className="SidePanel__title"
+        >
+          Test title
+        </p>
+        <IconButton
+          className="SidePanel__close"
+          icon={[Function]}
+          id="SidePanel-close"
+          onClick={[MockFunction]}
+          size="medium"
+          tooltipPlacement="right"
+          type="ghost"
+        />
+      </div>
+      <div
+        className="SidePanel__content"
+      >
+        <h1
+          id="content"
+        >
+          Test child
+        </h1>
+      </div>
+    </div>
+  </React.Portal>
+</React.Fragment>
+`;
+
+exports[`SidePanel Rendering Render SidePanel component when not expanded 1`] = `
+<React.Fragment>
+  <React.Portal
+    container="body"
+  >
+    <div
+      aria-expanded={false}
+      className="SidePanel "
+      id="SidePanel"
+      style={
+        Object {
+          "width": "50%",
+        }
+      }
+    >
+      <div
+        className="SidePanel__header"
+      >
+        <p
+          className="SidePanel__title"
+        >
+          Test title
+        </p>
+        <IconButton
+          className="SidePanel__close"
+          icon={[Function]}
+          id="SidePanel-close"
+          onClick={[MockFunction]}
+          size="medium"
+          tooltipPlacement="right"
+          type="ghost"
+        />
+      </div>
+      <div
+        className="SidePanel__content"
+      >
+        <h1>
+          Test child
+        </h1>
+      </div>
+    </div>
+  </React.Portal>
+</React.Fragment>
+`;
