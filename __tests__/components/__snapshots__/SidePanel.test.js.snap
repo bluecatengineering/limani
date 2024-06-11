@@ -7,7 +7,7 @@ exports[`SidePanel Rendering Render SidePanel component when expanded and show i
   >
     <div
       aria-expanded={true}
-      className="SidePanel SidePanel--visible"
+      className="SidePanel"
       id="SidePanel"
       style={
         Object {
@@ -54,7 +54,7 @@ exports[`SidePanel Rendering Render SidePanel component when not expanded 1`] = 
   >
     <div
       aria-expanded={false}
-      className="SidePanel "
+      className="SidePanel"
       id="SidePanel"
       style={
         Object {
