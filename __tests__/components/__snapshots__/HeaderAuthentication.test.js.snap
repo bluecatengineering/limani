@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with default props 1`] = `
+<React.Fragment>
+  <div
+    className="HeaderAuthentication__authentication"
+  >
+    <span>
+      BAM
+        
+      <Link
+        id="link-icon"
+      />
+       
+      <a
+        href="#"
+        rel="noreferrer"
+        target="_blank"
+        title="BAM-9.5.0"
+      >
+        BAM-9.5.0
+      </a>
+    </span>
+  </div>
+</React.Fragment>
+`;
+
+exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with props 1`] = `
+<React.Fragment>
+  <div
+    className="HeaderAuthentication__authentication varClassName"
+  >
+    <span>
+      BAM
+        
+      <Link
+        id="link-icon"
+      />
+       
+      <a
+        href="#"
+        rel="noreferrer"
+        target="_blank"
+        title="BAM-9.5.0"
+      >
+        BAM-9.5.0
+      </a>
+    </span>
+  </div>
+</React.Fragment>
+`;

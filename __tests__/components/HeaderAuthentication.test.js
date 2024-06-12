@@ -19,35 +19,40 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import HeaderBAM from '../src/header/HeaderBAM';
-import PlatformDataContext from '../src/components/PlatformDataContext';
 
-const mockValue = {
-    data: {
-        user: {
-            // eslint-disable-next-line camelcase
-            bam_info: {
-                alias: 'BAM-9.5.0',
-                url: '#',
+import { shallow } from 'enzyme';
+import HeaderAuthentication from '../../src/header/HeaderAuthentication';
+
+jest.unmock('../../src/header/HeaderAuthentication');
+
+jest.mock('../../src/hooks/usePlatformData', () =>
+    jest.fn(() => {
+        return {
+            data: {
+                user: {
+                    authentication_info: {
+                        alias: 'BAM-9.5.0',
+                        url: '#',
+                        service: 'BAM',
+                    },
+                },
             },
-        },
-    },
-};
+        };
+    }),
+);
 
-export default {
-    title: 'Components/HeaderBAM',
-    component: HeaderBAM,
-    decorators: [
-        (Story) => (
-            <PlatformDataContext.Provider value={mockValue}>
-                <Story />
-            </PlatformDataContext.Provider>
-        ),
-    ],
-};
+describe('HeaderAuthentication', () => {
+    describe('Rendering', () => {
+        it('Render HeaderAuthentication component with default props', () => {
+            const wrapper = shallow(<HeaderAuthentication />);
+            expect(wrapper.getElement()).toMatchSnapshot();
+        });
 
-export const Normal = {
-    args: {
-        className: 'TestHeaderBAM',
-    },
-};
+        it('Render HeaderAuthentication component with props', () => {
+            const wrapper = shallow(
+                <HeaderAuthentication className='varClassName' />,
+            );
+            expect(wrapper.getElement()).toMatchSnapshot();
+        });
+    });
+});
