@@ -70,5 +70,6 @@ export const Normal = {
         title: 'Title',
         expanded: false,
         size: 'large',
+        top: 50,
     },
 };

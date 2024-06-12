@@ -23,13 +23,10 @@
 
 .SidePanel {
     padding: @sp-16;
-    position: fixed;
+    position: absolute;
     background-color: @white;
     border-left: 1px solid @gray-20;
-    top: 0;
     right: 0;
-    height: 100vh;
-    z-index: 10;
     transform: translateX(100%);
     transition: transform 0.25s ease-out;
 
@@ -60,5 +57,9 @@
 
     &__content {
         margin-top: @sp-16;
+        padding-bottom: @sp-08;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
     }
 }

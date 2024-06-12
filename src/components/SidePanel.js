@@ -37,6 +37,8 @@ const SidePanel = ({
     title,
     expanded,
     size,
+    top,
+    zIndex,
     children,
     onClose,
 }) => {
@@ -51,6 +53,9 @@ const SidePanel = ({
                     aria-expanded={expanded}
                     style={{
                         width: `${panelSize[size] ?? panelSize.medium}%`,
+                        top: `${top ?? 0}px`,
+                        height: `calc(100% - ${top ?? 0}px)`,
+                        zIndex: `${zIndex ?? 1}`,
                     }}>
                     <div className='SidePanel__header'>
                         <p className='SidePanel__title'>{title}</p>
@@ -80,6 +85,10 @@ SidePanel.propTypes = {
     expanded: PropTypes.bool.isRequired,
     /** The component width */
     size: PropTypes.oneOf(['medium', 'large']),
+    /** The margin top */
+    top: PropTypes.number,
+    /** The margin top */
+    zIndex: PropTypes.number,
     /** A callback that will be called when a user clicks mask, close button */
     onClose: PropTypes.func.isRequired,
     /** Child components */
