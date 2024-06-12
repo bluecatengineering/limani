@@ -22,6 +22,7 @@ SOFTWARE.
 import { IconButton } from '@bluecateng/pelagos';
 import { Close } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
+import { useCallback, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import useRandomId from '../hooks/useRandomId';
 import './SidePanel.less';
@@ -43,6 +44,31 @@ const SidePanel = ({
     onClose,
 }) => {
     id = useRandomId(id);
+    const animationRef = useRef(null);
+    const animationFlow = [
+        { transform: 'translateX(100%)' },
+        { transform: 'translateX(0)' },
+    ];
+
+    useEffect(() => {
+        if (expanded) {
+            animationRef.current = document
+                .getElementById(id)
+                .animate(animationFlow, {
+                    duration: 250,
+                    fill: 'both',
+                    easing: 'ease-out',
+                });
+        }
+    }, [id, expanded]);
+
+    const handleClose = useCallback(() => {
+        const animation = animationRef.current;
+        if (animation) {
+            animation.onfinish = onClose;
+            animation.reverse();
+        }
+    }, [onClose]);
 
     return (
         <>
@@ -63,7 +89,7 @@ const SidePanel = ({
                             id={`${id}-close`}
                             className='SidePanel__close'
                             icon={Close}
-                            onClick={onClose}
+                            onClick={handleClose}
                         />
                     </div>
                     <div className='SidePanel__content'>{children}</div>

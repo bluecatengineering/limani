@@ -30,7 +30,7 @@ exports[`SidePanel Rendering Render SidePanel component when expanded and show i
           className="SidePanel__close"
           icon={[Function]}
           id="SidePanel-close"
-          onClick={[MockFunction]}
+          onClick={[Function]}
           size="medium"
           tooltipPlacement="right"
           type="ghost"
@@ -80,7 +80,7 @@ exports[`SidePanel Rendering Render SidePanel component when not expanded 1`] = 
           className="SidePanel__close"
           icon={[Function]}
           id="SidePanel-close"
-          onClick={[MockFunction]}
+          onClick={[Function]}
           size="medium"
           tooltipPlacement="right"
           type="ghost"

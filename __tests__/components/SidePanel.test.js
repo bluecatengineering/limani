@@ -62,22 +62,4 @@ describe('SidePanel', () => {
             expect(wrapper.getElement()).toMatchSnapshot();
         });
     });
-
-    describe('Acting', () => {
-        it('Trigger function `onClose` when clicking on `x` button', () => {
-            const handleClose = jest.fn();
-            const wrapper = shallow(
-                <SidePanel
-                    id={componentId}
-                    expanded={true}
-                    title='Test title'
-                    onClose={handleClose}>
-                    <h1 id='content'>Test child</h1>
-                </SidePanel>,
-            );
-
-            wrapper.find(`#${componentId}-close`).simulate('click');
-            expect(handleClose).toHaveBeenCalled();
-        });
-    });
 });

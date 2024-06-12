@@ -51,16 +51,8 @@ export const Normal = {
                     onClose={() => setIsExpanded(false)}>
                     <div>
                         <strong>Content 1</strong>
-                        <p>Cotent 2</p>
+                        <p>Content 2</p>
                     </div>
-                    <Button
-                        onClick={() => setIsExpanded(false)}
-                        style={{
-                            width: 'fit-content',
-                            marginTop: '10px',
-                        }}>
-                        Close
-                    </Button>
                 </SidePanel>
             </div>
         );
@@ -70,6 +62,6 @@ export const Normal = {
         title: 'Title',
         expanded: false,
         size: 'large',
-        top: 50,
+        top: 0,
     },
 };
