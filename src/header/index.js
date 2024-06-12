@@ -21,7 +21,7 @@ SOFTWARE.
 */
 export { default as Header } from './Header';
 export { default as HeaderAccountMenu } from './HeaderAccountMenu';
-export { default as HeaderBAM } from './HeaderBAM';
+export { default as HeaderAuthentication } from './HeaderAuthentication';
 export { default as HeaderHelpMenu } from './HeaderHelpMenu';
 export { default as HeaderHomeNav } from './HeaderHomeNav';
 export { default as HeaderLogo } from './HeaderLogo';
