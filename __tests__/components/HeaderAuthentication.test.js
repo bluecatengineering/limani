@@ -31,8 +31,9 @@ jest.mock('../../src/hooks/usePlatformData', () =>
             data: {
                 user: {
                     authentication_info: {
-                        alias: 'Bam1',
-                        url: '192.168.10.2',
+                        alias: 'BAM-9.5.0',
+                        url: '#',
+                        service: 'BAM',
                     },
                 },
             },

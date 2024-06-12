@@ -29,6 +29,7 @@ const mockValue = {
             authentication_info: {
                 alias: 'BAM-9.5.0',
                 url: '#',
+                service: 'BAM',
             },
         },
     },

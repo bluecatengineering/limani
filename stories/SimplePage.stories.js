@@ -32,9 +32,10 @@ const platformMockValue = {
         language: 'en',
     },
     user: {
-        bam_info: {
+        authentication_info: {
             alias: 'BAM-9.5.0',
             url: '#',
+            service: 'BAM',
         },
         help_links: {
             custom: [

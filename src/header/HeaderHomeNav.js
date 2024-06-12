@@ -19,13 +19,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import PropTypes from 'prop-types';
-import {
-    faHouseChimney,
-    faWindowMaximize,
-} from '@fortawesome/free-solid-svg-icons';
-import { HeaderIcon } from '@bluecateng/pelagos';
 import { t } from '@bluecateng/l10n.macro';
+import { HeaderIcon } from '@bluecateng/pelagos';
+import { OpenPanelFilledTop, Home } from '@carbon/icons-react';
+import PropTypes from 'prop-types';
 import usePlatformData from '../hooks/usePlatformData';
 import './HeaderHomeNav.less';
 
@@ -77,7 +74,7 @@ const HeaderHomeNav = ({ className }) => {
                 className='HeaderHomeNav__link'
                 href='/home'
                 aria-current={activeHomePage ? 'page' : null}>
-                <HeaderIcon icon={faHouseChimney} label={t`Home`} />
+                <HeaderIcon icon={Home} label={t`Home`} />
             </a>
             {landingPageActivated ? (
                 <a
@@ -85,7 +82,10 @@ const HeaderHomeNav = ({ className }) => {
                     className='HeaderHomeNav__link'
                     href='/index'
                     aria-current={activeLandingPage ? 'page' : null}>
-                    <HeaderIcon icon={faWindowMaximize} label={t`Workflows`} />
+                    <HeaderIcon
+                        icon={OpenPanelFilledTop}
+                        label={t`Workflows`}
+                    />
                 </a>
             ) : null}
         </div>
