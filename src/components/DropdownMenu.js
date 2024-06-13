@@ -23,7 +23,6 @@ const setRefs =
     (...refs) =>
     (current) => {
         for (const ref of refs) {
-            console.log(typeof ref);
             if (typeof ref === 'function') {
                 ref(current);
             } else {
