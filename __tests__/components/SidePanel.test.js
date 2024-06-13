@@ -44,6 +44,7 @@ describe('SidePanel', () => {
             ).toBe(false);
             expect(wrapper.getElement()).toMatchSnapshot();
         });
+
         it('Render SidePanel component when expanded and show its content', () => {
             const wrapper = shallow(
                 <SidePanel
@@ -57,7 +58,7 @@ describe('SidePanel', () => {
             expect(wrapper.find(`#${componentId}`).prop('aria-expanded')).toBe(
                 true,
             );
-            expect(wrapper.find('.SidePanel__title').text()).toBe('Test title');
+            expect(wrapper.find('#sidePanelTitle').text()).toBe('Test title');
             expect(wrapper.find('#content').text()).toBe('Test child');
             expect(wrapper.getElement()).toMatchSnapshot();
         });

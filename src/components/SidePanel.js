@@ -24,11 +24,10 @@ import { Close } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import { useCallback, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import useRandomId from '../hooks/useRandomId';
 import './SidePanel.less';
 
 const panelSize = {
-    medium: 50,
+    small: 50,
     large: (2 / 3) * 100,
 };
 
@@ -43,7 +42,6 @@ const SidePanel = ({
     children,
     onClose,
 }) => {
-    id = useRandomId(id);
     const animationRef = useRef(null);
     const animationFlow = [
         { transform: 'translateX(100%)' },
@@ -77,16 +75,19 @@ const SidePanel = ({
                     id={id}
                     className={`SidePanel${className ? ` ${className}` : ''}`}
                     aria-expanded={expanded}
+                    aria-labelledby='sidePanelTitle'
                     style={{
-                        width: `${panelSize[size] ?? panelSize.medium}%`,
+                        width: `${panelSize[size] ?? panelSize.small}%`,
                         top: `${top ?? 0}px`,
                         height: `calc(100% - ${top ?? 0}px)`,
                         zIndex: `${zIndex ?? 1}`,
                     }}>
                     <div className='SidePanel__header'>
-                        <p className='SidePanel__title'>{title}</p>
+                        <p id='sidePanelTitle' className='SidePanel__title'>
+                            {title}
+                        </p>
                         <IconButton
-                            id={`${id}-close`}
+                            id='closeSidePanelBtn'
                             className='SidePanel__close'
                             icon={Close}
                             onClick={handleClose}
@@ -110,7 +111,7 @@ SidePanel.propTypes = {
     /** Whether the panel is visible or not */
     expanded: PropTypes.bool.isRequired,
     /** The component width */
-    size: PropTypes.oneOf(['medium', 'large']),
+    size: PropTypes.oneOf(['small', 'large']),
     /** The margin top */
     top: PropTypes.number,
     /** The margin top */
@@ -125,7 +126,7 @@ SidePanel.propTypes = {
 };
 
 SidePanel.defaultProps = {
-    size: 'medium',
+    size: 'small',
 };
 
 export default SidePanel;
