@@ -21,8 +21,19 @@
 @import '~@bluecateng/pelagos/less/spacing';
 
 .DropdownMenu {
-    padding: 0 @sp-08;
     width: fit-content;
+
+    &.Button--small {
+        padding: 0 @sp-08;
+    }
+
+    &.Button--medium {
+        padding: 0 @sp-12;
+    }
+
+    &.Button--large {
+        padding: 0 @sp-16;
+    }
 
     & > .Button__icon {
         margin: 0;
