@@ -32,6 +32,10 @@ msgstr ""
 "Mime-Version: 1.0\n"
 "X-Generator: BlueCat pseudo-translation tool v0.0.2\n"
 
+#: 0b0c
+msgid "{0}"
+msgstr ""
+
 #: 85df
 msgid "Account"
 msgstr "ÂÂççççôôùùnt"
@@ -55,6 +59,18 @@ msgstr "ÉÉrrôôr whîîléé ççôômmùùnîîççââtîîng wîîth séé
 #: e847
 msgid "Go back"
 msgstr "Gôô bââççk"
+
+#: 7bdc
+#~ msgid "Go to BAM"
+#~ msgstr "Gô ƭô ßÂM"
+
+#: 2a41
+#~ msgid "Go to Gateway"
+#~ msgstr "Gô ƭô Gáƭèωá¥"
+
+#: 8976
+#~ msgid "Go to Micetro"
+#~ msgstr "Gô ƭô Mïçèƭřô"
 
 #: c47a
 msgid "Help"

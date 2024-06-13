@@ -23,7 +23,8 @@ import './preview.less';
 import { initialize, mswDecorator } from 'msw-storybook-addon';
 
 // Initialize MSW
-initialize();
+// Suppress warnings about unhandled requests from 3rd party libraries on mock API
+initialize({ onUnhandledRequest: 'bypass' });
 
 const setTheme = (theme) => (
     sessionStorage.setItem('theme', theme),
