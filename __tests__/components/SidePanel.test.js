@@ -45,6 +45,24 @@ describe('SidePanel', () => {
             expect(wrapper.getElement()).toMatchSnapshot();
         });
 
+        it('Render SidePanel component with children as a prop', () => {
+            const wrapper = shallow(
+                <SidePanel
+                    id={componentId}
+                    expanded={true}
+                    title='Test title'
+                    zIndex={2}
+                    top={50}
+                    onClose={jest.fn()}
+                    children={<h1>Test child</h1>}
+                />,
+            );
+            expect(
+                wrapper.find(`#${componentId}`).props()['aria-expanded'],
+            ).toBe(true);
+            expect(wrapper.getElement()).toMatchSnapshot();
+        });
+
         it('Render SidePanel component when expanded and show its content', () => {
             const wrapper = shallow(
                 <SidePanel

@@ -40,7 +40,6 @@ export const Normal = {
         return (
             <div style={{ width: '600px' }}>
                 <Button
-                    id='btn-SidePanel'
                     style={{ width: 'fit-content' }}
                     onClick={() => setIsExpanded(true)}>
                     Open
@@ -60,7 +59,6 @@ export const Normal = {
     args: {
         className: 'SidePanel',
         title: 'Title',
-        expanded: false,
         size: 'large',
         top: 0,
     },

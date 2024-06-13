@@ -24,6 +24,7 @@ import { Close } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import { useCallback, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import useRandomId from '../hooks/useRandomId';
 import './SidePanel.less';
 
 const panelSize = {
@@ -42,6 +43,7 @@ const SidePanel = ({
     children,
     onClose,
 }) => {
+    id = useRandomId(id);
     const animationRef = useRef(null);
     const animationFlow = [
         { transform: 'translateX(100%)' },
