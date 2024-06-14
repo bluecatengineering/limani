@@ -88,7 +88,7 @@ const DropdownMenu = forwardRef(
                         className ? ` ${className}` : ''
                     }`}
                     data-layer={expanded ? level : null}
-                    disabled={disabled}
+                    disabled={disabled || menuItems.length === 0}
                     icon={ChevronDown}
                     id={id}
                     ref={ref ? setRefs(ref, buttonRef) : buttonRef}
