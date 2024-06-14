@@ -29,7 +29,7 @@ exports[`SidePanel Rendering Render SidePanel component when expanded and show i
           Test title
         </p>
         <IconButton
-          aria-label="bbfa"
+          aria-label="Close"
           className="SidePanel__close"
           icon={[Function]}
           id="closeSidePanelBtn"
@@ -83,7 +83,7 @@ exports[`SidePanel Rendering Render SidePanel component when not expanded 1`] = 
           Test title
         </p>
         <IconButton
-          aria-label="bbfa"
+          aria-label="Close"
           className="SidePanel__close"
           icon={[Function]}
           id="closeSidePanelBtn"
@@ -135,7 +135,7 @@ exports[`SidePanel Rendering Render SidePanel component with children as a prop 
           Test title
         </p>
         <IconButton
-          aria-label="bbfa"
+          aria-label="Close"
           className="SidePanel__close"
           icon={[Function]}
           id="closeSidePanelBtn"
