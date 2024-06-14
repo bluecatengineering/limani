@@ -44,12 +44,17 @@ export const Normal = {
                     onClick={() => setIsExpanded(true)}>
                     Open
                 </Button>
+                <Button
+                    style={{ width: 'fit-content' }}
+                    onClick={() => setIsExpanded(false)}>
+                    Close
+                </Button>
                 <SidePanel
                     {...args}
                     expanded={expanded}
                     onClose={() => setIsExpanded(false)}>
                     <div>
-                        <strong>Content 1</strong>
+                        {expanded && <strong>Content 1</strong>}
                         <p>Content 2</p>
                     </div>
                 </SidePanel>

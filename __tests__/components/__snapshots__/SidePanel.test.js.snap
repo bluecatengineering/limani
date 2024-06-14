@@ -14,8 +14,8 @@ exports[`SidePanel Rendering Render SidePanel component when expanded and show i
         Object {
           "height": "calc(100% - 0px)",
           "top": "0px",
-          "width": "50%",
-          "zIndex": "1",
+          "width": "45%",
+          "zIndex": 1,
         }
       }
     >
@@ -66,8 +66,8 @@ exports[`SidePanel Rendering Render SidePanel component when not expanded 1`] = 
         Object {
           "height": "calc(100% - 0px)",
           "top": "0px",
-          "width": "50%",
-          "zIndex": "1",
+          "width": "45%",
+          "zIndex": 1,
         }
       }
     >
@@ -116,8 +116,8 @@ exports[`SidePanel Rendering Render SidePanel component with children as a prop 
         Object {
           "height": "calc(100% - 50px)",
           "top": "50px",
-          "width": "50%",
-          "zIndex": "2",
+          "width": "45%",
+          "zIndex": 2,
         }
       }
     >

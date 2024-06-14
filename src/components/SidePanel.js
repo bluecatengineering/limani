@@ -22,14 +22,14 @@ SOFTWARE.
 import { IconButton } from '@bluecateng/pelagos';
 import { Close } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import useRandomId from '../hooks/useRandomId';
 import './SidePanel.less';
 
 const panelSize = {
-    small: 50,
-    large: (2 / 3) * 100,
+    small: 45,
+    large: 70,
 };
 
 const SidePanel = ({
@@ -44,25 +44,45 @@ const SidePanel = ({
     onClose,
 }) => {
     id = useRandomId(id);
+    const [isClickingClose, setIsClickingClose] = useState(false);
     const animationRef = useRef(null);
-    const animationFlow = [
-        { transform: 'translateX(100%)' },
-        { transform: 'translateX(0)' },
-    ];
+    const renderCountRef = useRef(0);
+
+    const customStyles = useMemo(() => {
+        return {
+            width: `${panelSize[size] ?? panelSize.small}%`,
+            top: `${top ?? 0}px`,
+            height: `calc(100% - ${top ?? 0}px)`,
+            zIndex: zIndex ?? 1,
+        };
+    }, [size, top, zIndex]);
 
     useEffect(() => {
+        renderCountRef.current++;
+        const sidePanel = document.getElementById(id);
         if (expanded) {
-            animationRef.current = document
-                .getElementById(id)
-                .animate(animationFlow, {
-                    duration: 250,
+            setIsClickingClose(false);
+            animationRef.current = sidePanel.animate(
+                [
+                    { transform: 'translateX(100%)' },
+                    { transform: 'translateX(0)' },
+                ],
+                {
+                    duration: 300,
                     fill: 'both',
                     easing: 'ease-out',
-                });
+                },
+            );
+        } else {
+            if (isClickingClose || renderCountRef.current === 1) {
+                return;
+            }
+            handleClose();
         }
     }, [id, expanded]);
 
     const handleClose = useCallback(() => {
+        setIsClickingClose(true);
         const animation = animationRef.current;
         if (animation) {
             animation.onfinish = onClose;
@@ -78,12 +98,7 @@ const SidePanel = ({
                     className={`SidePanel${className ? ` ${className}` : ''}`}
                     aria-expanded={expanded}
                     aria-labelledby='sidePanelTitle'
-                    style={{
-                        width: `${panelSize[size] ?? panelSize.small}%`,
-                        top: `${top ?? 0}px`,
-                        height: `calc(100% - ${top ?? 0}px)`,
-                        zIndex: `${zIndex ?? 1}`,
-                    }}>
+                    style={customStyles}>
                     <div className='SidePanel__header'>
                         <p id='sidePanelTitle' className='SidePanel__title'>
                             {title}
