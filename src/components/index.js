@@ -20,6 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 export { default as Card } from './Card';
+export { default as DropdownMenu } from './DropdownMenu';
 export { default as FileDisplay } from './FileDisplay';
 export { default as FormButtons } from './FormButtons';
 export { default as FormLayout } from './FormLayout';
