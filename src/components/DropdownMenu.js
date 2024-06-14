@@ -154,8 +154,6 @@ DropdownMenu.propTypes = {
     ),
 };
 
-PropTypes.func;
-
 DropdownMenu.defaultProps = {
     size: 'small',
     type: 'ghost',
