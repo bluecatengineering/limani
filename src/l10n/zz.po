@@ -44,6 +44,10 @@ msgstr "ÂÂççççôôùùnt"
 msgid "Cancel"
 msgstr "ÇÇâânççéél"
 
+#: bbfa
+msgid "Close"
+msgstr ""
+
 #: 3752
 msgid "Download all logs"
 msgstr "Dôôwnlôôââd ââll lôôgs"
