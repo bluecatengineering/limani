@@ -19,6 +19,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+import { t } from '@bluecateng/l10n.macro';
 import { IconButton } from '@bluecateng/pelagos';
 import { Close } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
@@ -40,6 +41,7 @@ const SidePanel = ({
     size,
     top,
     zIndex,
+    tooltip,
     children,
     onClose,
 }) => {
@@ -107,6 +109,9 @@ const SidePanel = ({
                             id='closeSidePanelBtn'
                             className='SidePanel__close'
                             icon={Close}
+                            aria-label={t`Close`}
+                            tooltipText={tooltip?.text ?? undefined}
+                            tooltipPlacement={tooltip?.placement ?? 'left'}
                             onClick={handleClose}
                         />
                     </div>
@@ -133,6 +138,16 @@ SidePanel.propTypes = {
     top: PropTypes.number,
     /** The margin top */
     zIndex: PropTypes.number,
+    /** Whether the tooltip is shown or not */
+    tooltip: PropTypes.oneOfType(
+        [
+            PropTypes.shape({
+                text: PropTypes.string,
+                placement: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
+            }),
+        ],
+        false,
+    ),
     /** A callback that will be called when a user clicks mask, close button */
     onClose: PropTypes.func.isRequired,
     /** Child components */
@@ -144,6 +159,10 @@ SidePanel.propTypes = {
 
 SidePanel.defaultProps = {
     size: 'small',
+    tooltip: {
+        text: 'Close',
+        placement: 'left',
+    },
 };
 
 export default SidePanel;

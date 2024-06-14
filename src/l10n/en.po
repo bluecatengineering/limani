@@ -40,6 +40,10 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
+#: bbfa
+msgid "Close"
+msgstr ""
+
 #: 3752
 msgid "Download all logs"
 msgstr ""
