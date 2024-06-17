@@ -21,7 +21,10 @@ SOFTWARE.
 */
 
 import { shallow } from 'enzyme';
+import React from 'react';
 import { SidePanel } from '../../src';
+
+jest.unmock('../../src/components/SidePanel');
 
 global.document = { body: 'body' };
 
@@ -79,6 +82,44 @@ describe('SidePanel', () => {
             expect(wrapper.find('#sidePanelTitle').text()).toBe('Test title');
             expect(wrapper.find('#content').text()).toBe('Test child');
             expect(wrapper.getElement()).toMatchSnapshot();
+        });
+    });
+
+    describe('Behaviour', () => {
+        const handleClose = jest.fn();
+        const mockElement = jest.fn(() => ({
+            animate: jest.fn().mockReturnValue({
+                onfinish: null,
+                reverse: jest.fn(),
+            }),
+        }));
+        global.document.getElementById = mockElement;
+
+        beforeEach(() => {
+            jest.spyOn(React, 'useEffect').mockImplementation((f) => f());
+        });
+
+        afterEach(() => {
+            jest.clearAllMocks();
+        });
+
+        it('Trigger close function when clicking on `x` button', () => {
+            const wrapper = shallow(
+                <SidePanel
+                    id={componentId}
+                    expanded={true}
+                    title='Test title'
+                    onClose={handleClose}>
+                    <h1 id='content'>Test child</h1>
+                </SidePanel>,
+            );
+
+            wrapper.find('#closeSidePanelBtn').simulate('click');
+            const element = mockElement.mock.results[0].value;
+            const { onfinish, reverse } = element.animate.mock.results[0].value;
+
+            expect(onfinish).toBe(handleClose);
+            expect(reverse).toBeCalled();
         });
     });
 });

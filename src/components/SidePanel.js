@@ -23,7 +23,7 @@ import { t } from '@bluecateng/l10n.macro';
 import { IconButton } from '@bluecateng/pelagos';
 import { Close } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import useRandomId from '../hooks/useRandomId';
 import './SidePanel.less';
@@ -41,14 +41,13 @@ const SidePanel = ({
     size,
     top,
     zIndex,
-    tooltip,
     children,
     onClose,
 }) => {
     id = useRandomId(id);
-    const [isClickingClose, setIsClickingClose] = useState(false);
     const animationRef = useRef(null);
     const renderCountRef = useRef(0);
+    const clickingCloseRef = useRef(false);
 
     const customStyles = useMemo(() => {
         return {
@@ -63,7 +62,7 @@ const SidePanel = ({
         renderCountRef.current++;
         const sidePanel = document.getElementById(id);
         if (expanded) {
-            setIsClickingClose(false);
+            clickingCloseRef.current = false;
             animationRef.current = sidePanel.animate(
                 [
                     { transform: 'translateX(100%)' },
@@ -76,7 +75,7 @@ const SidePanel = ({
                 },
             );
         } else {
-            if (isClickingClose || renderCountRef.current === 1) {
+            if (clickingCloseRef.current || renderCountRef.current === 1) {
                 return;
             }
             handleClose();
@@ -84,7 +83,7 @@ const SidePanel = ({
     }, [id, expanded]);
 
     const handleClose = useCallback(() => {
-        setIsClickingClose(true);
+        clickingCloseRef.current = true;
         const animation = animationRef.current;
         if (animation) {
             animation.onfinish = onClose;
@@ -110,8 +109,8 @@ const SidePanel = ({
                             className='SidePanel__close'
                             icon={Close}
                             aria-label={t`Close`}
-                            tooltipText={tooltip?.text ?? undefined}
-                            tooltipPlacement={tooltip?.placement ?? 'left'}
+                            tooltipText={t`Close`}
+                            tooltipPlacement='left'
                             onClick={handleClose}
                         />
                     </div>
@@ -138,16 +137,6 @@ SidePanel.propTypes = {
     top: PropTypes.number,
     /** The margin top */
     zIndex: PropTypes.number,
-    /** Whether the tooltip is shown or not */
-    tooltip: PropTypes.oneOfType(
-        [
-            PropTypes.shape({
-                text: PropTypes.string,
-                placement: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
-            }),
-        ],
-        false,
-    ),
     /** A callback that will be called when a user clicks mask, close button */
     onClose: PropTypes.func.isRequired,
     /** Child components */
@@ -159,10 +148,6 @@ SidePanel.propTypes = {
 
 SidePanel.defaultProps = {
     size: 'small',
-    tooltip: {
-        text: 'Close',
-        placement: 'left',
-    },
 };
 
 export default SidePanel;

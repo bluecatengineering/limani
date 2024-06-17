@@ -59,7 +59,6 @@ export const Normal = {
     args: {
         className: 'SidePanel',
         title: 'Title',
-        size: 'large',
-        top: 0,
+        size: 'small',
     },
 };
