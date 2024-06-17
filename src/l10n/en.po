@@ -32,10 +32,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: 0b0c
-msgid "{0}"
-msgstr ""
-
 #: 85df
 msgid "Account"
 msgstr ""
@@ -60,17 +56,6 @@ msgstr ""
 msgid "Go back"
 msgstr ""
 
-#: 7bdc
-#~ msgid "Go to BAM"
-#~ msgstr ""
-
-#: 2a41
-#~ msgid "Go to Gateway"
-#~ msgstr ""
-
-#: 8976
-#~ msgid "Go to Micetro"
-#~ msgstr ""
 
 #: c47a
 msgid "Help"

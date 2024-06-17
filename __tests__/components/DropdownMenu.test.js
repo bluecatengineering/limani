@@ -118,6 +118,7 @@ describe('DropdownMenu', () => {
         });
 
         it('Render the DropdownMenu component with pseudo translated text', () => {
+            //Required for usePageMessages()
             setLanguage('zz').finally(() => {
                 const wrapper = shallow(
                     <DropdownMenu

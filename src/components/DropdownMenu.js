@@ -1,4 +1,3 @@
-import { t } from '@bluecateng/l10n.macro';
 import {
     Button,
     Layer,
@@ -64,7 +63,7 @@ const DropdownMenu = forwardRef(
                     const values = [];
                     data?.dropdown_menu?.forEach((item) => {
                         values.push({
-                            text: t`${item?.text}`,
+                            text: item?.text,
                             onClick: () => {
                                 window.open(item?.url, '_blank').focus();
                             },
