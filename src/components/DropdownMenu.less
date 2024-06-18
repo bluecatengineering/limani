@@ -21,22 +21,12 @@
 @import '~@bluecateng/pelagos/less/spacing';
 
 .DropdownMenu {
-    width: fit-content;
-
-    &.IconButton--medium {
-        padding: @sp-08;
-    }
-
-    &.IconButton--large {
-        padding: @sp-12 @sp-16;
-    }
-
-    & > .IconButton__icon {
+    > svg {
         margin: 0;
         transition: transform 0.15s ease-out;
     }
 
-    &[aria-expanded='true'] > .IconButton__icon {
+    &[aria-expanded='true'] > svg {
         margin: 0;
         transform: rotate(180deg);
     }
