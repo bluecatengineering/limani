@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownMenu Rendering Render the DropdownMenu component default props 1`] = `
+<React.Fragment>
+  <IconButton
+    aria-controls="undefined-menu"
+    aria-expanded={true}
+    aria-haspopup="true"
+    className="DropdownMenu"
+    data-layer={NaN}
+    disabled={true}
+    icon={[Function]}
+    onClick={[MockFunction]}
+    onKeyDown={[MockFunction]}
+    size="medium"
+    tooltipPlacement="right"
+    type="ghost"
+  />
+  <React.Portal
+    container="body"
+  >
+    <Layer
+      className="DropdownMenu__popUp"
+      level={NaN}
+    >
+      <Menu
+        id="undefined-menu"
+        onClick={[MockFunction]}
+        onKeyDown={[MockFunction]}
+      />
+    </Layer>
+  </React.Portal>
+</React.Fragment>
+`;
+
+exports[`DropdownMenu Rendering Render the DropdownMenu component with all props 1`] = `
+<React.Fragment>
+  <IconButton
+    aria-controls="test-id-menu"
+    aria-expanded={true}
+    aria-haspopup="true"
+    className="DropdownMenu test_cn"
+    data-layer={NaN}
+    disabled={false}
+    icon={[Function]}
+    id="test-id"
+    onClick={[MockFunction]}
+    onKeyDown={[MockFunction]}
+    size="large"
+    tooltipPlacement="left"
+    tooltipText="test-tooltip"
+    type="tertiary"
+  />
+  <React.Portal
+    container="body"
+  >
+    <Layer
+      className="DropdownMenu__popUp"
+      level={NaN}
+    >
+      <Menu
+        aria-labelledby="test-id"
+        id="test-id-menu"
+        onClick={[MockFunction]}
+        onKeyDown={[MockFunction]}
+      >
+        <React.Fragment>
+          <MenuItem
+            onClick={[MockFunction]}
+            text="Go to custom page"
+            type="default"
+          />
+        </React.Fragment>
+      </Menu>
+    </Layer>
+  </React.Portal>
+</React.Fragment>
+`;
+
+exports[`DropdownMenu Rendering Render the DropdownMenu component with pseudo translated text 1`] = `
+<React.Fragment>
+  <IconButton
+    aria-controls="test-id-menu"
+    aria-expanded={true}
+    aria-haspopup="true"
+    className="DropdownMenu test_cn"
+    data-layer={NaN}
+    disabled={true}
+    icon={[Function]}
+    id="test-id"
+    onClick={[MockFunction]}
+    onKeyDown={[MockFunction]}
+    size="large"
+    tooltipPlacement="left"
+    tooltipText="test-tooltip"
+    type="tertiary"
+  />
+  <React.Portal
+    container="body"
+  >
+    <Layer
+      className="DropdownMenu__popUp"
+      level={NaN}
+    >
+      <Menu
+        aria-labelledby="test-id"
+        id="test-id-menu"
+        onClick={[MockFunction]}
+        onKeyDown={[MockFunction]}
+      />
+    </Layer>
+  </React.Portal>
+</React.Fragment>
+`;
