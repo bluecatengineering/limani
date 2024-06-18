@@ -1,5 +1,5 @@
 import {
-    Button,
+    IconButton,
     Layer,
     Menu,
     MenuItem,
@@ -60,15 +60,12 @@ const DropdownMenu = forwardRef(
             setBusy(true);
             doGet(requestUrl || '/-/v3/dropdown_menu/data')
                 .then((data) => {
-                    const values = [];
-                    data?.dropdown_menu?.forEach((item) => {
-                        values.push({
-                            text: item?.text,
-                            onClick: () => {
-                                window.open(item?.url, '_blank').focus();
-                            },
-                        });
-                    });
+                    const values = data?.dropdown_menu?.map((item) => ({
+                        text: item?.text,
+                        onClick: () => {
+                            window.open(item?.url, '_blank').focus();
+                        },
+                    }));
                     setDefaultValue(values);
                 })
                 .catch((error) => addErrorMessage(error.message))
@@ -77,7 +74,7 @@ const DropdownMenu = forwardRef(
 
         return (
             <>
-                <Button
+                <IconButton
                     {...buttonProps}
                     {...props}
                     aria-controls={expanded ? menuId : null}
@@ -133,15 +130,15 @@ DropdownMenu.propTypes = {
     /** The placement of the tooltip relative to the button. */
     tooltipPlacement: PropTypes.oneOf(['left', 'right', 'top', 'bottom']),
     /** The size of the button. */
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    size: PropTypes.oneOf(['medium', 'large']),
     /** The button type. */
     type: PropTypes.oneOf(['primary', 'tertiary', 'ghost']),
     /** Whether the button is disabled. */
     disabled: PropTypes.bool,
     /** Whether the menu alignment should be flipped. */
     flipped: PropTypes.bool,
-    /** Whether request called with a URL
-     * or default URL at '/-/v3/dropdown_menu/data'*/
+    // eslint-disable-next-line max-len
+    /** Whether request called with a custom URL or use the default URL from Gateway at '/-/v3/dropdown_menu/data'*/
     requestUrl: PropTypes.string,
     /** The menu items. */
     customValues: PropTypes.arrayOf(
@@ -154,7 +151,7 @@ DropdownMenu.propTypes = {
 };
 
 DropdownMenu.defaultProps = {
-    size: 'small',
+    size: 'medium',
     type: 'ghost',
 };
 

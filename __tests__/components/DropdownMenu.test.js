@@ -108,10 +108,12 @@ describe('DropdownMenu', () => {
                     className='test_cn'
                     tooltipText='test-tooltip'
                     tooltipPlacement='left'
-                    size='left'
+                    size='large'
                     type='tertiary'
-                    flipped
+                    disabled={false}
+                    flipped={false}
                     customValues={dropdownMenuMockValue}
+                    requestUrl={'/-/custom_url'}
                 />,
             );
             expect(wrapper.getElement()).toMatchSnapshot();
@@ -126,10 +128,11 @@ describe('DropdownMenu', () => {
                         className='test_cn'
                         tooltipText='test-tooltip'
                         tooltipPlacement='left'
-                        size='left'
+                        size='large'
                         type='tertiary'
-                        flipped
-                        customValues={dropdownMenuMockValue}
+                        disabled={false}
+                        flipped={false}
+                        requestUrl={'/-/custom_url'}
                     />,
                 );
                 expect(wrapper.getElement()).toMatchSnapshot();

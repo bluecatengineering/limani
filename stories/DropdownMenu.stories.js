@@ -107,3 +107,18 @@ export const CustomUrl = {
         requestUrl: '/-/custom_url',
     },
 };
+
+export const FullParameters = {
+    args: {
+        className: 'TestDropdownMenu',
+        customValues: customValues,
+        disabled: false,
+        flipped: false,
+        id: 'TestDropdownMenu',
+        requestUrl: '/-/custom_url',
+        size: 'large',
+        tooltipPlacement: 'right',
+        tooltipText: 'Custom dropdown menu with CustomUrl and customValues',
+        type: 'tertiary',
+    },
+};

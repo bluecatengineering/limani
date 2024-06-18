@@ -2,7 +2,7 @@
 
 exports[`DropdownMenu Rendering Render the DropdownMenu component default props 1`] = `
 <React.Fragment>
-  <Button
+  <IconButton
     aria-controls="undefined-menu"
     aria-expanded={true}
     aria-haspopup="true"
@@ -12,7 +12,8 @@ exports[`DropdownMenu Rendering Render the DropdownMenu component default props 
     icon={[Function]}
     onClick={[MockFunction]}
     onKeyDown={[MockFunction]}
-    size="small"
+    size="medium"
+    tooltipPlacement="right"
     type="ghost"
   />
   <React.Portal
@@ -34,7 +35,7 @@ exports[`DropdownMenu Rendering Render the DropdownMenu component default props 
 
 exports[`DropdownMenu Rendering Render the DropdownMenu component with all props 1`] = `
 <React.Fragment>
-  <Button
+  <IconButton
     aria-controls="test-id-menu"
     aria-expanded={true}
     aria-haspopup="true"
@@ -45,7 +46,7 @@ exports[`DropdownMenu Rendering Render the DropdownMenu component with all props
     id="test-id"
     onClick={[MockFunction]}
     onKeyDown={[MockFunction]}
-    size="left"
+    size="large"
     tooltipPlacement="left"
     tooltipText="test-tooltip"
     type="tertiary"
@@ -78,18 +79,18 @@ exports[`DropdownMenu Rendering Render the DropdownMenu component with all props
 
 exports[`DropdownMenu Rendering Render the DropdownMenu component with pseudo translated text 1`] = `
 <React.Fragment>
-  <Button
+  <IconButton
     aria-controls="test-id-menu"
     aria-expanded={true}
     aria-haspopup="true"
     className="DropdownMenu test_cn"
     data-layer={NaN}
-    disabled={false}
+    disabled={true}
     icon={[Function]}
     id="test-id"
     onClick={[MockFunction]}
     onKeyDown={[MockFunction]}
-    size="left"
+    size="large"
     tooltipPlacement="left"
     tooltipText="test-tooltip"
     type="tertiary"
@@ -106,15 +107,7 @@ exports[`DropdownMenu Rendering Render the DropdownMenu component with pseudo tr
         id="test-id-menu"
         onClick={[MockFunction]}
         onKeyDown={[MockFunction]}
-      >
-        <React.Fragment>
-          <MenuItem
-            onClick={[MockFunction]}
-            text="Go to custom page"
-            type="default"
-          />
-        </React.Fragment>
-      </Menu>
+      />
     </Layer>
   </React.Portal>
 </React.Fragment>

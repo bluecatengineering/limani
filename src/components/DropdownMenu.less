@@ -23,24 +23,20 @@
 .DropdownMenu {
     width: fit-content;
 
-    &.Button--small {
-        padding: 0 @sp-08;
+    &.IconButton--medium {
+        padding: @sp-08;
     }
 
-    &.Button--medium {
-        padding: 0 @sp-12;
+    &.IconButton--large {
+        padding: @sp-12 @sp-16;
     }
 
-    &.Button--large {
-        padding: 0 @sp-16;
-    }
-
-    & > .Button__icon {
+    & > .IconButton__icon {
         margin: 0;
         transition: transform 0.15s ease-out;
     }
 
-    &[aria-expanded='true'] > .Button__icon {
+    &[aria-expanded='true'] > .IconButton__icon {
         margin: 0;
         transform: rotate(180deg);
     }
