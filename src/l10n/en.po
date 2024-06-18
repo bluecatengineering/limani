@@ -60,7 +60,6 @@ msgstr ""
 msgid "Go back"
 msgstr ""
 
-
 #: c47a
 msgid "Help"
 msgstr ""

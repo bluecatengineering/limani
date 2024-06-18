@@ -60,7 +60,6 @@ msgstr "ÉÉrrôôr whîîléé ççôômmùùnîîççââtîîng wîîth séé
 msgid "Go back"
 msgstr "Gôô bââççk"
 
-
 #: c47a
 msgid "Help"
 msgstr "Héélp"
