@@ -35,7 +35,6 @@ import { Fragment, forwardRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { doGet } from '../functions/fetchFunctions';
 import usePageMessages from './usePageMessages';
-import usePageModalSpinner from './usePageModalSpinner';
 
 import './DropdownMenu.less';
 
@@ -59,6 +58,7 @@ const DropdownMenu = forwardRef(
             className,
             disabled,
             flipped,
+            showErrorMessage,
             customValues,
             requestUrl,
             ...props
@@ -74,11 +74,9 @@ const DropdownMenu = forwardRef(
         const setPopUpPosition = useMenuPositioner(flipped);
         const { expanded, buttonProps, menuProps, buttonRef } =
             useMenuHandler(setPopUpPosition);
-        const { setBusy } = usePageModalSpinner();
-        const { addErrorMessage } = usePageMessages();
+        const { addWarningMessage } = usePageMessages();
 
         useEffect(() => {
-            setBusy(true);
             doGet(requestUrl || '/-/v3/dropdown_menu/data')
                 .then((data) => {
                     const values = data?.dropdown_menu?.map((item) => ({
@@ -89,8 +87,12 @@ const DropdownMenu = forwardRef(
                     }));
                     setDefaultValue(values);
                 })
-                .catch((error) => addErrorMessage(error.message))
-                .finally(() => setBusy(false));
+                .catch((error) => {
+                    console.log(error); // DEBUG
+                    if (showErrorMessage) {
+                        addWarningMessage(error.message);
+                    }
+                });
         }, []);
 
         return (
@@ -157,6 +159,8 @@ DropdownMenu.propTypes = {
     disabled: PropTypes.bool,
     /** Whether the menu alignment should be flipped. */
     flipped: PropTypes.bool,
+    /** Whether to show error message. */
+    showErrorMessage: PropTypes.bool,
     // eslint-disable-next-line max-len
     /** Whether request called with a custom URL or use the default URL from Gateway at '/-/v3/dropdown_menu/data'*/
     requestUrl: PropTypes.string,
