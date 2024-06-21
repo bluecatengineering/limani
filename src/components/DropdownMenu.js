@@ -88,7 +88,6 @@ const DropdownMenu = forwardRef(
                     setDefaultValue(values);
                 })
                 .catch((error) => {
-                    console.log(error); // DEBUG
                     if (showErrorMessage) {
                         addWarningMessage(error.message);
                     }
