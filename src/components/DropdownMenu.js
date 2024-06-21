@@ -161,7 +161,8 @@ DropdownMenu.propTypes = {
     /** Whether to show error message. */
     showErrorMessage: PropTypes.bool,
     // eslint-disable-next-line max-len
-    /** Whether request called with a custom URL or use the default URL from Gateway at '/-/v3/dropdown_menu/data'*/
+    /** The URL to fetch data for populating the drop-down menu.
+     * If not provided, a default URL will be used to fetch data from Gateway.*/
     requestUrl: PropTypes.string,
     /** The menu items. */
     customValues: PropTypes.arrayOf(
