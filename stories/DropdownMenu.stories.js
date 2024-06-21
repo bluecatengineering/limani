@@ -83,6 +83,9 @@ export default {
                 rest.get('/-/custom_url', (_req, res, ctx) => {
                     return res(ctx.json(dropdownMenuMockValue2));
                 }),
+                rest.get('/-/failed_request', (_req, res, ctx) => {
+                    return res(ctx.status(403));
+                }),
             ],
         },
     },
@@ -105,6 +108,13 @@ export const CustomUrl = {
     args: {
         className: 'TestDropdownMenu',
         requestUrl: '/-/custom_url',
+    },
+};
+
+export const failedRequest = {
+    args: {
+        className: 'TestDropdownMenu',
+        requestUrl: '/-/failed_request',
     },
 };
 
