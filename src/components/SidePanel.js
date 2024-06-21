@@ -135,9 +135,10 @@ SidePanel.propTypes = {
     size: PropTypes.oneOf(['small', 'large']),
     /** The margin top */
     top: PropTypes.number,
-    /** The margin top */
+    /** Specifies the stack order of the component,
+     * higher values are rendered in front of lower values. */
     zIndex: PropTypes.number,
-    /** A callback that will be called when a user clicks mask, close button */
+    /** Function invoked when the close button is clicked. */
     onClose: PropTypes.func.isRequired,
     /** Child components */
     children: PropTypes.oneOfType([
