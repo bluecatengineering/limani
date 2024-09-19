@@ -22,7 +22,7 @@ SOFTWARE.
 import PlatformDataContext from '../src/components/PlatformDataContext';
 import HeaderAuthentication from '../src/header/HeaderAuthentication';
 
-const mockValue = {
+const mockBAM = {
     data: {
         user: {
             // eslint-disable-next-line camelcase
@@ -35,20 +35,69 @@ const mockValue = {
     },
 };
 
+const mockMicetro = {
+    data: {
+        user: {
+            // eslint-disable-next-line camelcase
+            authentication_info: {
+                alias: 'Micetro-10',
+                url: '#',
+                service: 'Micetro',
+            },
+        },
+    },
+};
+
+const mockStandalone = {
+    data: {
+        user: {
+            // eslint-disable-next-line camelcase
+            authentication_info: null,
+        },
+    },
+};
+
 export default {
     title: 'Components/HeaderAuthentication',
     component: HeaderAuthentication,
     decorators: [
         (Story) => (
-            <PlatformDataContext.Provider value={mockValue}>
+            <PlatformDataContext.Provider value={mockBAM}>
+                <Story />
+            </PlatformDataContext.Provider>
+        ),
+    ],
+    args: {
+        className: 'TestHeaderAuthentication',
+    },
+};
+
+export const BAMAuthentication = {
+    decorators: [
+        (Story) => (
+            <PlatformDataContext.Provider value={mockBAM}>
                 <Story />
             </PlatformDataContext.Provider>
         ),
     ],
 };
 
-export const Normal = {
-    args: {
-        className: 'TestHeaderAuthentication',
-    },
+export const MicetroAuthentication = {
+    decorators: [
+        (Story) => (
+            <PlatformDataContext.Provider value={mockMicetro}>
+                <Story />
+            </PlatformDataContext.Provider>
+        ),
+    ],
+};
+
+export const StandaloneAuthentication = {
+    decorators: [
+        (Story) => (
+            <PlatformDataContext.Provider value={mockStandalone}>
+                <Story />
+            </PlatformDataContext.Provider>
+        ),
+    ],
 };
