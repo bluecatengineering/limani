@@ -41,7 +41,7 @@ const HeaderAuthentication = ({ className }) => {
         <>
             <div
                 className={`HeaderAuthentication__authentication${
-                    className ? ' ' + className : ''
+                    className ? ` ${className}` : ''
                 }`}>
                 {authenticationAlias ? (
                     <span>
