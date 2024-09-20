@@ -39,11 +39,11 @@ const HeaderAuthentication = ({ className }) => {
 
     return (
         <>
-            {authenticationAlias ? (
-                <div
-                    className={`HeaderAuthentication__authentication${
-                        className ? ' ' + className : ''
-                    }`}>
+            <div
+                className={`HeaderAuthentication__authentication${
+                    className ? ` ${className}` : ''
+                }`}>
+                {authenticationAlias ? (
                     <span>
                         {authenticationService} &nbsp;
                         <Link id='link-icon' />
@@ -56,8 +56,10 @@ const HeaderAuthentication = ({ className }) => {
                             {authenticationAlias}
                         </a>
                     </span>
-                </div>
-            ) : null}
+                ) : (
+                    <span>Standalone</span>
+                )}
+            </div>
         </>
     );
 };
