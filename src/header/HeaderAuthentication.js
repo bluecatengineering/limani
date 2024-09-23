@@ -39,27 +39,31 @@ const HeaderAuthentication = ({ className }) => {
 
     return (
         <>
-            <div
-                className={`HeaderAuthentication__authentication${
-                    className ? ` ${className}` : ''
-                }`}>
-                {authenticationAlias ? (
+            {authenticationService && (
+                <div
+                    className={`HeaderAuthentication__authentication${
+                        className ? ` ${className}` : ''
+                    }`}>
                     <span>
-                        {authenticationService} &nbsp;
-                        <Link id='link-icon' />
-                        &nbsp;
-                        <a
-                            href={authenticationLink}
-                            target='_blank'
-                            rel='noreferrer'
-                            title={authenticationAlias}>
-                            {authenticationAlias}
-                        </a>
+                        {authenticationAlias ? (
+                            <>
+                                {authenticationService} &nbsp;
+                                <Link id='link-icon' />
+                                &nbsp;
+                                <a
+                                    href={authenticationLink}
+                                    target='_blank'
+                                    rel='noreferrer'
+                                    title={authenticationAlias}>
+                                    {authenticationAlias}
+                                </a>
+                            </>
+                        ) : (
+                            authenticationService
+                        )}
                     </span>
-                ) : (
-                    <span>Standalone</span>
-                )}
-            </div>
+                </div>
+            )}
         </>
     );
 };

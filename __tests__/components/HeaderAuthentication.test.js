@@ -25,6 +25,14 @@ import HeaderAuthentication from '../../src/header/HeaderAuthentication';
 
 jest.unmock('../../src/header/HeaderAuthentication');
 
+const mockDisable = {
+    data: {
+        user: {
+            // eslint-disable-next-line camelcase
+            authentication_info: null,
+        },
+    },
+};
 const mockBAM = {
     data: {
         user: {
@@ -53,7 +61,9 @@ const mockStandalone = {
     data: {
         user: {
             // eslint-disable-next-line camelcase
-            authentication_info: null,
+            authentication_info: {
+                service: 'Standalone',
+            },
         },
     },
 };
@@ -64,12 +74,18 @@ jest.mock('../../src/hooks/usePlatformData', () => {
     return mockUsePlatformData;
 });
 const mockUsePlatformData = require('../../src/hooks/usePlatformData');
+mockUsePlatformData.mockReturnValueOnce({ ...mockDisable });
 mockUsePlatformData.mockReturnValueOnce({ ...mockMicetro });
 mockUsePlatformData.mockReturnValueOnce({ ...mockStandalone });
 mockUsePlatformData.mockReturnValue({ ...mockBAM });
 
 describe('HeaderAuthentication', () => {
     describe('Rendering', () => {
+        it('Render HeaderAuthentication component with disable show authentication', () => {
+            const wrapper = shallow(<HeaderAuthentication />);
+            expect(wrapper.getElement()).toMatchSnapshot();
+        });
+
         it('Render HeaderAuthentication component with Micetro authentication', () => {
             const wrapper = shallow(<HeaderAuthentication />);
             expect(wrapper.getElement()).toMatchSnapshot();

@@ -52,7 +52,9 @@ const mockStandalone = {
     data: {
         user: {
             // eslint-disable-next-line camelcase
-            authentication_info: null,
+            authentication_info: {
+                service: 'Standalone',
+            },
         },
     },
 };

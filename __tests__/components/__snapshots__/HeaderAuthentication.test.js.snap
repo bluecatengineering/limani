@@ -6,20 +6,22 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
     className="HeaderAuthentication__authentication"
   >
     <span>
-      BAM
-        
-      <Link
-        id="link-icon"
-      />
-       
-      <a
-        href="#"
-        rel="noreferrer"
-        target="_blank"
-        title="BAM-9.5.0"
-      >
-        BAM-9.5.0
-      </a>
+      <React.Fragment>
+        BAM
+          
+        <Link
+          id="link-icon"
+        />
+         
+        <a
+          href="#"
+          rel="noreferrer"
+          target="_blank"
+          title="BAM-9.5.0"
+        >
+          BAM-9.5.0
+        </a>
+      </React.Fragment>
     </span>
   </div>
 </React.Fragment>
@@ -31,20 +33,22 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
     className="HeaderAuthentication__authentication varClassName"
   >
     <span>
-      BAM
-        
-      <Link
-        id="link-icon"
-      />
-       
-      <a
-        href="#"
-        rel="noreferrer"
-        target="_blank"
-        title="BAM-9.5.0"
-      >
-        BAM-9.5.0
-      </a>
+      <React.Fragment>
+        BAM
+          
+        <Link
+          id="link-icon"
+        />
+         
+        <a
+          href="#"
+          rel="noreferrer"
+          target="_blank"
+          title="BAM-9.5.0"
+        >
+          BAM-9.5.0
+        </a>
+      </React.Fragment>
     </span>
   </div>
 </React.Fragment>
@@ -56,20 +60,22 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
     className="HeaderAuthentication__authentication"
   >
     <span>
-      Micetro
-        
-      <Link
-        id="link-icon"
-      />
-       
-      <a
-        href="#"
-        rel="noreferrer"
-        target="_blank"
-        title="Micetro-10"
-      >
-        Micetro-10
-      </a>
+      <React.Fragment>
+        Micetro
+          
+        <Link
+          id="link-icon"
+        />
+         
+        <a
+          href="#"
+          rel="noreferrer"
+          target="_blank"
+          title="Micetro-10"
+        >
+          Micetro-10
+        </a>
+      </React.Fragment>
     </span>
   </div>
 </React.Fragment>
@@ -86,3 +92,5 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
   </div>
 </React.Fragment>
 `;
+
+exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with disable show authentication 1`] = `<React.Fragment />`;
