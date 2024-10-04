@@ -25,30 +25,83 @@ import HeaderAuthentication from '../../src/header/HeaderAuthentication';
 
 jest.unmock('../../src/header/HeaderAuthentication');
 
-jest.mock('../../src/hooks/usePlatformData', () =>
-    jest.fn(() => {
-        return {
-            data: {
-                user: {
-                    authentication_info: {
-                        alias: 'BAM-9.5.0',
-                        url: '#',
-                        service: 'BAM',
-                    },
-                },
+const mockDisable = {
+    data: {
+        user: {
+            // eslint-disable-next-line camelcase
+            authentication_info: null,
+        },
+    },
+};
+const mockBAM = {
+    data: {
+        user: {
+            // eslint-disable-next-line camelcase
+            authentication_info: {
+                alias: 'BAM-9.5.0',
+                url: '#',
+                service: 'BAM',
             },
-        };
-    }),
-);
+        },
+    },
+};
+const mockMicetro = {
+    data: {
+        user: {
+            // eslint-disable-next-line camelcase
+            authentication_info: {
+                alias: 'Micetro-10',
+                url: '#',
+                service: 'Micetro',
+            },
+        },
+    },
+};
+const mockStandalone = {
+    data: {
+        user: {
+            // eslint-disable-next-line camelcase
+            authentication_info: {
+                service: 'Standalone',
+            },
+        },
+    },
+};
+jest.mock('../../src/hooks/usePlatformData', () => {
+    const mockValue = jest.fn();
+    const mockUsePlatformData = jest.fn(() => mockValue);
+    mockUsePlatformData.mockImplementation(() => mockValue);
+    return mockUsePlatformData;
+});
+const mockUsePlatformData = require('../../src/hooks/usePlatformData');
+mockUsePlatformData.mockReturnValueOnce({ ...mockDisable });
+mockUsePlatformData.mockReturnValueOnce({ ...mockMicetro });
+mockUsePlatformData.mockReturnValueOnce({ ...mockStandalone });
+mockUsePlatformData.mockReturnValue({ ...mockBAM });
 
 describe('HeaderAuthentication', () => {
     describe('Rendering', () => {
-        it('Render HeaderAuthentication component with default props', () => {
+        it('Render HeaderAuthentication component with disable show authentication', () => {
             const wrapper = shallow(<HeaderAuthentication />);
             expect(wrapper.getElement()).toMatchSnapshot();
         });
 
-        it('Render HeaderAuthentication component with props', () => {
+        it('Render HeaderAuthentication component with Micetro authentication', () => {
+            const wrapper = shallow(<HeaderAuthentication />);
+            expect(wrapper.getElement()).toMatchSnapshot();
+        });
+
+        it('Render HeaderAuthentication component with Standalone authentication', () => {
+            const wrapper = shallow(<HeaderAuthentication />);
+            expect(wrapper.getElement()).toMatchSnapshot();
+        });
+
+        it('Render HeaderAuthentication component with BAM authentication and default props', () => {
+            const wrapper = shallow(<HeaderAuthentication />);
+            expect(wrapper.getElement()).toMatchSnapshot();
+        });
+
+        it('Render HeaderAuthentication component with BAM authentication and props', () => {
             const wrapper = shallow(
                 <HeaderAuthentication className='varClassName' />,
             );

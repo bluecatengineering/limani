@@ -1,51 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with default props 1`] = `
+exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with BAM authentication and default props 1`] = `
 <React.Fragment>
   <div
     className="HeaderAuthentication__authentication"
   >
     <span>
-      BAM
-        
-      <Link
-        id="link-icon"
-      />
-       
-      <a
-        href="#"
-        rel="noreferrer"
-        target="_blank"
-        title="BAM-9.5.0"
-      >
-        BAM-9.5.0
-      </a>
+      <React.Fragment>
+        BAM
+          
+        <Link
+          id="link-icon"
+        />
+         
+        <a
+          href="#"
+          rel="noreferrer"
+          target="_blank"
+          title="BAM-9.5.0"
+        >
+          BAM-9.5.0
+        </a>
+      </React.Fragment>
     </span>
   </div>
 </React.Fragment>
 `;
 
-exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with props 1`] = `
+exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with BAM authentication and props 1`] = `
 <React.Fragment>
   <div
     className="HeaderAuthentication__authentication varClassName"
   >
     <span>
-      BAM
-        
-      <Link
-        id="link-icon"
-      />
-       
-      <a
-        href="#"
-        rel="noreferrer"
-        target="_blank"
-        title="BAM-9.5.0"
-      >
-        BAM-9.5.0
-      </a>
+      <React.Fragment>
+        BAM
+          
+        <Link
+          id="link-icon"
+        />
+         
+        <a
+          href="#"
+          rel="noreferrer"
+          target="_blank"
+          title="BAM-9.5.0"
+        >
+          BAM-9.5.0
+        </a>
+      </React.Fragment>
     </span>
   </div>
 </React.Fragment>
 `;
+
+exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with Micetro authentication 1`] = `
+<React.Fragment>
+  <div
+    className="HeaderAuthentication__authentication"
+  >
+    <span>
+      <React.Fragment>
+        Micetro
+          
+        <Link
+          id="link-icon"
+        />
+         
+        <a
+          href="#"
+          rel="noreferrer"
+          target="_blank"
+          title="Micetro-10"
+        >
+          Micetro-10
+        </a>
+      </React.Fragment>
+    </span>
+  </div>
+</React.Fragment>
+`;
+
+exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with Standalone authentication 1`] = `
+<React.Fragment>
+  <div
+    className="HeaderAuthentication__authentication"
+  >
+    <span>
+      Standalone
+    </span>
+  </div>
+</React.Fragment>
+`;
+
+exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with disable show authentication 1`] = `<React.Fragment />`;

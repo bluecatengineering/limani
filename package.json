@@ -111,6 +111,9 @@
         ],
         "*.less": [
             "prettier --check --config ./.prettierrc . --ignore-path ./.prettierignore"
+        ],
+        "*.{md, rst}": [
+            "prettier --write --config ./.prettierrc . --ignore-path ./.prettierignore"
         ]
     },
     "stylelint": {
