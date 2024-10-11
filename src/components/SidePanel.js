@@ -147,8 +147,4 @@ SidePanel.propTypes = {
     ]),
 };
 
-SidePanel.defaultProps = {
-    size: 'small',
-};
-
 export default SidePanel;

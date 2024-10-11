@@ -174,9 +174,4 @@ DropdownMenu.propTypes = {
     ),
 };
 
-DropdownMenu.defaultProps = {
-    size: 'medium',
-    type: 'ghost',
-};
-
 export default DropdownMenu;
