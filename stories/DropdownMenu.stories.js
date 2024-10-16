@@ -74,6 +74,7 @@ const customValues = [
 export default {
     title: 'Components/DropdownMenu',
     component: DropdownMenu,
+    args: { size: 'medium', type: 'ghost', disabled: false },
     parameters: {
         msw: {
             handlers: [

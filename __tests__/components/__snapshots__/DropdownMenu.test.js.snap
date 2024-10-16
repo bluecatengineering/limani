@@ -12,6 +12,8 @@ exports[`DropdownMenu Rendering Render the DropdownMenu component default props 
     icon={[Function]}
     onClick={[MockFunction]}
     onKeyDown={[MockFunction]}
+    size="medium"
+    type="ghost"
   />
   <React.Portal
     container="body"
