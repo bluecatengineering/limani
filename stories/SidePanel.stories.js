@@ -27,11 +27,6 @@ import { useEffect, useState } from 'react';
 export default {
     title: 'Components/SidePanel',
     component: SidePanel,
-    args: {
-        expanded: false,
-        top: 0,
-        size: 'small',
-    },
 };
 
 export const Normal = {

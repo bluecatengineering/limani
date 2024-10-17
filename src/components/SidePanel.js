@@ -38,7 +38,7 @@ const SidePanel = ({
     className,
     title,
     expanded,
-    size,
+    size = 'small',
     top,
     zIndex,
     children,

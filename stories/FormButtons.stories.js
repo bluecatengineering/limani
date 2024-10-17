@@ -19,18 +19,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import { Form } from '@bluecateng/auto-forms';
-import { t } from '@bluecateng/l10n.macro';
 import { FormButtons } from '/src';
+import { Form } from '@bluecateng/auto-forms';
 
 export default {
     title: 'Components/FormButtons',
     component: FormButtons,
-    args: {
-        cancelButtonLabel: t`Cancel`,
-        saveButtonLabel: t`Save`,
-        childrenPosition: 'end',
-    },
 };
 
 export const Normal = {
