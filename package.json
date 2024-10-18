@@ -49,8 +49,8 @@
         "prop-types": "^15.8.1"
     },
     "peerDependencies": {
-        "@bluecateng/pelagos": "^12.11.0",
-        "@bluecateng/pelagos-forms": "^5.0.0"
+        "@bluecateng/pelagos": "^12.16.0",
+        "@bluecateng/pelagos-forms": "^5.0.1"
     },
     "devDependencies": {
         "@babel/cli": "^7.17.10",
@@ -59,7 +59,7 @@
         "@babel/preset-react": "^7.17.12",
         "@bluecateng/commitlint-config-bluecateng": "^1.0.1",
         "@bluecateng/git-check-push": "^1.0.0",
-        "@bluecateng/jest-helpers": "^3.0.0",
+        "@bluecateng/jest-helpers": "^3.2.2",
         "@bluecateng/l10n-cli": "^0.1.8",
         "@bluecateng/l10n-core": "^0.2.0",
         "@bluecateng/l10n-icu2obj": "^0.1.5",
