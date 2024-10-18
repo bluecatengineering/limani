@@ -44,6 +44,4 @@ PageModalSpinner.propTypes = {
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]),
 };
 
-PageModalSpinner.defaultProps = {};
-
 export default PageModalSpinner;

@@ -13,7 +13,6 @@ exports[`DropdownMenu Rendering Render the DropdownMenu component default props 
     onClick={[MockFunction]}
     onKeyDown={[MockFunction]}
     size="medium"
-    tooltipPlacement="right"
     type="ghost"
   />
   <React.Portal
@@ -68,7 +67,6 @@ exports[`DropdownMenu Rendering Render the DropdownMenu component with all props
           <MenuItem
             onClick={[MockFunction]}
             text="Go to custom page"
-            type="default"
           />
         </React.Fragment>
       </Menu>

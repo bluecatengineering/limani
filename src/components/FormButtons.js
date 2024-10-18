@@ -32,9 +32,9 @@ import './FormButtons.less';
  */
 
 const FormButtons = ({
-    cancelButtonLabel,
-    saveButtonLabel,
-    childrenPosition,
+    cancelButtonLabel = t`Cancel`,
+    saveButtonLabel = t`Save`,
+    childrenPosition = 'end',
     children,
     className,
 }) => {
@@ -70,12 +70,6 @@ FormButtons.propTypes = {
 
     /** The component class name(s). */
     className: PropTypes.string,
-};
-
-FormButtons.defaultProps = {
-    cancelButtonLabel: t`Cancel`,
-    saveButtonLabel: t`Save`,
-    childrenPosition: 'end',
 };
 
 export default FormButtons;

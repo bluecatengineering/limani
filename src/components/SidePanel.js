@@ -38,7 +38,7 @@ const SidePanel = ({
     className,
     title,
     expanded,
-    size,
+    size = 'small',
     top,
     zIndex,
     children,
@@ -145,10 +145,6 @@ SidePanel.propTypes = {
         PropTypes.arrayOf(PropTypes.element),
         PropTypes.element,
     ]),
-};
-
-SidePanel.defaultProps = {
-    size: 'small',
 };
 
 export default SidePanel;
