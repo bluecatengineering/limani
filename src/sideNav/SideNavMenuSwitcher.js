@@ -36,7 +36,7 @@ const SideNavMenuSwitcher = () => {
     }, [isExpanded]);
 
     return (
-        <div>
+        <div className='SideNavMenu__hamburgerIcon'>
             <Hamburger
                 id='navToggle'
                 active={isExpanded}

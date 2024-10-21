@@ -18,50 +18,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 @import '~@bluecateng/pelagos/less/spacing';
-@import '~@bluecateng/pelagos/less/colors';
+@import '~@bluecateng/pelagos/less/utils';
 
-.SideNavMenu__hamburgerIcon {
-    .Hamburger {
-        color: white;
-    }
-}
+.HeaderNotification {
+    height: @sp-40;
+    width: @sp-40;
+    justify-content: center;
 
-.Header {
-    background-color: var(--background);
-    color: var(--text-primary);
+    &__button {
+        @icon-button();
+        color: var(--text-secondary);
 
-    &__topNav {
-        width: 100%;
-        height: 48px;
-        display: flex;
-        z-index: 2;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 @sp-08 0 @sp-08;
-    }
-
-    #navToggle {
-        grid-row: 1;
-    }
-
-    &__leftSideMenu {
-        display: flex;
-        flex-direction: row;
-        justify-content: start;
-        align-items: center;
-        gap: @sp-16;
-
-        &__info {
-            display: flex;
-            flex-direction: row;
+        &[aria-expanded='true'] {
+            outline: none;
+            background-color: var(--layer-selected);
         }
-    }
-
-    &__rightSideMenu {
-        display: flex;
-        flex-direction: row;
-        justify-content: end;
-        align-items: center;
     }
 }

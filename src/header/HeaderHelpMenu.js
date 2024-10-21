@@ -20,18 +20,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 import { t } from '@bluecateng/l10n.macro';
-import {
-    HeaderIcon,
-    Layer,
-    Menu,
-    MenuItem,
-    useMenuHandler,
-} from '@bluecateng/pelagos';
-import { Help } from '@carbon/icons-react';
+import { Layer, Menu, MenuItem, useMenuHandler } from '@bluecateng/pelagos';
+import Help from '@carbon/icons-react/es/Help';
 import PropTypes from 'prop-types';
 import usePlatformData from '../hooks/usePlatformData';
 import { resizeButtonMenu } from '../utils/display';
 import './HeaderHelpMenu.less';
+import AppShellIcon from './AppShellIcon';
 
 /**
  * HeaderHelpMenu component is a button when clicked this button reveals the
@@ -79,7 +74,10 @@ const HeaderHelpMenu = ({ className }) => {
     return (
         <>
             {helpItems.length ? (
-                <div className={className}>
+                <div
+                    className={`HeaderHelpMenu${
+                        className ? ' ' + className : ''
+                    }`}>
                     <button
                         id='helpMenuButton'
                         className='HeaderHelpMenu__button'
@@ -88,18 +86,15 @@ const HeaderHelpMenu = ({ className }) => {
                         aria-haspopup='true'
                         aria-expanded={expanded}
                         {...buttonProps}>
-                        <HeaderIcon
-                            className='button'
-                            icon={Help}
-                            label={t`Help`}
-                        />
+                        <AppShellIcon icon={Help} />
                     </button>
                     {expanded && (
                         <Layer
                             id='helpMenu'
                             role='menu'
                             className='HeaderHelpMenu__menu'
-                            aria-label={t`Help Menu`}>
+                            aria-label={t`Help Menu`}
+                            level='1'>
                             <div tabIndex={0} {...guardProps} />
                             <Menu {...menuProps}>
                                 {helpItems.map((helpMenuItem, index) => (

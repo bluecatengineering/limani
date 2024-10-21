@@ -48,7 +48,11 @@ const HeaderAuthentication = ({ className }) => {
                         {authenticationAlias ? (
                             <>
                                 {authenticationService} &nbsp;
-                                <Link id='link-icon' />
+                                <Link
+                                    /* eslint-disable-next-line max-len */
+                                    className='HeaderAuthentication__authentication__linkIcon'
+                                    id='link-icon'
+                                />
                                 &nbsp;
                                 <a
                                     href={authenticationLink}

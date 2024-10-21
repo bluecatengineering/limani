@@ -32,6 +32,7 @@ const HeaderLogo = ({ className }) => {
             className={`HeaderLogo__logo${className ? ' ' + className : ''}`}
             href='/'>
             <img src={headerLogoPath} alt='Gateway logo' />
+            <span className='HeaderLogo__logo__name'>Gateway</span>
         </a>
     );
 };

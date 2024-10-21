@@ -27,12 +27,12 @@ import HeaderAuthentication from './HeaderAuthentication';
 import HeaderHelpMenu from './HeaderHelpMenu';
 import HeaderLogo from './HeaderLogo';
 import HeaderSystemMenu from './HeaderSystemMenu';
-import HeaderHomeNav from './HeaderHomeNav';
 import SideNavMenu from '../sideNav/SideNavMenu';
 import usePlatformData from '../hooks/usePlatformData';
 import SideNavMenuSwitcher from '../sideNav/SideNavMenuSwitcher';
 
 import './Header.less';
+import HeaderNotification from './HeaderNotification';
 
 /**
  * Header component presents the top navbar and the side navbar.
@@ -56,22 +56,26 @@ const Header = ({ className }) => {
     return (
         <>
             {!isFetchingData && (
-                <div className={`Header${className ? ' ' + className : ''}`}>
-                    <Layer data-theme='dark' className='Header__topNav'>
+                <header
+                    className={`Header${className ? ' ' + className : ''}`}
+                    data-theme='dark'>
+                    <Layer className='Header__topNav'>
                         <div className='Header__leftSideMenu'>
                             <SideNavMenuSwitcher />
-                            <HeaderHomeNav />
+                            <div className='Header__leftSideMenu__info'>
+                                <HeaderLogo />
+                                <HeaderAuthentication />
+                            </div>
                         </div>
-                        <HeaderLogo />
                         <div className='Header__rightSideMenu'>
-                            <HeaderAuthentication />
+                            <HeaderNotification />
                             <HeaderHelpMenu />
                             <HeaderSystemMenu />
                             <HeaderAccountMenu />
                         </div>
                     </Layer>
                     <SideNavMenu />
-                </div>
+                </header>
             )}
         </>
     );

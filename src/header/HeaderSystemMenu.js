@@ -20,18 +20,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 import { t } from '@bluecateng/l10n.macro';
-import {
-    HeaderIcon,
-    Layer,
-    Menu,
-    MenuItem,
-    useMenuHandler,
-} from '@bluecateng/pelagos';
-import { Settings } from '@carbon/icons-react';
+import { Layer, Menu, MenuItem, useMenuHandler } from '@bluecateng/pelagos';
+import Settings from '@carbon/icons-react/es/Settings';
 import PropTypes from 'prop-types';
 import usePlatformData from '../hooks/usePlatformData';
 import { resizeButtonMenu } from '../utils/display';
 import './HeaderSystemMenu.less';
+import AppShellIcon from './AppShellIcon';
 
 /**
  * HeaderSystemMenu component is a button when clicked this button reveals the
@@ -62,7 +57,10 @@ const HeaderSystemMenu = ({ className }) => {
     return (
         <>
             {(canDownloadLogs || canViewLogs) && (
-                <div className={className}>
+                <div
+                    className={`HeaderSystemMenu${
+                        className ? ' ' + className : ''
+                    }`}>
                     <button
                         id='systemMenuButton'
                         className='HeaderSystemMenu__button'
@@ -71,18 +69,15 @@ const HeaderSystemMenu = ({ className }) => {
                         aria-haspopup='true'
                         aria-expanded={expanded}
                         {...buttonProps}>
-                        <HeaderIcon
-                            className='button'
-                            icon={Settings}
-                            label={t`System`}
-                        />
+                        <AppShellIcon icon={Settings} />
                     </button>
                     {expanded && (
                         <Layer
                             id='systemMenu'
                             role='menu'
                             className='HeaderSystemMenu__menu'
-                            aria-label={`System Menu`}>
+                            aria-label={`System Menu`}
+                            level='1'>
                             <div tabIndex={0} {...guardProps} />
                             <Menu {...menuProps}>
                                 {canDownloadLogs && (

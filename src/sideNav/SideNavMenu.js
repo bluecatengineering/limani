@@ -128,7 +128,8 @@ const SideNavMenu = ({ className }) => {
             id='sideNav'
             className={classNames.join(' ')}
             active={isExpanded}
-            onClick={handleClick}>
+            onClick={handleClick}
+            data-layer='1'>
             <SideNavItems>{renderItems(links, [], isExpanded)}</SideNavItems>
         </SideNav>
     ) : null;
