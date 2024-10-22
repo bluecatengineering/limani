@@ -37,7 +37,11 @@ export default {
     component: HeaderAccountMenu,
     decorators: [
         (Story) => (
-            <div style={{ width: 'fit-content' }}>
+            <div
+                style={{
+                    width: 'fit-content',
+                    backgroundColor: 'var(--background)',
+                }}>
                 <PlatformDataContext.Provider value={mockValue}>
                     <Story />
                 </PlatformDataContext.Provider>

@@ -64,9 +64,11 @@ export default {
     component: HeaderAuthentication,
     decorators: [
         (Story) => (
-            <PlatformDataContext.Provider value={mockBAM}>
-                <Story />
-            </PlatformDataContext.Provider>
+            <div style={{ backgroundColor: 'var(--background)' }}>
+                <PlatformDataContext.Provider value={mockBAM}>
+                    <Story />
+                </PlatformDataContext.Provider>
+            </div>
         ),
     ],
     args: {

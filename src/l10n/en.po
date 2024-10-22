@@ -61,8 +61,8 @@ msgid "Go back"
 msgstr ""
 
 #: c47a
-msgid "Help"
-msgstr ""
+#~ msgid "Help"
+#~ msgstr ""
 
 #: 268b
 msgid "Help Menu"
@@ -85,13 +85,13 @@ msgid "Save"
 msgstr ""
 
 #: bc07
-msgid "System"
-msgstr ""
+#~ msgid "System"
+#~ msgstr ""
 
 #: 4c39
 msgid "View logs"
 msgstr ""
 
 #: 825c
-msgid "Workflows"
-msgstr ""
+#~ msgid "Workflows"
+#~ msgstr ""

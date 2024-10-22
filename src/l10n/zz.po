@@ -61,8 +61,8 @@ msgid "Go back"
 msgstr "Gôô bââççk"
 
 #: c47a
-msgid "Help"
-msgstr "Héélp"
+#~ msgid "Help"
+#~ msgstr "Héélp"
 
 #: 268b
 msgid "Help Menu"
@@ -85,13 +85,13 @@ msgid "Save"
 msgstr "Sââvéé"
 
 #: bc07
-msgid "System"
-msgstr "Systéém"
+#~ msgid "System"
+#~ msgstr "Systéém"
 
 #: 4c39
 msgid "View logs"
 msgstr "Vîîééw lôôgs"
 
 #: 825c
-msgid "Workflows"
-msgstr "Wôôrkflôôws"
+#~ msgid "Workflows"
+#~ msgstr "Wôôrkflôôws"
