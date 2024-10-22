@@ -76,7 +76,7 @@ const HeaderHelpMenu = ({ className }) => {
             {helpItems.length ? (
                 <div
                     className={`HeaderHelpMenu${
-                        className ? ' ' + className : ''
+                        className ? ` ${className}` : ''
                     }`}>
                     <button
                         id='helpMenuButton'

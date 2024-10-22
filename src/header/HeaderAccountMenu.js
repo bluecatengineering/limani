@@ -53,7 +53,7 @@ const HeaderAccountMenu = ({ className }) => {
     resizeButtonMenu(expanded, 'accountMenuBtn', 'accountMenu');
 
     return (
-        <div className={`HeaderAccountMenu${className ? ' ' + className : ''}`}>
+        <div className={`HeaderAccountMenu${className ? ` ${className}` : ''}`}>
             <button
                 id='accountMenuBtn'
                 className='HeaderAccountMenu__button'

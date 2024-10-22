@@ -14,9 +14,8 @@ exports[`HeaderAccountMenu Rendering Render HeaderAccountMenu component with def
     onKeyDown={[Function]}
     type="button"
   >
-    <HeaderIcon
+    <AppShellIcon
       icon={[Function]}
-      label="Account"
     />
   </button>
 </div>
@@ -36,9 +35,8 @@ exports[`HeaderAccountMenu Rendering Render HeaderAccountMenu component with pro
     onKeyDown={[Function]}
     type="button"
   >
-    <HeaderIcon
+    <AppShellIcon
       icon={[Function]}
-      label="Account"
     />
   </button>
 </div>
@@ -58,9 +56,8 @@ exports[`HeaderAccountMenu Rendering Render HeaderAccountMenu component with pse
     onKeyDown={[Function]}
     type="button"
   >
-    <HeaderIcon
+    <AppShellIcon
       icon={[Function]}
-      label="ÂÂççççôôùùnt"
     />
   </button>
 </div>

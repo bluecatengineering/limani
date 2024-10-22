@@ -3,7 +3,7 @@
 exports[`HeaderHelpMenu Rendering Render HeaderHelpMenu component with props 1`] = `
 <React.Fragment>
   <div
-    className="customHelpMenu"
+    className="HeaderHelpMenu customHelpMenu"
   >
     <button
       aria-controls={null}
@@ -15,10 +15,8 @@ exports[`HeaderHelpMenu Rendering Render HeaderHelpMenu component with props 1`]
       onKeyDown={[Function]}
       type="button"
     >
-      <HeaderIcon
-        className="button"
+      <AppShellIcon
         icon={[Function]}
-        label="Help"
       />
     </button>
   </div>
@@ -28,7 +26,7 @@ exports[`HeaderHelpMenu Rendering Render HeaderHelpMenu component with props 1`]
 exports[`HeaderHelpMenu Rendering Render HeaderHelpMenu component with pseudo translated text 1`] = `
 <React.Fragment>
   <div
-    className="customHelpMenu"
+    className="HeaderHelpMenu customHelpMenu"
   >
     <button
       aria-controls={null}
@@ -40,10 +38,8 @@ exports[`HeaderHelpMenu Rendering Render HeaderHelpMenu component with pseudo tr
       onKeyDown={[Function]}
       type="button"
     >
-      <HeaderIcon
-        className="button"
+      <AppShellIcon
         icon={[Function]}
-        label="Héélp"
       />
     </button>
   </div>

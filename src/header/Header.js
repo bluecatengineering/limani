@@ -57,7 +57,7 @@ const Header = ({ className }) => {
         <>
             {!isFetchingData && (
                 <header
-                    className={`Header${className ? ' ' + className : ''}`}
+                    className={`Header${className ? ` ${className}` : ''}`}
                     data-theme='dark'>
                     <Layer className='Header__topNav'>
                         <div className='Header__leftSideMenu'>

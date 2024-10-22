@@ -59,7 +59,7 @@ const HeaderSystemMenu = ({ className }) => {
             {(canDownloadLogs || canViewLogs) && (
                 <div
                     className={`HeaderSystemMenu${
-                        className ? ' ' + className : ''
+                        className ? ` ${className}` : ''
                     }`}>
                     <button
                         id='systemMenuButton'
