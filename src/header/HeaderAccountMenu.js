@@ -62,7 +62,12 @@ const HeaderAccountMenu = ({ className }) => {
                 aria-haspopup='true'
                 aria-expanded={expanded}
                 {...buttonProps}>
-                <AppShellIcon icon={UserAvatar} />
+                <AppShellIcon
+                    icon={UserAvatar}
+                    tooltipText={t`Account`}
+                    tooltipPlacement='bottom'
+                    hideTooltip={expanded}
+                />
             </button>
             {expanded && (
                 <Layer
@@ -70,7 +75,7 @@ const HeaderAccountMenu = ({ className }) => {
                     className='HeaderAccountMenu__menu'
                     role='menu'
                     aria-label={t`Account`}
-                    level='1'>
+                    level={1}>
                     <div
                         id='user-profile'
                         className='HeaderAccountMenu__userProfile'>

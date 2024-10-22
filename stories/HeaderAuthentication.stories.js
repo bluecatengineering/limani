@@ -29,7 +29,7 @@ const mockBAM = {
             authentication_info: {
                 alias: 'BAM-9.5.0',
                 url: '#',
-                service: 'BAM',
+                service: 'Address Manager',
             },
         },
     },

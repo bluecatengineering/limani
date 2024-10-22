@@ -69,7 +69,12 @@ const HeaderSystemMenu = ({ className }) => {
                         aria-haspopup='true'
                         aria-expanded={expanded}
                         {...buttonProps}>
-                        <AppShellIcon icon={Settings} />
+                        <AppShellIcon
+                            icon={Settings}
+                            tooltipText={t`System`}
+                            tooltipPlacement='bottom'
+                            hideTooltip={expanded}
+                        />
                     </button>
                     {expanded && (
                         <Layer
@@ -77,7 +82,7 @@ const HeaderSystemMenu = ({ className }) => {
                             role='menu'
                             className='HeaderSystemMenu__menu'
                             aria-label={`System Menu`}
-                            level='1'>
+                            level={1}>
                             <div tabIndex={0} {...guardProps} />
                             <Menu {...menuProps}>
                                 {canDownloadLogs && (

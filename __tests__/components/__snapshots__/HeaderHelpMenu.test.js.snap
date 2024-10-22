@@ -17,6 +17,8 @@ exports[`HeaderHelpMenu Rendering Render HeaderHelpMenu component with props 1`]
     >
       <AppShellIcon
         icon={[Function]}
+        tooltipPlacement="bottom"
+        tooltipText="Help"
       />
     </button>
   </div>
@@ -40,6 +42,8 @@ exports[`HeaderHelpMenu Rendering Render HeaderHelpMenu component with pseudo tr
     >
       <AppShellIcon
         icon={[Function]}
+        tooltipPlacement="bottom"
+        tooltipText="Héélp"
       />
     </button>
   </div>

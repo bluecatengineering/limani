@@ -22,17 +22,21 @@ SOFTWARE.
 import AppShellIcon from './AppShellIcon';
 import Notification from '@carbon/icons-react/es/Notification';
 import './HeaderNotification.less';
+import { t } from '@bluecateng/l10n.macro';
 
-const HeaderNotification = ({ className, buttonProps }) => {
+const HeaderNotification = ({ className }) => {
     return (
         <div
             className={`HeaderNotification${className ? ` ${className}` : ''}`}>
             <button
                 id='notificationButton'
                 className='HeaderNotification__button'
-                type='button'
-                {...buttonProps}>
-                <AppShellIcon icon={Notification} />
+                type='button'>
+                <AppShellIcon
+                    icon={Notification}
+                    tooltipText={t`Notification`}
+                    tooltipPlacement='bottom'
+                />
             </button>
         </div>
     );

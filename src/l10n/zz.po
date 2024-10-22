@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-13T14:44:45.416Z\n"
-"PO-Revision-Date: 2023-06-30T18:24:38.888039+00:00\n"
+"PO-Revision-Date: 2024-10-22T19:28:49.031786+00:00\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zz\n"
@@ -42,7 +42,7 @@ msgstr "ÇÇâânççéél"
 
 #: bbfa
 msgid "Close"
-msgstr ""
+msgstr "ÇÇlôôséé"
 
 #: 3752
 msgid "Download all logs"
@@ -61,8 +61,8 @@ msgid "Go back"
 msgstr "Gôô bââççk"
 
 #: c47a
-#~ msgid "Help"
-#~ msgstr "Héélp"
+msgid "Help"
+msgstr "Héélp"
 
 #: 268b
 msgid "Help Menu"
@@ -76,6 +76,10 @@ msgstr "Hôôméé"
 msgid "Logout"
 msgstr "Lôôgôôùùt"
 
+#: c18f
+msgid "Notification"
+msgstr "Nôôtîîfîîççââtîîôôn"
+
 #: 519e
 msgid "Path"
 msgstr "Pââth"
@@ -85,13 +89,12 @@ msgid "Save"
 msgstr "Sââvéé"
 
 #: bc07
-#~ msgid "System"
-#~ msgstr "Systéém"
+msgid "System"
+msgstr "Systéém"
 
 #: 4c39
 msgid "View logs"
 msgstr "Vîîééw lôôgs"
 
-#: 825c
 #~ msgid "Workflows"
 #~ msgstr "Wôôrkflôôws"

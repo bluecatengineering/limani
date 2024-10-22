@@ -11,6 +11,8 @@ exports[`HeaderNotification renders HeaderNotification component with className 
   >
     <AppShellIcon
       icon={[Function]}
+      tooltipPlacement="bottom"
+      tooltipText="Notification"
     />
   </button>
 </div>
@@ -27,6 +29,8 @@ exports[`HeaderNotification renders HeaderNotification component with default pr
   >
     <AppShellIcon
       icon={[Function]}
+      tooltipPlacement="bottom"
+      tooltipText="Notification"
     />
   </button>
 </div>

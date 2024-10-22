@@ -86,7 +86,12 @@ const HeaderHelpMenu = ({ className }) => {
                         aria-haspopup='true'
                         aria-expanded={expanded}
                         {...buttonProps}>
-                        <AppShellIcon icon={Help} />
+                        <AppShellIcon
+                            icon={Help}
+                            tooltipText={t`Help`}
+                            tooltipPlacement='bottom'
+                            hideTooltip={expanded}
+                        />
                     </button>
                     {expanded && (
                         <Layer
@@ -94,7 +99,7 @@ const HeaderHelpMenu = ({ className }) => {
                             role='menu'
                             className='HeaderHelpMenu__menu'
                             aria-label={t`Help Menu`}
-                            level='1'>
+                            level={1}>
                             <div tabIndex={0} {...guardProps} />
                             <Menu {...menuProps}>
                                 {helpItems.map((helpMenuItem, index) => (

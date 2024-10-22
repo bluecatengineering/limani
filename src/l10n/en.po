@@ -61,8 +61,8 @@ msgid "Go back"
 msgstr ""
 
 #: c47a
-#~ msgid "Help"
-#~ msgstr ""
+msgid "Help"
+msgstr ""
 
 #: 268b
 msgid "Help Menu"
@@ -76,6 +76,10 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
+#: c18f
+msgid "Notification"
+msgstr ""
+
 #: 519e
 msgid "Path"
 msgstr ""
@@ -85,8 +89,8 @@ msgid "Save"
 msgstr ""
 
 #: bc07
-#~ msgid "System"
-#~ msgstr ""
+msgid "System"
+msgstr ""
 
 #: 4c39
 msgid "View logs"
