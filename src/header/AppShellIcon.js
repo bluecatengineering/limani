@@ -9,10 +9,12 @@ const AppShellIcon = ({
     hideTooltip,
 }) => {
     const tooltipRef = useTooltip(tooltipText, tooltipPlacement);
+
     return (
         <div
+            key={hideTooltip}
             className='AppShellIcon'
-            ref={!hideTooltip ? tooltipRef : undefined}>
+            ref={!hideTooltip ? tooltipRef : null}>
             <Icon size={16} />
         </div>
     );
