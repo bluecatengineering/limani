@@ -1,5 +1,5 @@
 /*
-Copyright 2023-2024 BlueCat Networks Inc.
+Copyright 2024 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,31 +19,41 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import { Hamburger } from '@bluecateng/pelagos';
-import useSideNav from './useSideNav';
-import { useLayoutEffect } from 'react';
 
-const SideNavMenuSwitcher = () => {
-    const { isExpanded, setExpanded } = useSideNav();
+import './AppShellIcon.less';
+import { useTooltip } from '@bluecateng/pelagos';
+import PropTypes from 'prop-types';
 
-    useLayoutEffect(() => {
-        if (isExpanded) {
-            const button = document.getElementById('navToggle');
-            const { bottom } = button.getBoundingClientRect();
-            const menu = document.getElementById('sideNav');
-            menu.style.top = `${bottom}px`;
-        }
-    }, [isExpanded]);
+const AppShellIcon = ({
+    icon: Icon,
+    tooltipText,
+    tooltipPlacement = 'right',
+    hideTooltip,
+}) => {
+    const tooltipRef = useTooltip(tooltipText, tooltipPlacement);
 
     return (
-        <div className='SideNavMenu__hamburgerIcon'>
-            <Hamburger
-                id='navToggle'
-                active={isExpanded}
-                onClick={() => setExpanded(!isExpanded)}
-            />
+        <div
+            key={hideTooltip}
+            className='AppShellIcon'
+            ref={!hideTooltip ? tooltipRef : null}>
+            <Icon size={16} />
         </div>
     );
 };
 
-export default SideNavMenuSwitcher;
+AppShellIcon.propTypes = {
+    /** The component class name(s). */
+    icon: PropTypes.object,
+
+    /** Tooltip text value. */
+    tooltipText: PropTypes.string,
+
+    /** Tooltip position*/
+    tooltipPlacement: PropTypes.oneOf(['left', 'right', 'top', 'bottom']),
+
+    /** To hide the tooltip text*/
+    hideTooltip: PropTypes.bool,
+};
+
+export default AppShellIcon;

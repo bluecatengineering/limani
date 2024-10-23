@@ -5,7 +5,7 @@ exports[`HeaderSystemMenu Rendering Render HeaderSystemMenu component with defau
 exports[`HeaderSystemMenu Rendering Render HeaderSystemMenu component with props 1`] = `
 <React.Fragment>
   <div
-    className="customSystemMenu"
+    className="HeaderSystemMenu customSystemMenu"
   >
     <button
       aria-controls={null}
@@ -17,10 +17,11 @@ exports[`HeaderSystemMenu Rendering Render HeaderSystemMenu component with props
       onKeyDown={[Function]}
       type="button"
     >
-      <HeaderIcon
-        className="button"
+      <AppShellIcon
+        hideTooltip={false}
         icon={[Function]}
-        label="System"
+        tooltipPlacement="bottom"
+        tooltipText="System"
       />
     </button>
   </div>
@@ -30,7 +31,7 @@ exports[`HeaderSystemMenu Rendering Render HeaderSystemMenu component with props
 exports[`HeaderSystemMenu Rendering Render HeaderSystemMenu component with pseudo translated text 1`] = `
 <React.Fragment>
   <div
-    className="customSystemMenu"
+    className="HeaderSystemMenu customSystemMenu"
   >
     <button
       aria-controls={null}
@@ -42,10 +43,11 @@ exports[`HeaderSystemMenu Rendering Render HeaderSystemMenu component with pseud
       onKeyDown={[Function]}
       type="button"
     >
-      <HeaderIcon
-        className="button"
+      <AppShellIcon
+        hideTooltip={false}
         icon={[Function]}
-        label="Systéém"
+        tooltipPlacement="bottom"
+        tooltipText="Systéém"
       />
     </button>
   </div>

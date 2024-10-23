@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2024 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@ const mockBAM = {
             authentication_info: {
                 alias: 'BAM-9.5.0',
                 url: '#',
-                service: 'BAM',
+                service: 'Address Manager',
             },
         },
     },
@@ -64,9 +64,11 @@ export default {
     component: HeaderAuthentication,
     decorators: [
         (Story) => (
-            <PlatformDataContext.Provider value={mockBAM}>
-                <Story />
-            </PlatformDataContext.Provider>
+            <div style={{ backgroundColor: 'var(--background)' }}>
+                <PlatformDataContext.Provider value={mockBAM}>
+                    <Story />
+                </PlatformDataContext.Provider>
+            </div>
         ),
     ],
     args: {

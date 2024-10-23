@@ -2,60 +2,68 @@
 
 exports[`Header Rendering Render Header component with default props 1`] = `
 <React.Fragment>
-  <div
+  <header
     className="Header"
+    data-theme="dark"
   >
     <Layer
       className="Header__topNav"
-      data-theme="dark"
     >
       <div
         className="Header__leftSideMenu"
       >
         <SideNavMenuSwitcher />
-        <HeaderHomeNav />
+        <div
+          className="Header__leftSideMenu__info"
+        >
+          <HeaderLogo />
+          <HeaderAuthentication />
+        </div>
       </div>
-      <HeaderLogo />
       <div
         className="Header__rightSideMenu"
       >
-        <HeaderAuthentication />
+        <HeaderNotification />
         <HeaderHelpMenu />
         <HeaderSystemMenu />
         <HeaderAccountMenu />
       </div>
     </Layer>
     <SideNavMenu />
-  </div>
+  </header>
 </React.Fragment>
 `;
 
 exports[`Header Rendering Render Header component with props 1`] = `
 <React.Fragment>
-  <div
+  <header
     className="Header customClassName"
+    data-theme="dark"
   >
     <Layer
       className="Header__topNav"
-      data-theme="dark"
     >
       <div
         className="Header__leftSideMenu"
       >
         <SideNavMenuSwitcher />
-        <HeaderHomeNav />
+        <div
+          className="Header__leftSideMenu__info"
+        >
+          <HeaderLogo />
+          <HeaderAuthentication />
+        </div>
       </div>
-      <HeaderLogo />
       <div
         className="Header__rightSideMenu"
       >
-        <HeaderAuthentication />
+        <HeaderNotification />
         <HeaderHelpMenu />
         <HeaderSystemMenu />
         <HeaderAccountMenu />
       </div>
     </Layer>
     <SideNavMenu />
-  </div>
+  </header>
 </React.Fragment>
 `;

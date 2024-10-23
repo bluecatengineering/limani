@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2024 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,18 +20,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 import { t } from '@bluecateng/l10n.macro';
-import {
-    HeaderIcon,
-    Layer,
-    Menu,
-    MenuItem,
-    useMenuHandler,
-} from '@bluecateng/pelagos';
-import { Settings } from '@carbon/icons-react';
+import { Layer, Menu, MenuItem, useMenuHandler } from '@bluecateng/pelagos';
+import Settings from '@carbon/icons-react/es/Settings';
 import PropTypes from 'prop-types';
 import usePlatformData from '../hooks/usePlatformData';
 import { resizeButtonMenu } from '../utils/display';
 import './HeaderSystemMenu.less';
+import AppShellIcon from './AppShellIcon';
 
 /**
  * HeaderSystemMenu component is a button when clicked this button reveals the
@@ -62,7 +57,10 @@ const HeaderSystemMenu = ({ className }) => {
     return (
         <>
             {(canDownloadLogs || canViewLogs) && (
-                <div className={className}>
+                <div
+                    className={`HeaderSystemMenu${
+                        className ? ` ${className}` : ''
+                    }`}>
                     <button
                         id='systemMenuButton'
                         className='HeaderSystemMenu__button'
@@ -71,10 +69,11 @@ const HeaderSystemMenu = ({ className }) => {
                         aria-haspopup='true'
                         aria-expanded={expanded}
                         {...buttonProps}>
-                        <HeaderIcon
-                            className='button'
+                        <AppShellIcon
                             icon={Settings}
-                            label={t`System`}
+                            tooltipText={t`System`}
+                            tooltipPlacement='bottom'
+                            hideTooltip={expanded}
                         />
                     </button>
                     {expanded && (
@@ -82,7 +81,8 @@ const HeaderSystemMenu = ({ className }) => {
                             id='systemMenu'
                             role='menu'
                             className='HeaderSystemMenu__menu'
-                            aria-label={`System Menu`}>
+                            aria-label={`System Menu`}
+                            level={1}>
                             <div tabIndex={0} {...guardProps} />
                             <Menu {...menuProps}>
                                 {canDownloadLogs && (

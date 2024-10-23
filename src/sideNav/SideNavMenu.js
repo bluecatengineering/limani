@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2024 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -128,7 +128,8 @@ const SideNavMenu = ({ className }) => {
             id='sideNav'
             className={classNames.join(' ')}
             active={isExpanded}
-            onClick={handleClick}>
+            onClick={handleClick}
+            data-layer='1'>
             <SideNavItems>{renderItems(links, [], isExpanded)}</SideNavItems>
         </SideNav>
     ) : null;

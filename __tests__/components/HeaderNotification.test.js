@@ -1,5 +1,5 @@
 /*
-Copyright 2023-2024 BlueCat Networks Inc.
+Copyright 2024 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,31 +19,22 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import { Hamburger } from '@bluecateng/pelagos';
-import useSideNav from './useSideNav';
-import { useLayoutEffect } from 'react';
 
-const SideNavMenuSwitcher = () => {
-    const { isExpanded, setExpanded } = useSideNav();
+import { shallow } from 'enzyme';
+import HeaderNotification from '../../src/header/HeaderNotification';
 
-    useLayoutEffect(() => {
-        if (isExpanded) {
-            const button = document.getElementById('navToggle');
-            const { bottom } = button.getBoundingClientRect();
-            const menu = document.getElementById('sideNav');
-            menu.style.top = `${bottom}px`;
-        }
-    }, [isExpanded]);
+jest.unmock('../../src/header/HeaderNotification');
 
-    return (
-        <div className='SideNavMenu__hamburgerIcon'>
-            <Hamburger
-                id='navToggle'
-                active={isExpanded}
-                onClick={() => setExpanded(!isExpanded)}
-            />
-        </div>
-    );
-};
+describe('HeaderNotification', () => {
+    it('renders HeaderNotification component with default props', () => {
+        const wrapper = shallow(<HeaderNotification />);
+        expect(wrapper.getElement()).toMatchSnapshot();
+    });
 
-export default SideNavMenuSwitcher;
+    it('renders HeaderNotification component with className props', () => {
+        const wrapper = shallow(
+            <HeaderNotification className='varClassName' />,
+        );
+        expect(wrapper.getElement()).toMatchSnapshot();
+    });
+});
