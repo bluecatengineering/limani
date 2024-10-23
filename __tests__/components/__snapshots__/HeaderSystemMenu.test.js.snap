@@ -18,6 +18,7 @@ exports[`HeaderSystemMenu Rendering Render HeaderSystemMenu component with props
       type="button"
     >
       <AppShellIcon
+        hideTooltip={false}
         icon={[Function]}
         tooltipPlacement="bottom"
         tooltipText="System"
@@ -43,6 +44,7 @@ exports[`HeaderSystemMenu Rendering Render HeaderSystemMenu component with pseud
       type="button"
     >
       <AppShellIcon
+        hideTooltip={false}
         icon={[Function]}
         tooltipPlacement="bottom"
         tooltipText="Systéém"

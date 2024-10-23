@@ -15,6 +15,7 @@ exports[`HeaderAccountMenu Rendering Render HeaderAccountMenu component with def
     type="button"
   >
     <AppShellIcon
+      hideTooltip={false}
       icon={[Function]}
       tooltipPlacement="bottom"
       tooltipText="Account"
@@ -38,6 +39,7 @@ exports[`HeaderAccountMenu Rendering Render HeaderAccountMenu component with pro
     type="button"
   >
     <AppShellIcon
+      hideTooltip={false}
       icon={[Function]}
       tooltipPlacement="bottom"
       tooltipText="Account"
@@ -61,6 +63,7 @@ exports[`HeaderAccountMenu Rendering Render HeaderAccountMenu component with pse
     type="button"
   >
     <AppShellIcon
+      hideTooltip={false}
       icon={[Function]}
       tooltipPlacement="bottom"
       tooltipText="ÂÂççççôôùùnt"
