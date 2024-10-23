@@ -9,10 +9,8 @@ exports[`FileDisplay Rendering Render FileDisplay with all props 1`] = `
     icon={[Function]}
     id="test-id-for-file-display-download"
     onClick={[Function]}
-    size="medium"
     tooltipPlacement="top"
     tooltipText="test-tooltip-for-download-button"
-    type="ghost"
   />
   <div
     className="FileDisplay__fileName"
@@ -25,10 +23,8 @@ exports[`FileDisplay Rendering Render FileDisplay with all props 1`] = `
     icon={[Function]}
     id="test-id-for-file-display-delete"
     onClick={[Function]}
-    size="medium"
     tooltipPlacement="top"
     tooltipText="test-tooltip-for-delete-button"
-    type="ghost"
   />
 </div>
 `;
@@ -70,10 +66,8 @@ exports[`FileDisplay Rendering Render FileDisplay with props, including onDelete
     icon={[Function]}
     id="test-id-for-file-display-delete"
     onClick={[Function]}
-    size="medium"
     tooltipPlacement="top"
     tooltipText="test-tooltip-for-delete-button"
-    type="ghost"
   />
 </div>
 `;
@@ -93,9 +87,7 @@ exports[`FileDisplay Rendering Render FileDisplay with props, including onDelete
     icon={[Function]}
     id="test-id-for-file-display-delete"
     onClick={[Function]}
-    size="medium"
     tooltipPlacement="top"
-    type="ghost"
   />
 </div>
 `;
@@ -109,9 +101,7 @@ exports[`FileDisplay Rendering Render FileDisplay with props, including onDownlo
     icon={[Function]}
     id="test-id-for-file-display-download"
     onClick={[Function]}
-    size="medium"
     tooltipPlacement="top"
-    type="ghost"
   />
   <div
     className="FileDisplay__fileName"
@@ -130,10 +120,8 @@ exports[`FileDisplay Rendering Render FileDisplay with props, including onDownlo
     icon={[Function]}
     id="test-id-for-file-display-download"
     onClick={[Function]}
-    size="medium"
     tooltipPlacement="top"
     tooltipText="test-tooltip-for-download-button"
-    type="ghost"
   />
   <div
     className="FileDisplay__fileName"

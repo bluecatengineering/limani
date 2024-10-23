@@ -7,9 +7,7 @@ exports[`FormButtons Rendering Render the FormButtons component with default pro
   <Button
     id="formCancel"
     onClick={[Function]}
-    size="medium"
     text="Cancel"
-    type="tertiary"
   />
   <FormSubmit
     id="formSubmit"
@@ -24,16 +22,12 @@ exports[`FormButtons Rendering Render the FormButtons component with props, chil
 >
   <Button
     onClick={[Function]}
-    size="medium"
     text="Button at start"
-    type="tertiary"
   />
   <Button
     id="formCancel"
     onClick={[Function]}
-    size="medium"
     text="Abort"
-    type="tertiary"
   />
   <FormSubmit
     id="formSubmit"
@@ -48,16 +42,12 @@ exports[`FormButtons Rendering Render the FormButtons component with props, chil
 >
   <Button
     onClick={[Function]}
-    size="medium"
     text="Button at start"
-    type="tertiary"
   />
   <Button
     id="formCancel"
     onClick={[Function]}
-    size="medium"
     text="Abort"
-    type="tertiary"
   />
   <FormSubmit
     id="formSubmit"
@@ -73,9 +63,7 @@ exports[`FormButtons Rendering Render the FormButtons component with props, chil
   <Button
     id="formCancel"
     onClick={[Function]}
-    size="medium"
     text="Abort"
-    type="tertiary"
   />
   <FormSubmit
     id="formSubmit"
@@ -83,9 +71,7 @@ exports[`FormButtons Rendering Render the FormButtons component with props, chil
   />
   <Button
     onClick={[Function]}
-    size="medium"
     text="Button at start"
-    type="tertiary"
   />
 </div>
 `;

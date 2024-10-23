@@ -24,7 +24,7 @@ import PropTypes from 'prop-types';
 import { Toast } from '@bluecateng/pelagos';
 import PageMessagesContext from './PageMessagesContext';
 
-const PageMessages = ({ initialMessages, children }) => {
+const PageMessages = ({ initialMessages = [], children }) => {
     const [messages, setMessages] = useState(initialMessages);
 
     const addMessages = (messages) => {
@@ -71,11 +71,6 @@ PageMessages.propTypes = {
     initialMessages: PropTypes.array,
     /** The child elements. */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]),
-};
-
-PageMessages.defaultProps = {
-    /** The initial messages. */
-    initialMessages: [],
 };
 
 export default PageMessages;
