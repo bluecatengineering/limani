@@ -1,77 +1,79 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card Rendering Render the Card component with default props 1`] = `
-<a
+<Layer
   className="Card"
 >
-  <span
-    className="Card__title"
+  <div>
+    <span
+      className="Card__title"
+    >
+      Add Host record
+    </span>
+  </div>
+  <div
+    className="Card__iconContainer"
   >
-    Add Host record
-  </span>
-</a>
+    <ArrowRight
+      className="Card__arrowRight"
+      size={20}
+    />
+  </div>
+</Layer>
 `;
 
 exports[`Card Rendering Render the Card component with props 1`] = `
-<a
+<Layer
   className="Card test_cn"
   href="#"
 >
-  <span
-    className="Card__title"
-  >
-    Add Host Record
-  </span>
-  <span
-    className="Card__description"
-  >
-    Add a host record on BAM
-  </span>
-  <span>
+  <div>
     <span
-      className="Card__pathTitle"
+      className="Card__title"
     >
-       
-      Path
-       
+      Add Host Record
     </span>
     <span
-      className="Card__path"
+      className="Card__description"
     >
-      Host Record
+      Add a host record on BAM
     </span>
-  </span>
-</a>
+  </div>
+  <div
+    className="Card__iconContainer"
+  >
+    <ArrowRight
+      className="Card__arrowRight"
+      size={20}
+    />
+  </div>
+</Layer>
 `;
 
 exports[`Card Rendering Render the Card component with pseudo translated text 1`] = `
-<a
+<Layer
   className="Card test_cn"
   href="#"
 >
-  <span
-    className="Card__title"
-  >
-    Add Host Record
-  </span>
-  <span
-    className="Card__description"
-  >
-    Add a host record on BAM
-  </span>
-  <span>
+  <div>
     <span
-      className="Card__pathTitle"
+      className="Card__title"
     >
-       
-      Pââth
-       
+      Add Host Record
     </span>
     <span
-      className="Card__path"
+      className="Card__description"
     >
-      Host Record
+      Add a host record on BAM
     </span>
-  </span>
-</a>
+  </div>
+  <div
+    className="Card__iconContainer"
+  >
+    <ArrowRight
+      className="Card__arrowRight"
+      size={20}
+    />
+  </div>
+</Layer>
 `;

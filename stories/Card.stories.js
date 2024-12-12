@@ -20,17 +20,31 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 import { Card } from '/src';
+import { Layer } from '@bluecateng/pelagos';
 
 export default {
     title: 'Components/Card',
     component: Card,
+    decorators: [
+        (Story) => (
+            <Layer
+                data-layer='1'
+                style={{
+                    backgroundColor: 'var(--layer)',
+                    height: '300px',
+                    padding: '20px',
+                }}>
+                <Story />
+            </Layer>
+        ),
+    ],
 };
 
 export const Normal = {
     args: {
         title: 'Add user',
         href: '#',
-        description: 'API to add an Object',
+        description: 'Add a user to the application',
         path: ['parent', 'API'],
     },
 };
