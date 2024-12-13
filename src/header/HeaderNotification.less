@@ -1,4 +1,4 @@
-// Copyright 2023-2024 BlueCat Networks Inc.
+// Copyright 2024 BlueCat Networks Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,22 +19,11 @@
 // SOFTWARE.
 @import '~@bluecateng/pelagos/less/spacing';
 @import '~@bluecateng/pelagos/less/utils';
-@import '~@bluecateng/pelagos/less/elevations';
 
-.HeaderHelpMenu {
+.HeaderNotification {
     height: @sp-40;
     width: @sp-40;
     justify-content: center;
-
-    &__menu {
-        @elv-04();
-        overflow: auto;
-        position: fixed;
-        max-width: 320px;
-        max-height: 240px;
-        border-radius: 3px;
-        white-space: nowrap;
-    }
 
     &__button {
         @icon-button();

@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2024 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,18 +20,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 import { t } from '@bluecateng/l10n.macro';
-import {
-    HeaderIcon,
-    Layer,
-    Menu,
-    MenuItem,
-    useMenuHandler,
-} from '@bluecateng/pelagos';
-import { UserAvatar } from '@carbon/icons-react';
+import { Layer, Menu, MenuItem, useMenuHandler } from '@bluecateng/pelagos';
+import UserAvatar from '@carbon/icons-react/es/UserAvatar';
+
 import PropTypes from 'prop-types';
 import usePlatformData from '../hooks/usePlatformData';
 import { resizeButtonMenu } from '../utils/display';
 import './HeaderAccountMenu.less';
+import AppShellIcon from './AppShellIcon';
 
 const doLogout = () => window.open('/logout', '_self');
 
@@ -57,7 +53,7 @@ const HeaderAccountMenu = ({ className }) => {
     resizeButtonMenu(expanded, 'accountMenuBtn', 'accountMenu');
 
     return (
-        <div className={`HeaderAccountMenu${className ? ' ' + className : ''}`}>
+        <div className={`HeaderAccountMenu${className ? ` ${className}` : ''}`}>
             <button
                 id='accountMenuBtn'
                 className='HeaderAccountMenu__button'
@@ -66,14 +62,20 @@ const HeaderAccountMenu = ({ className }) => {
                 aria-haspopup='true'
                 aria-expanded={expanded}
                 {...buttonProps}>
-                <HeaderIcon icon={UserAvatar} label={t`Account`} />
+                <AppShellIcon
+                    icon={UserAvatar}
+                    tooltipText={t`Account`}
+                    tooltipPlacement='bottom'
+                    hideTooltip={expanded}
+                />
             </button>
             {expanded && (
                 <Layer
                     id='accountMenu'
                     className='HeaderAccountMenu__menu'
                     role='menu'
-                    aria-label={t`Account`}>
+                    aria-label={t`Account`}
+                    level={1}>
                     <div
                         id='user-profile'
                         className='HeaderAccountMenu__userProfile'>

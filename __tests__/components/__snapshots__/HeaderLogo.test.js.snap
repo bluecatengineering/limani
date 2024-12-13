@@ -9,6 +9,11 @@ exports[`HeaderLogo Rendering Render HeaderLogo component with default props 1`]
     alt="Gateway logo"
     src="/parent/testpath"
   />
+  <span
+    className="HeaderLogo__logo__name"
+  >
+    Gateway
+  </span>
 </a>
 `;
 
@@ -21,5 +26,10 @@ exports[`HeaderLogo Rendering Render HeaderLogo component with props 1`] = `
     alt="Gateway logo"
     src="/parent/testpath"
   />
+  <span
+    className="HeaderLogo__logo__name"
+  >
+    Gateway
+  </span>
 </a>
 `;

@@ -1,4 +1,4 @@
-// Copyright 2023 BlueCat Networks Inc.
+// Copyright 2023-2024 BlueCat Networks Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,19 +18,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 @import '~@bluecateng/pelagos/less/spacing';
+@import '~@bluecateng/pelagos/less/colors';
+
+.SideNavMenu__hamburgerIcon {
+    .Hamburger {
+        color: var(--icon-interactive);
+    }
+}
 
 .Header {
+    background-color: var(--background);
+    color: var(--text-primary);
+
     &__topNav {
-        color: var(--text-primary);
-        background-color: var(--layer-01);
-        box-shadow: 0 @sp-02 14px 1px rgba(0 0 0 / 0.5);
         width: 100%;
-        height: 50px;
-        display: inline-grid;
+        height: @sp-48;
+        display: flex;
         z-index: 2;
-        grid-template-columns: 20% 60% 20%;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        padding: 0 @sp-12 0 @sp-12;
+        padding: 0 @sp-08 0 @sp-08;
     }
 
     #navToggle {
@@ -43,6 +51,11 @@
         justify-content: start;
         align-items: center;
         gap: @sp-16;
+
+        &__info {
+            display: flex;
+            flex-direction: row;
+        }
     }
 
     &__rightSideMenu {
@@ -50,6 +63,5 @@
         flex-direction: row;
         justify-content: end;
         align-items: center;
-        gap: @sp-16;
     }
 }
