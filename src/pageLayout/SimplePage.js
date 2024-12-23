@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2024 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,14 +24,23 @@ import { PageToolkit } from '../components';
 import PageBody from './PageBody';
 import PageContent from './PageContent';
 
-const SimplePage = ({ pageTitle, appTitle, children, onLanguageChange }) => {
+const SimplePage = ({
+    pageTitle,
+    appTitle,
+    children,
+    onLanguageChange,
+    titleComponent,
+}) => {
     return (
         <PageToolkit onLanguageChange={onLanguageChange}>
             {/* ^- setLanguage of Limani and the workflow */}
 
             <PageBody>
                 {/* ^- render Header */}
-                <PageContent pageTitle={pageTitle} appTitle={appTitle}>
+                <PageContent
+                    pageTitle={pageTitle}
+                    appTitle={appTitle}
+                    titleComponent={titleComponent}>
                     {children}
                 </PageContent>
             </PageBody>

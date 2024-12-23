@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2024 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -99,23 +99,14 @@ export default {
             }),
         ],
     },
-};
-
-//description
-/**
- * SimplePage is a component to display a page template containing the header,
- * navbar, and page contents. <br/>
- * It also handles theme changes, based on its value from Platform Data
- * for UI theme. <br/>
- * Note that for theme change feature to work as expected,
- * it requires Gateway >= 23.3.0 <br/>
- * This component is intended to nest a page's contents inside of the
- * `children` property.
- */
-export const Normal = {
+    decorators: [
+        (Story) => (
+            <div style={{ height: '400px' }}>
+                <Story />
+            </div>
+        ),
+    ],
     args: {
-        pageTitle: 'Page Title',
-        appTitle: 'App Title',
         children: (
             <div style={{ height: 'auto' }}>
                 <div>
@@ -137,13 +128,42 @@ export const Normal = {
                 </div>
             </div>
         ),
+    },
+};
+
+//description
+/**
+ * SimplePage is a component to display a page template containing the header,
+ * navbar, and page contents. <br/>
+ * It also handles theme changes, based on its value from Platform Data
+ * for UI theme. <br/>
+ * Note that for theme change feature to work as expected,
+ * it requires Gateway >= 23.3.0 <br/>
+ * This component is intended to nest a page's contents inside of the
+ * `children` property.
+ */
+export const Normal = {
+    args: {
+        className: 'TestSimplePage',
+        pageTitle: 'Page Title',
+        appTitle: 'App Title',
         onLanguageChange: null,
     },
-    decorators: [
-        (Story) => (
-            <div style={{ height: '250px' }}>
-                <Story />
+};
+
+export const CustomTitle = {
+    args: {
+        className: 'TestSimplePage',
+        pageTitle: 'Page Title',
+        appTitle: 'App Title',
+        titleComponent: (
+            <div className={'PageContent__title'}>
+                <h1 id='pageTitle'>Custom Title</h1>
+                <h5 id='pageTitle'>
+                    This line can be a description for the title.
+                </h5>
             </div>
         ),
-    ],
+        onLanguageChange: null,
+    },
 };

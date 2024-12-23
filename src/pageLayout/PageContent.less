@@ -25,7 +25,16 @@
     flex: 1;
     overflow: hidden;
 
-    padding: @sp-24 @sp-04 @sp-24 @sp-40;
+    &__title {
+        background-color: var(--layer);
+        width: 100%;
+        min-height: 116px;
+        padding: @sp-32 @sp-32 0 @sp-32;
+    }
+
+    &__content {
+        padding: @sp-24 @sp-16 @sp-24 @sp-16;
+    }
 }
 
 .PageContent--noPadding {

@@ -21,42 +21,33 @@ SOFTWARE.
 */
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import buildBreadcrumb from '../functions/buildBreadcrumb';
 import './PageContent.less';
 
-const PageContent = ({ className, pageTitle, appTitle, children }) => {
-    let windowTitle;
-    if (appTitle === undefined) {
-        appTitle = 'BlueCat Gateway';
-    }
-
-    if (pageTitle && appTitle) {
-        windowTitle = `${appTitle} - ${pageTitle}`;
-    } else if (!pageTitle && appTitle) {
-        windowTitle = `${appTitle}`;
-    } else if (!appTitle && pageTitle) {
-        windowTitle = `${pageTitle}`;
-    }
+const PageContent = ({
+    className,
+    pageTitle,
+    appTitle = 'BlueCat Gateway',
+    titleComponent,
+    children,
+}) => {
+    const classNames = className ? ['PageContent', className] : ['PageContent'];
+    const windowTitle = [appTitle, pageTitle].filter(Boolean).join(' - ');
 
     useEffect(() => {
         // eslint-disable-next-line max-len
         windowTitle && (document.title = windowTitle); //`BlueCat Gateway - ${title}`
     }, [windowTitle]);
 
-    const classNames = ['PageContent'];
-    if (className) {
-        classNames.push(className);
-    }
-
     return (
         <div className={classNames.join(' ')}>
-            {pageTitle ? (
-                <>
-                    {buildBreadcrumb(pageTitle)}
+            {titleComponent ? (
+                titleComponent
+            ) : pageTitle ? (
+                <div className={'PageContent__title'}>
                     <h1 id='pageTitle'>{pageTitle}</h1>
-                </>
+                </div>
             ) : null}
-            {children}
+            <div className={'PageContent__content'}>{children}</div>
         </div>
     );
 };
