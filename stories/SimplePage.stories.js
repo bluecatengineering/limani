@@ -101,7 +101,7 @@ export default {
     },
     decorators: [
         (Story) => (
-            <div style={{ height: '400px' }}>
+            <div style={{ height: '380px' }}>
                 <Story />
             </div>
         ),
