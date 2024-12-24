@@ -157,7 +157,7 @@ export const CustomTitle = {
         pageTitle: 'Page Title',
         appTitle: 'App Title',
         titleComponent: (
-            <div className={'PageContent__title'}>
+            <div className={'PageContent__customTitle'}>
                 <h1 id='pageTitle'>Custom Title</h1>
                 <h5 id='pageTitle'>
                     This line can be a description for the title.
