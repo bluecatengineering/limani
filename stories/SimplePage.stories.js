@@ -148,21 +148,65 @@ export const Normal = {
         pageTitle: 'Page Title',
         appTitle: 'App Title',
         onLanguageChange: null,
+        children: (
+            <div style={{ height: 'auto' }}>
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec hendrerit rutrum orci, in varius lacus semper in.
+                    Donec facilisis imperdiet risus, suscipit ultrices dui
+                    scelerisque ut. Suspendisse nec urna felis. Etiam libero
+                    tellus, pharetra nec dapibus sed, dignissim ut lectus.
+                    Vestibulum ante ipsum primis in faucibus orci luctus et
+                    ultrices posuere cubilia curae;
+                </div>
+                <br />
+                <div style={{ fontSize: '12px' }}>
+                    Nunc at efficitur ligula, id sollicitudin enim. Proin tempus
+                    odio blandit, mollis leo non, suscipit urna. Nulla rutrum ex
+                    eu aliquet ullamcorper. Aliquam sollicitudin, tortor ac
+                    faucibus ullamcorper, urna arcu tincidunt diam, a vestibulum
+                    dui quam ac urna.
+                </div>
+            </div>
+        ),
     },
 };
 
 export const CustomTitle = {
     args: {
         className: 'TestSimplePage',
-        pageTitle: 'Page Title',
         appTitle: 'App Title',
-        titleComponent: (
-            <div className={'PageContent__customTitle'}>
-                <h1 id='pageTitle'>Custom Title</h1>
-                <h5 id='pageTitle'>
-                    This line can be a description for the title.
-                </h5>
-            </div>
+        noPadding: true,
+        children: (
+            <>
+                <div className={'PageContent__customTitle'}>
+                    <h1 id='pageTitle'>Custom Title</h1>
+                    <div id='pageTitle' style={{ fontSize: '14px' }}>
+                        Do not pass the value of `pageTitle` to the SimplePage.
+                        Create your own custom title inside the children
+                        component.
+                    </div>
+                </div>
+                <div style={{ height: 'auto', padding: '16px' }}>
+                    <div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Donec hendrerit rutrum orci, in varius lacus semper in.
+                        Donec facilisis imperdiet risus, suscipit ultrices dui
+                        scelerisque ut. Suspendisse nec urna felis. Etiam libero
+                        tellus, pharetra nec dapibus sed, dignissim ut lectus.
+                        Vestibulum ante ipsum primis in faucibus orci luctus et
+                        ultrices posuere cubilia curae;
+                    </div>
+                    <br />
+                    <div style={{ fontSize: '12px' }}>
+                        Nunc at efficitur ligula, id sollicitudin enim. Proin
+                        tempus odio blandit, mollis leo non, suscipit urna.
+                        Nulla rutrum ex eu aliquet ullamcorper. Aliquam
+                        sollicitudin, tortor ac faucibus ullamcorper, urna arcu
+                        tincidunt diam, a vestibulum dui quam ac urna.
+                    </div>
+                </div>
+            </>
         ),
         onLanguageChange: null,
     },

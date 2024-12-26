@@ -27,10 +27,14 @@ const PageContent = ({
     className,
     pageTitle,
     appTitle = 'BlueCat Gateway',
-    titleComponent,
+    noPadding,
     children,
 }) => {
-    const classNames = className ? ['PageContent', className] : ['PageContent'];
+    const classNames = [
+        'PageContent',
+        noPadding && 'PageContent--noPadding',
+        className,
+    ].filter(Boolean);
     const windowTitle = [appTitle, pageTitle].filter(Boolean).join(' - ');
 
     useEffect(() => {
@@ -40,9 +44,7 @@ const PageContent = ({
 
     return (
         <div className={classNames.join(' ')}>
-            {titleComponent ? (
-                titleComponent
-            ) : pageTitle ? (
+            {pageTitle ? (
                 <div className={'PageContent__title'}>
                     <h1 id='pageTitle'>{pageTitle}</h1>
                 </div>
@@ -61,9 +63,8 @@ PageContent.propTypes = {
     appTitle: PropTypes.string,
     /** Child content to be rendered inside the PageContent */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]),
-    // eslint-disable-next-line max-len
-    /** Custom title component to be displayed in the page header instead of the page title */
-    titleComponent: PropTypes.elementType,
+    /** No padding */
+    noPadding: PropTypes.bool,
 };
 
 export default PageContent;
