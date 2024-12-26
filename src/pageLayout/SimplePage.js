@@ -29,7 +29,7 @@ const SimplePage = ({
     appTitle,
     children,
     onLanguageChange,
-    customTitle,
+    titleComponent,
 }) => {
     return (
         <PageToolkit onLanguageChange={onLanguageChange}>
@@ -40,7 +40,7 @@ const SimplePage = ({
                 <PageContent
                     pageTitle={pageTitle}
                     appTitle={appTitle}
-                    customTitle={customTitle}>
+                    titleComponent={titleComponent}>
                     {children}
                 </PageContent>
             </PageBody>
@@ -60,7 +60,7 @@ SimplePage.propTypes = {
     onLanguageChange: PropTypes.func,
     // eslint-disable-next-line max-len
     /** Custom title component to be displayed in the page header instead of the page title */
-    customTitle: PropTypes.elementType,
+    titleComponent: PropTypes.elementType,
 };
 
 export default SimplePage;

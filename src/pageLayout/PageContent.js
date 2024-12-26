@@ -61,6 +61,9 @@ PageContent.propTypes = {
     appTitle: PropTypes.string,
     /** Child content to be rendered inside the PageContent */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]),
+    // eslint-disable-next-line max-len
+    /** Custom title component to be displayed in the page header instead of the page title */
+    titleComponent: PropTypes.elementType,
 };
 
 export default PageContent;
