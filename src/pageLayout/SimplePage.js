@@ -29,7 +29,7 @@ const SimplePage = ({
     appTitle,
     children,
     onLanguageChange,
-    titleComponent,
+    customTitle,
 }) => {
     return (
         <PageToolkit onLanguageChange={onLanguageChange}>
@@ -40,7 +40,7 @@ const SimplePage = ({
                 <PageContent
                     pageTitle={pageTitle}
                     appTitle={appTitle}
-                    titleComponent={titleComponent}>
+                    customTitle={customTitle}>
                     {children}
                 </PageContent>
             </PageBody>
@@ -58,6 +58,9 @@ SimplePage.propTypes = {
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]),
     /** Function to call once the language for the UI is known/changed */
     onLanguageChange: PropTypes.func,
+    // eslint-disable-next-line max-len
+    /** Custom title component to be displayed in the page header instead of the page title */
+    customTitle: PropTypes.elementType,
 };
 
 export default SimplePage;
