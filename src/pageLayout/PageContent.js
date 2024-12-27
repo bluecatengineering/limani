@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2024 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21,42 +21,35 @@ SOFTWARE.
 */
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import buildBreadcrumb from '../functions/buildBreadcrumb';
 import './PageContent.less';
 
-const PageContent = ({ className, pageTitle, appTitle, children }) => {
-    let windowTitle;
-    if (appTitle === undefined) {
-        appTitle = 'BlueCat Gateway';
-    }
-
-    if (pageTitle && appTitle) {
-        windowTitle = `${appTitle} - ${pageTitle}`;
-    } else if (!pageTitle && appTitle) {
-        windowTitle = `${appTitle}`;
-    } else if (!appTitle && pageTitle) {
-        windowTitle = `${pageTitle}`;
-    }
+const PageContent = ({
+    className,
+    pageTitle,
+    appTitle = 'BlueCat Gateway',
+    noPadding,
+    children,
+}) => {
+    const classNames = [
+        'PageContent',
+        noPadding && 'PageContent--noPadding',
+        className,
+    ].filter(Boolean);
+    const windowTitle = [appTitle, pageTitle].filter(Boolean).join(' - ');
 
     useEffect(() => {
         // eslint-disable-next-line max-len
         windowTitle && (document.title = windowTitle); //`BlueCat Gateway - ${title}`
     }, [windowTitle]);
 
-    const classNames = ['PageContent'];
-    if (className) {
-        classNames.push(className);
-    }
-
     return (
         <div className={classNames.join(' ')}>
             {pageTitle ? (
-                <>
-                    {buildBreadcrumb(pageTitle)}
+                <div className={'PageContent__title'}>
                     <h1 id='pageTitle'>{pageTitle}</h1>
-                </>
+                </div>
             ) : null}
-            {children}
+            <div className={'PageContent__content'}>{children}</div>
         </div>
     );
 };
@@ -70,6 +63,8 @@ PageContent.propTypes = {
     appTitle: PropTypes.string,
     /** Child content to be rendered inside the PageContent */
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]),
+    /** No padding */
+    noPadding: PropTypes.bool,
 };
 
 export default PageContent;
