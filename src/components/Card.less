@@ -24,14 +24,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 360px;
-    height: 176px;
+    height: 174px;
     padding: @sp-16;
     text-decoration: none;
     background-color: var(--layer);
 
     &__title {
-        @body-compact-01();
+        @heading-01();
         line-height: @sp-32;
         width: 184px;
         text-align: left;
@@ -41,13 +40,13 @@
 
     &__description {
         display: -webkit-box;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         @body-01();
-        max-width: 235px;
         text-align: left;
         text-overflow: ellipsis;
         overflow: hidden;
+        margin-bottom: @sp-16;
     }
 
     &__arrowRight {
