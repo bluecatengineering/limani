@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2024 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -41,12 +41,12 @@ const FormButtons = ({
     return (
         <div className={`FormButtons${className ? ' ' + className : ''}`}>
             {childrenPosition === 'start' ? children : null}
+            <FormSubmit id='formSubmit' text={saveButtonLabel} />
             <Button
                 id='formCancel'
                 text={cancelButtonLabel}
                 onClick={() => window.location.reload()}
             />
-            <FormSubmit id='formSubmit' text={saveButtonLabel} />
             {childrenPosition === 'end' ? children : null}
         </div>
     );
