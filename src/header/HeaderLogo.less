@@ -1,4 +1,4 @@
-// Copyright 2023 BlueCat Networks Inc.
+// Copyright 2023-2024 BlueCat Networks Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,11 +21,22 @@
 
 .HeaderLogo {
     &__logo {
+        display: flex;
         justify-self: center;
+        align-items: center;
+        text-decoration: none;
+        color: var(--text-primary);
+        font-size: 14px;
 
         > img {
-            height: @sp-24;
+            max-height: 20px;
+            max-width: 20px;
             object-fit: contain;
+            margin-right: @sp-08;
+        }
+
+        &__name {
+            color: var(--text-primary);
         }
     }
 }

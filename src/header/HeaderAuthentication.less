@@ -1,4 +1,4 @@
-// Copyright 2023 BlueCat Networks Inc.
+// Copyright 2023-2024 BlueCat Networks Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,25 +18,43 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 @import '~@bluecateng/pelagos/less/spacing';
+@import '~@bluecateng/pelagos/less/colors';
 
 .HeaderAuthentication {
+    height: @sp-48;
+    width: @sp-48;
+
     &__authentication {
         & span {
-            color: var(--text-secondary);
+            color: var(--tag-color-teal);
             display: flex;
             flex-direction: row;
             align-items: center;
             font-size: 14px;
             text-align: left;
-            margin: 0 @sp-08 0 0;
 
             a {
+                text-decoration: none;
+                color: var(--tag-color-teal);
+
                 padding: 0 0 0 @sp-02;
                 max-width: @sp-160;
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
             }
+        }
+
+        &__linkIcon {
+            color: var(--icon-interactive);
+        }
+
+        & > span::before {
+            content: '';
+            margin-left: @sp-08;
+            margin-right: @sp-08;
+            height: 100%;
+            border: 1px solid var(--border-subtle);
         }
     }
 }
