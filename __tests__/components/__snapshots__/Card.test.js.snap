@@ -4,76 +4,88 @@ exports[`Card Rendering Render the Card component with default props 1`] = `
 <Layer
   className="Card"
 >
-  <div>
-    <span
-      className="Card__title"
-    >
-      Add Host record
-    </span>
-  </div>
-  <div
-    className="Card__iconContainer"
+  <a
+    className="Card__link"
   >
-    <ArrowRight
-      className="Card__arrowRight"
-      size={20}
-    />
-  </div>
+    <div>
+      <span
+        className="Card__title"
+      >
+        Add Host record
+      </span>
+    </div>
+    <div
+      className="Card__iconContainer"
+    >
+      <ArrowRight
+        className="Card__arrowRight"
+        size={20}
+      />
+    </div>
+  </a>
 </Layer>
 `;
 
 exports[`Card Rendering Render the Card component with props 1`] = `
 <Layer
   className="Card test_cn"
-  href="#"
 >
-  <div>
-    <span
-      className="Card__title"
-    >
-      Add Host Record
-    </span>
-    <span
-      className="Card__description"
-    >
-      Add a host record on BAM
-    </span>
-  </div>
-  <div
-    className="Card__iconContainer"
+  <a
+    className="Card__link"
+    href="#"
   >
-    <ArrowRight
-      className="Card__arrowRight"
-      size={20}
-    />
-  </div>
+    <div>
+      <span
+        className="Card__title"
+      >
+        Add Host Record
+      </span>
+      <span
+        className="Card__description"
+      >
+        Add a host record on BAM
+      </span>
+    </div>
+    <div
+      className="Card__iconContainer"
+    >
+      <ArrowRight
+        className="Card__arrowRight"
+        size={20}
+      />
+    </div>
+  </a>
 </Layer>
 `;
 
 exports[`Card Rendering Render the Card component with pseudo translated text 1`] = `
 <Layer
   className="Card test_cn"
-  href="#"
 >
-  <div>
-    <span
-      className="Card__title"
-    >
-      Add Host Record
-    </span>
-    <span
-      className="Card__description"
-    >
-      Add a host record on BAM
-    </span>
-  </div>
-  <div
-    className="Card__iconContainer"
+  <a
+    className="Card__link"
+    href="#"
   >
-    <ArrowRight
-      className="Card__arrowRight"
-      size={20}
-    />
-  </div>
+    <div>
+      <span
+        className="Card__title"
+      >
+        Add Host Record
+      </span>
+      <span
+        className="Card__description"
+      >
+        Add a host record on BAM
+      </span>
+    </div>
+    <div
+      className="Card__iconContainer"
+    >
+      <ArrowRight
+        className="Card__arrowRight"
+        size={20}
+      />
+    </div>
+  </a>
 </Layer>
 `;
