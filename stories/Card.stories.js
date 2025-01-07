@@ -38,6 +38,5 @@ export const Normal = {
         title: 'Add user',
         href: '#',
         description: 'Add an user to the application',
-        path: ['parent', 'API'],
     },
 };
