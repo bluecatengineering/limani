@@ -31,18 +31,18 @@ import './Card.less';
 
 const Card = ({ title, href, description, className }) => {
     return (
-        <Layer
-            className={`Card${className ? ' ' + className : ''}`}
-            href={href}>
-            <div>
-                <span className='Card__title'>{title}</span>
-                {description && (
-                    <span className='Card__description'>{description}</span>
-                )}
-            </div>
-            <div className='Card__iconContainer'>
-                <ArrowRight size={20} className='Card__arrowRight' />
-            </div>
+        <Layer className={`Card${className ? ' ' + className : ''}`}>
+            <a className='Card__link' href={href}>
+                <div>
+                    <span className='Card__title'>{title}</span>
+                    {description && (
+                        <span className='Card__description'>{description}</span>
+                    )}
+                </div>
+                <div className='Card__iconContainer'>
+                    <ArrowRight size={20} className='Card__arrowRight' />
+                </div>
+            </a>
         </Layer>
     );
 };

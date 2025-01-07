@@ -25,8 +25,11 @@
     flex-direction: column;
     justify-content: space-between;
     padding: @sp-16;
-    text-decoration: none;
     background-color: var(--layer);
+
+    &__link {
+        text-decoration: none;
+    }
 
     &__title {
         @heading-01();
@@ -35,6 +38,7 @@
         text-align: left;
         text-decoration: none;
         margin-bottom: @sp-08;
+        color: var(--text-primary);
     }
 
     &__description {
@@ -46,6 +50,7 @@
         text-overflow: ellipsis;
         overflow: hidden;
         margin-bottom: @sp-16;
+        color: var(--text-primary);
     }
 
     &__arrowRight {
