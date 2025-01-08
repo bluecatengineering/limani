@@ -21,14 +21,15 @@
 @import '~@bluecateng/pelagos/less/fonts';
 
 .Card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     padding: @sp-16;
     background-color: var(--layer);
 
     &__link {
         text-decoration: none;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     &__title {
