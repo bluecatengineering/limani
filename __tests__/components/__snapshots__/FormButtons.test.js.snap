@@ -6,7 +6,7 @@ exports[`FormButtons Rendering Render the FormButtons component with default pro
 >
   <FormSubmit
     id="formSubmit"
-    text="Save"
+    text="Save changes"
   />
   <Button
     id="formCancel"
