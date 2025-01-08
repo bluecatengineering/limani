@@ -85,8 +85,12 @@ msgid "Path"
 msgstr "Pââth"
 
 #: efc0
-msgid "Save"
-msgstr "Sââvéé"
+#~ msgid "Save"
+#~ msgstr "Sââvéé"
+
+#: 1793
+msgid "Save changes"
+msgstr "Sââvéé ççhâângéés"
 
 #: bc07
 msgid "System"

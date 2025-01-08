@@ -33,7 +33,7 @@ import './FormButtons.less';
 
 const FormButtons = ({
     cancelButtonLabel = t`Cancel`,
-    saveButtonLabel = t`Save`,
+    saveButtonLabel = t`Save changes`,
     childrenPosition = 'end',
     children,
     className,
