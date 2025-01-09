@@ -24,13 +24,19 @@ import { Card } from '/src';
 export default {
     title: 'Components/Card',
     component: Card,
+    decorators: [
+        (Story) => (
+            <div style={{ maxWidth: '350px', maxHeight: '350px' }}>
+                <Story />
+            </div>
+        ),
+    ],
 };
 
 export const Normal = {
     args: {
         title: 'Add user',
         href: '#',
-        description: 'API to add an Object',
-        path: ['parent', 'API'],
+        description: 'Add an user to the application',
     },
 };

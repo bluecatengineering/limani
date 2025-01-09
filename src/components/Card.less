@@ -21,63 +21,52 @@
 @import '~@bluecateng/pelagos/less/fonts';
 
 .Card {
-    display: flex;
-    flex-direction: column;
-    gap: @sp-08;
-    background-color: var(--layer-01);
-    width: 272px;
-    height: 150px;
     padding: @sp-16;
-    text-decoration: none;
+    background-color: var(--layer);
+
+    &__link {
+        text-decoration: none;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
     &__title {
-        color: var(--link-primary);
-        font-size: @sp-16;
+        @heading-01();
         line-height: @sp-32;
         width: 184px;
         text-align: left;
-        text-decoration: underline;
+        text-decoration: none;
+        margin-bottom: @sp-08;
+        color: var(--text-primary);
     }
 
     &__description {
         display: -webkit-box;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
-        color: var(--text-placeholder);
-        font-size: @sp-12;
-        line-height: @sp-16;
-        max-width: 235px;
+        @body-01();
         text-align: left;
         text-overflow: ellipsis;
         overflow: hidden;
+        margin-bottom: @sp-16;
+        color: var(--text-primary);
+    }
+
+    &__arrowRight {
+        color: var(--icon-interactive);
+    }
+
+    &__iconContainer {
+        display: flex;
+        align-items: end;
     }
 
     &:hover {
-        background-color: var(--layer-hover-01);
-        outline: 1.5px solid var(--border-interactive);
-        box-shadow: 0 0 5px @sp-02 var(--border-subtle-selected-01);
-        text-decoration: none;
-        .Card__title {
-            color: var(--link-primary-hover);
-        }
+        background-color: var(--layer-hover);
     }
     &:active {
-        background-color: var(--layer-active-01);
-    }
-
-    &__path {
-        display: block;
-        color: var(--text-primary);
-        font-size: @sp-16;
-        line-height: @sp-24;
-        text-align: left;
-    }
-
-    &__pathTitle {
-        display: block;
-        color: var(--text-secondary);
-        font-size: @sp-12;
-        line-height: @sp-16;
-        text-align: left;
+        background-color: var(--layer-active);
     }
 }

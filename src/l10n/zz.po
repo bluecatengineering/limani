@@ -81,8 +81,8 @@ msgid "Notification"
 msgstr "Nôôtîîfîîççââtîîôôn"
 
 #: 519e
-msgid "Path"
-msgstr "Pââth"
+#~ msgid "Path"
+#~ msgstr "Pââth"
 
 #: efc0
 #~ msgid "Save"
