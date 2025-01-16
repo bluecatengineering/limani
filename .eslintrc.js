@@ -41,7 +41,11 @@ module.exports = {
         '__mocks__/**',
         'jest-helpers/setup-globals.js',
         'dist/**',
+        'storybook-static/**',
     ],
+    'settings': {
+        'react': { 'version': 'detect' },
+    },
     'rules': {
         // enable additional rules
         'indent': ['off'], // prettier

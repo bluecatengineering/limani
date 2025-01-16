@@ -1,4 +1,4 @@
-// Copyright 2023-2024 BlueCat Networks Inc.
+// Copyright 2024 BlueCat Networks Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -17,8 +17,21 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-// eslint-disable-next-line max-len
+@import '~@bluecateng/pelagos/less/spacing';
+@import '~@bluecateng/pelagos/less/utils';
 
-.PageContentShell--leftNavIsOpen--disabled {
-    margin-left: 0 !important;
+.HeaderNotification {
+    height: @sp-40;
+    width: @sp-40;
+    justify-content: center;
+
+    &__button {
+        @icon-button();
+        color: var(--text-secondary);
+
+        &[aria-expanded='true'] {
+            outline: none;
+            background-color: var(--layer-selected);
+        }
+    }
 }

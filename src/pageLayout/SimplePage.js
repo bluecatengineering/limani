@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2024 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,14 +24,23 @@ import { PageToolkit } from '../components';
 import PageBody from './PageBody';
 import PageContent from './PageContent';
 
-const SimplePage = ({ pageTitle, appTitle, children, onLanguageChange }) => {
+const SimplePage = ({
+    pageTitle,
+    appTitle,
+    children,
+    onLanguageChange,
+    noPadding,
+}) => {
     return (
         <PageToolkit onLanguageChange={onLanguageChange}>
             {/* ^- setLanguage of Limani and the workflow */}
 
             <PageBody>
                 {/* ^- render Header */}
-                <PageContent pageTitle={pageTitle} appTitle={appTitle}>
+                <PageContent
+                    pageTitle={pageTitle}
+                    appTitle={appTitle}
+                    noPadding={noPadding}>
                     {children}
                 </PageContent>
             </PageBody>
@@ -49,6 +58,8 @@ SimplePage.propTypes = {
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]),
     /** Function to call once the language for the UI is known/changed */
     onLanguageChange: PropTypes.func,
+    /** No padding */
+    noPadding: PropTypes.bool,
 };
 
 export default SimplePage;

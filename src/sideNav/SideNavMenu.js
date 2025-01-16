@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2024 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -47,7 +47,18 @@ const keyForState = (title, parents) => {
     return navPath.join('');
 };
 
-const renderItem = (item, parents, isNavActive) => {
+/* This checks for the /index page link. Without a landing page
+ pathname '/home' and '/' do point to the /index page if no
+ landing page is enabled in Gateway */
+const validateCurrentHomePageLink = (href, landingPageActivated) => {
+    if (href !== '/index' || landingPageActivated) {
+        return false;
+    }
+
+    return ['/', '/home', ''].includes(window.location.pathname);
+};
+
+const renderItem = (item, parents, isNavActive, landingPageActivated) => {
     const classNames = ['SideNavMenu__item--level' + (parents.length + 1)];
 
     if (item.children.length > 0) {
@@ -70,7 +81,10 @@ const renderItem = (item, parents, isNavActive) => {
         return (
             <SideNavLink
                 href={item.href}
-                current={item.href === window.location.pathname}
+                current={
+                    item.href === window.location.pathname ||
+                    validateCurrentHomePageLink(item.href, landingPageActivated)
+                }
                 className={classNames.join(' ')}
                 sideNavActive={true}>
                 {item.title}
@@ -79,8 +93,10 @@ const renderItem = (item, parents, isNavActive) => {
     }
 };
 
-const renderItems = (items, parents, isNavActive) => {
-    return items.map((item) => renderItem(item, parents, isNavActive));
+const renderItems = (items, parents, isNavActive, landingPageActivated) => {
+    return items.map((item) =>
+        renderItem(item, parents, isNavActive, landingPageActivated),
+    );
 };
 
 /**
@@ -95,6 +111,10 @@ const SideNavMenu = ({ className }) => {
     const { data } = usePlatformData();
     const { isExpanded } = useSideNav();
     const links = data?.user?.nav_links ?? [];
+    const homeUrl = data?.user?.home_url;
+    const landingPageActivated = ![null, '', '/', '/home', undefined].includes(
+        homeUrl,
+    );
 
     const [, setOpen] = useState(getStates());
 
@@ -128,8 +148,11 @@ const SideNavMenu = ({ className }) => {
             id='sideNav'
             className={classNames.join(' ')}
             active={isExpanded}
-            onClick={handleClick}>
-            <SideNavItems>{renderItems(links, [], isExpanded)}</SideNavItems>
+            onClick={handleClick}
+            data-layer='1'>
+            <SideNavItems>
+                {renderItems(links, [], isExpanded, landingPageActivated)}
+            </SideNavItems>
         </SideNav>
     ) : null;
 };

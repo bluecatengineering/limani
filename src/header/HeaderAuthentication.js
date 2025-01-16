@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2024 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -48,7 +48,11 @@ const HeaderAuthentication = ({ className }) => {
                         {authenticationAlias ? (
                             <>
                                 {authenticationService} &nbsp;
-                                <Link id='link-icon' />
+                                <Link
+                                    /* eslint-disable-next-line max-len */
+                                    className='HeaderAuthentication__authentication__linkIcon'
+                                    id='link-icon'
+                                />
                                 &nbsp;
                                 <a
                                     href={authenticationLink}

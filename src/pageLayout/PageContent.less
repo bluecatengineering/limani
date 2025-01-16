@@ -1,4 +1,4 @@
-// Copyright 2023 BlueCat Networks Inc.
+// Copyright 2023-2024 BlueCat Networks Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,10 +24,17 @@
     flex-direction: column;
     flex: 1;
     overflow: hidden;
+    padding: @sp-16;
 
-    padding: @sp-24 @sp-04 @sp-24 @sp-40;
-}
+    &__title {
+        padding: @sp-16;
+    }
 
-.PageContent--noPadding {
-    padding: 0;
+    &__content {
+        flex: 1;
+    }
+
+    &--noPadding {
+        padding: 0;
+    }
 }

@@ -14,9 +14,11 @@ exports[`HeaderAccountMenu Rendering Render HeaderAccountMenu component with def
     onKeyDown={[Function]}
     type="button"
   >
-    <HeaderIcon
+    <AppShellIcon
+      hideTooltip={false}
       icon={[Function]}
-      label="Account"
+      tooltipPlacement="bottom"
+      tooltipText="Account"
     />
   </button>
 </div>
@@ -36,9 +38,11 @@ exports[`HeaderAccountMenu Rendering Render HeaderAccountMenu component with pro
     onKeyDown={[Function]}
     type="button"
   >
-    <HeaderIcon
+    <AppShellIcon
+      hideTooltip={false}
       icon={[Function]}
-      label="Account"
+      tooltipPlacement="bottom"
+      tooltipText="Account"
     />
   </button>
 </div>
@@ -58,9 +62,11 @@ exports[`HeaderAccountMenu Rendering Render HeaderAccountMenu component with pse
     onKeyDown={[Function]}
     type="button"
   >
-    <HeaderIcon
+    <AppShellIcon
+      hideTooltip={false}
       icon={[Function]}
-      label="ÂÂççççôôùùnt"
+      tooltipPlacement="bottom"
+      tooltipText="ÂÂççççôôùùnt"
     />
   </button>
 </div>

@@ -34,10 +34,8 @@ exports[`SidePanel Rendering Render SidePanel component when expanded and show i
           icon={[Function]}
           id="closeSidePanelBtn"
           onClick={[Function]}
-          size="medium"
           tooltipPlacement="left"
           tooltipText="Close"
-          type="ghost"
         />
       </div>
       <div
@@ -88,10 +86,8 @@ exports[`SidePanel Rendering Render SidePanel component when not expanded 1`] = 
           icon={[Function]}
           id="closeSidePanelBtn"
           onClick={[Function]}
-          size="medium"
           tooltipPlacement="left"
           tooltipText="Close"
-          type="ghost"
         />
       </div>
       <div
@@ -140,10 +136,8 @@ exports[`SidePanel Rendering Render SidePanel component with children as a prop 
           icon={[Function]}
           id="closeSidePanelBtn"
           onClick={[Function]}
-          size="medium"
           tooltipPlacement="left"
           tooltipText="Close"
-          type="ghost"
         />
       </div>
       <div
