@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.2.0](https://github.com/bluecatengineering/limani/compare/v1.1.0...v1.2.0) (2025-01-17)
+
+### Features
+
+-   standalone gateway authentication (ENG-56797) ([e92f674](https://github.com/bluecatengineering/limani/commit/e92f6748cd42e346c5162ecddd746b23c0730771))
+
 ## [1.1.0](https://github.com/bluecatengineering/limani/compare/v1.0.0...v1.1.0) (2024-06-21)
 
 ### Features
