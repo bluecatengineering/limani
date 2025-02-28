@@ -91,9 +91,9 @@ export const doFetch = (method, path, data, contentType) => {
                                 body.status,
                                 body.code,
                                 body.details,
-                                body.reason,
                                 text,
                                 response,
+                                body.reason,
                             );
                         } else {
                             throw new FetchError(
