@@ -22,13 +22,22 @@ SOFTWARE.
 import { t } from '@bluecateng/l10n.macro';
 
 class FetchError extends Error {
-    constructor(message, status, code, details, responseText, response) {
+    constructor(
+        message,
+        status,
+        code,
+        details,
+        responseText,
+        response,
+        reason,
+    ) {
         super(message);
         this.status = status;
         this.code = code;
         this.details = details;
         this.responseText = responseText;
         this.response = response;
+        this.reason = reason;
     }
 }
 
@@ -60,6 +69,7 @@ export const doFetch = (method, path, data, contentType) => {
                 'status': null,
                 'code': null,
                 'details': null,
+                'reason': null,
             });
         })
         .then((response) => {
@@ -73,7 +83,8 @@ export const doFetch = (method, path, data, contentType) => {
                             'message' in body &&
                             'status' in body &&
                             'code' in body &&
-                            'details' in body
+                            'details' in body &&
+                            'reason' in body
                         ) {
                             throw new FetchError(
                                 body.message,
@@ -82,6 +93,7 @@ export const doFetch = (method, path, data, contentType) => {
                                 body.details,
                                 text,
                                 response,
+                                body.reason,
                             );
                         } else {
                             throw new FetchError(
@@ -92,6 +104,7 @@ export const doFetch = (method, path, data, contentType) => {
                                 null,
                                 text,
                                 response,
+                                null,
                             );
                         }
                     } else {
@@ -102,6 +115,7 @@ export const doFetch = (method, path, data, contentType) => {
                             null,
                             text,
                             response,
+                            null,
                         );
                     }
                 }

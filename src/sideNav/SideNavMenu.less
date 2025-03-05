@@ -25,11 +25,13 @@
 .SideNavMenu__nav {
     position: fixed;
     height: 100%;
-    width: 256px;
+    width: 264px;
     background-color: var(--layer);
+    border-right: 1px solid var(--border-subtle);
 
-    .SideNav__link {
-        @font-14-400(); // Override pelagos' decision.
+    .SideNav__link,
+    .SideNav__submenu {
+        height: @sp-40; // Override pelagos' decision.
     }
 
     @levels: {
@@ -44,6 +46,7 @@
             padding-left: @value;
         }
     })
+
 
     // Allow links one level deeper than groups.
     .SideNavMenu__item--level6 > .SideNav__link {

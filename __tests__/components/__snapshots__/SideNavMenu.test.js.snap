@@ -8,6 +8,7 @@ exports[`SideNavMenu Rendering Render SideNavMenu component with menu open 1`] =
 <SideNav
   active={true}
   className="SideNavMenu__nav"
+  data-layer="1"
   id="sideNav"
   onClick={[Function]}
 >
@@ -44,6 +45,7 @@ exports[`SideNavMenu Rendering Render SideNavMenu component with menu open and a
 <SideNav
   active={true}
   className="SideNavMenu__nav"
+  data-layer="1"
   id="sideNav"
   onClick={[Function]}
 >

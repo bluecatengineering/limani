@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderNotification renders HeaderNotification component with className props 1`] = `
+<div
+  className="HeaderNotification varClassName"
+>
+  <button
+    className="HeaderNotification__button"
+    id="notificationButton"
+    type="button"
+  >
+    <AppShellIcon
+      icon={[Function]}
+      tooltipPlacement="bottom"
+      tooltipText="Notification"
+    />
+  </button>
+</div>
+`;
+
+exports[`HeaderNotification renders HeaderNotification component with default props 1`] = `
+<div
+  className="HeaderNotification"
+>
+  <button
+    className="HeaderNotification__button"
+    id="notificationButton"
+    type="button"
+  >
+    <AppShellIcon
+      icon={[Function]}
+      tooltipPlacement="bottom"
+      tooltipText="Notification"
+    />
+  </button>
+</div>
+`;
