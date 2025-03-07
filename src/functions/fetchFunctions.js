@@ -83,8 +83,7 @@ export const doFetch = (method, path, data, contentType) => {
                             'message' in body &&
                             'status' in body &&
                             'code' in body &&
-                            'details' in body &&
-                            'reason' in body
+                            'details' in body
                         ) {
                             throw new FetchError(
                                 body.message,
@@ -93,7 +92,7 @@ export const doFetch = (method, path, data, contentType) => {
                                 body.details,
                                 text,
                                 response,
-                                body.reason,
+                                body?.reason,
                             );
                         } else {
                             throw new FetchError(
