@@ -10,6 +10,7 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
         BAM
           
         <Link
+          className="HeaderAuthentication__authentication__linkIcon"
           id="link-icon"
         />
          
@@ -37,6 +38,7 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
         BAM
           
         <Link
+          className="HeaderAuthentication__authentication__linkIcon"
           id="link-icon"
         />
          
@@ -64,6 +66,7 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
         Micetro
           
         <Link
+          className="HeaderAuthentication__authentication__linkIcon"
           id="link-icon"
         />
          
