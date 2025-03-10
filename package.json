@@ -66,7 +66,7 @@
         "@bluecateng/l10n-jest": "^0.3.0",
         "@bluecateng/l10n-loader": "^0.1.5",
         "@bluecateng/l10n.macro": "^0.1.6",
-        "@bluecateng/stylelint-config": "^4.0.1",
+        "@bluecateng/stylelint-config": "^6.0.1",
         "@commitlint/cli": "^17.0.2",
         "@storybook/addon-a11y": "^7.0.7",
         "@storybook/addon-essentials": "^7.0.7",
@@ -91,7 +91,7 @@
         "react-dom": "^18.2.0",
         "storybook": "^7.0.7",
         "style-loader": "^3.3.1",
-        "stylelint": "^14.9.1",
+        "stylelint": "^16.14.1",
         "stylelint-config-prettier": "^9.0.3",
         "stylelint-config-standard": "^26.0.0"
     },
