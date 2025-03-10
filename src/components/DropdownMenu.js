@@ -61,6 +61,8 @@ const DropdownMenu = forwardRef(
             showErrorMessage,
             customValues,
             requestUrl,
+            size = 'medium',
+            type = 'ghost',
             ...props
         },
         ref,
@@ -99,6 +101,8 @@ const DropdownMenu = forwardRef(
                 <IconButton
                     {...buttonProps}
                     {...props}
+                    size={size}
+                    type={type}
                     aria-controls={expanded ? menuId : null}
                     aria-expanded={expanded}
                     aria-haspopup='true'
@@ -172,11 +176,6 @@ DropdownMenu.propTypes = {
             disable: PropTypes.bool,
         }),
     ),
-};
-
-DropdownMenu.defaultProps = {
-    size: 'medium',
-    type: 'ghost',
 };
 
 export default DropdownMenu;

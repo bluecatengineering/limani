@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2024 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -65,12 +65,12 @@ const platformMockValue = {
                 'href': null,
                 'children': [
                     {
-                        'title': 'Workflow Management',
+                        'title': 'Workflow management',
                         'href': '/admin/workflow_export_import',
                         'children': [],
                     },
                     {
-                        'title': 'Create Workflow',
+                        'title': 'Create workflow',
                         'href': '/create_workflow/page',
                         'children': [],
                     },
@@ -99,23 +99,14 @@ export default {
             }),
         ],
     },
-};
-
-//description
-/**
- * SimplePage is a component to display a page template containing the header,
- * navbar, and page contents. <br/>
- * It also handles theme changes, based on its value from Platform Data
- * for UI theme. <br/>
- * Note that for theme change feature to work as expected,
- * it requires Gateway >= 23.3.0 <br/>
- * This component is intended to nest a page's contents inside of the
- * `children` property.
- */
-export const Normal = {
+    decorators: [
+        (Story) => (
+            <div style={{ height: '380px' }}>
+                <Story />
+            </div>
+        ),
+    ],
     args: {
-        pageTitle: 'Page Title',
-        appTitle: 'App Title',
         children: (
             <div style={{ height: 'auto' }}>
                 <div>
@@ -137,13 +128,86 @@ export const Normal = {
                 </div>
             </div>
         ),
-        onLanguageChange: null,
     },
-    decorators: [
-        (Story) => (
-            <div style={{ height: '250px' }}>
-                <Story />
+};
+
+//description
+/**
+ * SimplePage is a component to display a page template containing the header,
+ * navbar, and page contents. <br/>
+ * It also handles theme changes, based on its value from Platform Data
+ * for UI theme. <br/>
+ * Note that for theme change feature to work as expected,
+ * it requires Gateway >= 23.3.0 <br/>
+ * This component is intended to nest a page's contents inside of the
+ * `children` property.
+ */
+export const Normal = {
+    args: {
+        className: 'TestSimplePage',
+        pageTitle: 'Page Title',
+        appTitle: 'App Title',
+        onLanguageChange: null,
+        children: (
+            <div style={{ height: 'auto' }}>
+                <div>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec hendrerit rutrum orci, in varius lacus semper in.
+                    Donec facilisis imperdiet risus, suscipit ultrices dui
+                    scelerisque ut. Suspendisse nec urna felis. Etiam libero
+                    tellus, pharetra nec dapibus sed, dignissim ut lectus.
+                    Vestibulum ante ipsum primis in faucibus orci luctus et
+                    ultrices posuere cubilia curae;
+                </div>
+                <br />
+                <div style={{ fontSize: '12px' }}>
+                    Nunc at efficitur ligula, id sollicitudin enim. Proin tempus
+                    odio blandit, mollis leo non, suscipit urna. Nulla rutrum ex
+                    eu aliquet ullamcorper. Aliquam sollicitudin, tortor ac
+                    faucibus ullamcorper, urna arcu tincidunt diam, a vestibulum
+                    dui quam ac urna.
+                </div>
             </div>
         ),
-    ],
+    },
+};
+
+export const CustomTitle = {
+    args: {
+        className: 'TestSimplePage',
+        appTitle: 'App Title',
+        noPadding: true,
+        children: (
+            <>
+                <div className={'PageContent__customTitle'}>
+                    <h1 id='pageTitle'>Custom Title</h1>
+                    <div id='pageTitle' style={{ fontSize: '14px' }}>
+                        Do not pass the value of `pageTitle` to the SimplePage.
+                        Create your own custom title inside the children
+                        component.
+                    </div>
+                </div>
+                <div style={{ height: 'auto', padding: '16px' }}>
+                    <div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Donec hendrerit rutrum orci, in varius lacus semper in.
+                        Donec facilisis imperdiet risus, suscipit ultrices dui
+                        scelerisque ut. Suspendisse nec urna felis. Etiam libero
+                        tellus, pharetra nec dapibus sed, dignissim ut lectus.
+                        Vestibulum ante ipsum primis in faucibus orci luctus et
+                        ultrices posuere cubilia curae;
+                    </div>
+                    <br />
+                    <div style={{ fontSize: '12px' }}>
+                        Nunc at efficitur ligula, id sollicitudin enim. Proin
+                        tempus odio blandit, mollis leo non, suscipit urna.
+                        Nulla rutrum ex eu aliquet ullamcorper. Aliquam
+                        sollicitudin, tortor ac faucibus ullamcorper, urna arcu
+                        tincidunt diam, a vestibulum dui quam ac urna.
+                    </div>
+                </div>
+            </>
+        ),
+        onLanguageChange: null,
+    },
 };

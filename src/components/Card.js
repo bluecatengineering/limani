@@ -20,7 +20,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 import PropTypes from 'prop-types';
-import { t } from '@bluecateng/l10n.macro';
+import { Layer } from '@bluecateng/pelagos';
+import { ArrowRight } from '@carbon/icons-react';
 import './Card.less';
 
 /**
@@ -28,32 +29,21 @@ import './Card.less';
  * with some data to fill it up with.
  */
 
-const Card = ({ title, href, description, path, className }) => {
-    function getFullPath() {
-        let fullPath = '';
-        path.forEach((pathSection, index) => {
-            if (index === path.length - 1) {
-                fullPath = fullPath.concat(String(pathSection));
-            } else {
-                fullPath = fullPath.concat(String(pathSection), '/');
-            }
-        });
-        return fullPath;
-    }
-
+const Card = ({ title, href, description, className }) => {
     return (
-        <a className={`Card${className ? ' ' + className : ''}`} href={href}>
-            <span className='Card__title'>{title}</span>
-            {description ? (
-                <span className='Card__description'>{description}</span>
-            ) : null}
-            {path ? (
-                <span>
-                    <span className='Card__pathTitle'> {t`Path`} </span>
-                    <span className='Card__path'>{getFullPath()}</span>
-                </span>
-            ) : null}
-        </a>
+        <Layer className={`Card${className ? ' ' + className : ''}`}>
+            <a className='Card__link' href={href}>
+                <div>
+                    <span className='Card__title'>{title}</span>
+                    {description && (
+                        <span className='Card__description'>{description}</span>
+                    )}
+                </div>
+                <div className='Card__iconContainer'>
+                    <ArrowRight size={20} className='Card__arrowRight' />
+                </div>
+            </a>
+        </Layer>
     );
 };
 
@@ -66,9 +56,6 @@ Card.propTypes = {
 
     /** Description inside in the card */
     description: PropTypes.string,
-
-    /** Group to which the card belongs to */
-    path: PropTypes.arrayOf(PropTypes.string),
 
     /** The component class name(s). */
     className: PropTypes.string,

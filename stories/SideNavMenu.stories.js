@@ -34,12 +34,12 @@ const mockDataValue = {
                     'href': null,
                     'children': [
                         {
-                            'title': 'Workflow Management',
+                            'title': 'Workflow management',
                             'href': '/admin/workflow_export_import',
                             'children': [],
                         },
                         {
-                            'title': 'Create Workflow',
+                            'title': 'Create workflow',
                             'href': '/create_workflow/page',
                             'children': [],
                         },

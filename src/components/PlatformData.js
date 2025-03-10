@@ -65,6 +65,4 @@ PlatformData.propTypes = {
     children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]),
 };
 
-PlatformData.defaultProps = {};
-
 export default PlatformData;
