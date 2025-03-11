@@ -92,7 +92,6 @@
         "storybook": "^7.0.7",
         "style-loader": "^3.3.1",
         "stylelint": "^16.15.0",
-        "stylelint-config-prettier": "^9.0.5",
         "stylelint-config-standard": "^37.0.0"
     },
     "bc-l10n": {
