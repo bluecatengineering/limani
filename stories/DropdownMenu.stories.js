@@ -19,8 +19,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+import { http, HttpResponse } from 'msw';
 import DropdownMenu from '../src/components/DropdownMenu';
-import { rest } from 'msw';
 
 const dropdownMenuMockValue = {
     /* eslint-disable camelcase, max-len */
@@ -77,14 +77,16 @@ export default {
     parameters: {
         msw: {
             handlers: [
-                rest.get('/-/v3/dropdown_menu/data', (_req, res, ctx) => {
-                    return res(ctx.json(dropdownMenuMockValue));
+                http.get('/-/v3/dropdown_menu/data', () => {
+                    return HttpResponse.json(dropdownMenuMockValue);
                 }),
-                rest.get('/-/custom_url', (_req, res, ctx) => {
-                    return res(ctx.json(dropdownMenuMockValue2));
+                http.get('/-/custom_url', () => {
+                    return HttpResponse.json(dropdownMenuMockValue2);
                 }),
-                rest.get('/-/failed_request', (_req, res, ctx) => {
-                    return res(ctx.status(403));
+                http.get('/-/failed_request', () => {
+                    return new HttpResponse(null, {
+                        status: 403,
+                    });
                 }),
             ],
         },
