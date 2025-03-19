@@ -20,8 +20,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { http, HttpResponse } from 'msw';
 import { SimplePage } from '../src/pageLayout';
-import { rest } from 'msw';
 import './SimplePage.stories.less';
 
 const platformMockValue = {
@@ -94,8 +94,8 @@ export default {
     component: SimplePage,
     parameters: {
         msw: [
-            rest.get('/-/v3/navbar/data', (_req, res, ctx) => {
-                return res(ctx.json(platformMockValue));
+            http.get('/-/v3/navbar/data', () => {
+                return HttpResponse.json(platformMockValue);
             }),
         ],
     },
