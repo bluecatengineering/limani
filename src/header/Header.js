@@ -32,7 +32,6 @@ import usePlatformData from '../hooks/usePlatformData';
 import SideNavMenuSwitcher from '../sideNav/SideNavMenuSwitcher';
 
 import './Header.less';
-import HeaderNotification from './HeaderNotification';
 
 /**
  * Header component presents the top navbar and the side navbar.
@@ -68,7 +67,6 @@ const Header = ({ className }) => {
                             </div>
                         </div>
                         <div className='Header__rightSideMenu'>
-                            <HeaderNotification />
                             <HeaderHelpMenu />
                             <HeaderSystemMenu />
                             <HeaderAccountMenu />

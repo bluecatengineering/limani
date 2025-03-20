@@ -23,7 +23,6 @@ exports[`Header Rendering Render Header component with default props 1`] = `
       <div
         className="Header__rightSideMenu"
       >
-        <HeaderNotification />
         <HeaderHelpMenu />
         <HeaderSystemMenu />
         <HeaderAccountMenu />
@@ -57,7 +56,6 @@ exports[`Header Rendering Render Header component with props 1`] = `
       <div
         className="Header__rightSideMenu"
       >
-        <HeaderNotification />
         <HeaderHelpMenu />
         <HeaderSystemMenu />
         <HeaderAccountMenu />

@@ -77,8 +77,8 @@ msgid "Logout"
 msgstr "Lôôgôôùùt"
 
 #: c18f
-msgid "Notification"
-msgstr "Nôôtîîfîîççââtîîôôn"
+#~ msgid "Notification"
+#~ msgstr "Nôôtîîfîîççââtîîôôn"
 
 #: 519e
 #~ msgid "Path"
