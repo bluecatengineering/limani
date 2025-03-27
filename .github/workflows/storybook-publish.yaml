@@ -12,7 +12,7 @@ jobs:
 
         steps:
             - name: Checkout code
-              uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # tag=v4.1.0
+              uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # tag=v4.2.2
 
             - name: Build Storybook
               run: |
@@ -20,7 +20,7 @@ jobs:
                   npm run storybook-build-static
 
             - name: Upload artifact
-              uses: actions/upload-pages-artifact@a753861a5debcf57bf8b404356158c8e1e33150c # tag=v2.0.0
+              uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # tag=v3.0.1
               with:
                   path: storybook-static
 
@@ -40,4 +40,4 @@ jobs:
         steps:
             - name: Deploy to GitHub Pages
               id: deployment
-              uses: actions/deploy-pages@9dbe3824824f8a1377b8e298bafde1a50ede43e5 # tag=v2.0.4
+              uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # tag=v4.0.5
