@@ -34,13 +34,18 @@ picture {
     max-width: 100%;
     display: block;
 }
+
+html {
+    @root-font();
+}
+
 html,
 body {
-    @root-font();
     margin: 0;
 }
 
 body {
+    @body-compact-01();
     min-height: 100vh;
     display: flex;
     flex-direction: column;
