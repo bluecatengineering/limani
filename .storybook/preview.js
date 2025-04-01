@@ -19,8 +19,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+import { initialize, mswLoader } from 'msw-storybook-addon';
+import { setupWorker } from 'msw/browser';
 import './preview.less';
-import { initialize, mswDecorator } from 'msw-storybook-addon';
 
 // Initialize MSW
 // Suppress warnings about unhandled requests from 3rd party libraries on mock API
@@ -52,7 +53,7 @@ export default {
         theme: {
             name: 'Theme',
             description: 'Preview theme',
-            defaultValue: 'cg00',
+            defaultValue: 'white',
             toolbar: {
                 icon: 'photo',
                 items: [
@@ -65,15 +66,26 @@ export default {
         },
     },
 
-    decorators: [
-        mswDecorator,
-        (Story, { globals: { theme } }) => (
-            setTheme(theme),
-            (
-                <div id='root' style={{ width: '100%' }}>
-                    <Story />
-                </div>
-            )
-        ),
+    loaders: [
+        mswLoader,
+        async (context) => {
+            const {
+                globals: { theme },
+            } = context;
+            setTheme(theme);
+            return {}; // Loaders must return an object.
+        },
     ],
 };
+
+const worker = setupWorker();
+const pathname = document.location.pathname.slice(
+    0,
+    document.location.pathname.lastIndexOf('/'),
+);
+worker.start({
+    serviceWorker: {
+        // Points to the custom location of the Service Worker file.
+        url: `${pathname}/mockServiceWorker.js`,
+    },
+});
