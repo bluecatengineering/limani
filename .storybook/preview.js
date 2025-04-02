@@ -19,12 +19,19 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+import { initialize, mswLoader } from 'msw-storybook-addon';
 import './preview.less';
-import { initialize, mswDecorator } from 'msw-storybook-addon';
 
 // Initialize MSW
-// Suppress warnings about unhandled requests from 3rd party libraries on mock API
-initialize({ onUnhandledRequest: 'bypass' });
+const options = {
+    serviceWorker: {
+        // Use relative path for mockServiceWorker
+        url: './mockServiceWorker.js',
+    },
+    // Suppress warnings about unhandled requests from 3rd party libraries on mock API
+    onUnhandledRequest: 'bypass',
+};
+initialize(options);
 
 const setTheme = (theme) => (
     sessionStorage.setItem('theme', theme),
@@ -52,7 +59,7 @@ export default {
         theme: {
             name: 'Theme',
             description: 'Preview theme',
-            defaultValue: 'cg00',
+            defaultValue: 'white',
             toolbar: {
                 icon: 'photo',
                 items: [
@@ -65,8 +72,9 @@ export default {
         },
     },
 
+    loaders: [mswLoader],
+
     decorators: [
-        mswDecorator,
         (Story, { globals: { theme } }) => (
             setTheme(theme),
             (

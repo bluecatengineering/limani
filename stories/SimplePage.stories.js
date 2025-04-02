@@ -93,11 +93,13 @@ export default {
     title: 'Components/SimplePage',
     component: SimplePage,
     parameters: {
-        msw: [
-            http.get('/-/v3/navbar/data', () => {
-                return HttpResponse.json(platformMockValue);
-            }),
-        ],
+        msw: {
+            handlers: [
+                http.get('/-/v3/navbar/data', () => {
+                    return HttpResponse.json(platformMockValue);
+                }),
+            ],
+        },
     },
     decorators: [
         (Story) => (
