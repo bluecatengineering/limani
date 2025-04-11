@@ -39,6 +39,7 @@ const platformMockValue = {
                 alias: 'BAM-9.5.0',
                 url: '#',
                 service: 'BAM',
+                gateway_version: '25.2.1',
             },
             help_links: {
                 custom: [

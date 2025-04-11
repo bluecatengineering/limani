@@ -26,13 +26,16 @@ import usePlatformData from '../hooks/usePlatformData';
 const HeaderLogo = ({ className }) => {
     const { data } = usePlatformData();
     const headerLogoPath = data?.platform?.header_logo_path;
+    const gatewayVersion = data?.user?.authentication_info?.gateway_version;
 
     return (
         <a
             className={`HeaderLogo__logo${className ? ' ' + className : ''}`}
             href='/'>
             <img src={headerLogoPath} alt='Gateway logo' />
-            <span className='HeaderLogo__logo__name'>Gateway</span>
+            <span className='HeaderLogo__logo__name'>
+                Gateway {gatewayVersion}
+            </span>
         </a>
     );
 };
