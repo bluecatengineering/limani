@@ -6,23 +6,16 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
     className="HeaderAuthentication__authentication"
   >
     <span>
-      <React.Fragment>
+      <a
+        href="#"
+      >
         BAM
-          
-        <Link
-          className="HeaderAuthentication__authentication__linkIcon"
-          id="link-icon"
-        />
-         
-        <a
-          href="#"
-          rel="noreferrer"
-          target="_blank"
-          title="BAM-9.5.0"
-        >
+        :
+         
+        <u>
           BAM-9.5.0
-        </a>
-      </React.Fragment>
+        </u>
+      </a>
     </span>
   </div>
 </React.Fragment>
@@ -34,23 +27,16 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
     className="HeaderAuthentication__authentication varClassName"
   >
     <span>
-      <React.Fragment>
+      <a
+        href="#"
+      >
         BAM
-          
-        <Link
-          className="HeaderAuthentication__authentication__linkIcon"
-          id="link-icon"
-        />
-         
-        <a
-          href="#"
-          rel="noreferrer"
-          target="_blank"
-          title="BAM-9.5.0"
-        >
+        :
+         
+        <u>
           BAM-9.5.0
-        </a>
-      </React.Fragment>
+        </u>
+      </a>
     </span>
   </div>
 </React.Fragment>
@@ -62,23 +48,16 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
     className="HeaderAuthentication__authentication"
   >
     <span>
-      <React.Fragment>
+      <a
+        href="#"
+      >
         Micetro
-          
-        <Link
-          className="HeaderAuthentication__authentication__linkIcon"
-          id="link-icon"
-        />
-         
-        <a
-          href="#"
-          rel="noreferrer"
-          target="_blank"
-          title="Micetro-10"
-        >
+        :
+         
+        <u>
           Micetro-10
-        </a>
-      </React.Fragment>
+        </u>
+      </a>
     </span>
   </div>
 </React.Fragment>
