@@ -32,7 +32,7 @@ const HeaderLogo = ({ className }) => {
         <>
             <a
                 className={`HeaderLogo__logo${
-                    className ? ' ' + className : ''
+                    className ? ` ${className}` : ''
                 }`}
                 href='/'>
                 <img src={headerLogoPath} alt='Gateway logo' />

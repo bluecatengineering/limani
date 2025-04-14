@@ -19,6 +19,7 @@
 // SOFTWARE.
 @import '~@bluecateng/pelagos/less/spacing';
 @import '~@bluecateng/pelagos/less/colors';
+@import '~@bluecateng/pelagos/less/breakpoints';
 
 .SideNavMenu__hamburgerIcon {
     .Hamburger {
@@ -55,8 +56,9 @@
         gap: @sp-16;
 
         &__info {
-            display: flex;
             flex-direction: row;
+            display: none;
+            .breakpoint(md, {display: flex});
         }
     }
 
