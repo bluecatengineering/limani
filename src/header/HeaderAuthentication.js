@@ -19,7 +19,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import { Link } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import usePlatformData from '../hooks/usePlatformData';
 
@@ -46,22 +45,10 @@ const HeaderAuthentication = ({ className }) => {
                     }`}>
                     <span>
                         {authenticationAlias ? (
-                            <>
-                                {authenticationService} &nbsp;
-                                <Link
-                                    /* eslint-disable-next-line max-len */
-                                    className='HeaderAuthentication__authentication__linkIcon'
-                                    id='link-icon'
-                                />
-                                &nbsp;
-                                <a
-                                    href={authenticationLink}
-                                    target='_blank'
-                                    rel='noreferrer'
-                                    title={authenticationAlias}>
-                                    {authenticationAlias}
-                                </a>
-                            </>
+                            <a href={authenticationLink}>
+                                {authenticationService}:{' '}
+                                <u>{authenticationAlias}</u>
+                            </a>
                         ) : (
                             authenticationService
                         )}
