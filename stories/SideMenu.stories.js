@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2025 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21,7 +21,7 @@ SOFTWARE.
 */
 import React from 'react';
 import PlatformDataContext from '../src/components/PlatformDataContext';
-import SideNavMenu from '../src/sideNav/SideNavMenu';
+import SideMenu from '../src/sideNav/SideMenu';
 import SideNavContext from '../src/sideNav/SideNavContext';
 
 const mockDataValue = {
@@ -55,8 +55,11 @@ const mockExpanded = {
 };
 
 export default {
-    title: 'Components/SideNavMenu',
-    component: SideNavMenu,
+    title: 'Components/SideMenu',
+    component: SideMenu,
+    parameters: {
+        layout: 'fullscreen',
+    },
 };
 
 export const Normal = {
@@ -65,7 +68,7 @@ export const Normal = {
     },
     decorators: [
         (Story) => (
-            <div style={{ transform: 'translate3d(0,0,0)', height: 300 }}>
+            <div style={{ transform: 'translate3d(0,0,0)', height: '500px' }}>
                 <PlatformDataContext.Provider value={mockDataValue}>
                     <SideNavContext.Provider value={mockExpanded}>
                         <Story />

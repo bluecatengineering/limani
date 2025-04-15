@@ -1,0 +1,100 @@
+/*
+Copyright 2025 BlueCat Networks Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+@import '~@bluecateng/pelagos/less/breakpoints';
+@import '~@bluecateng/pelagos/less/colors';
+@import '~@bluecateng/pelagos/less/fonts';
+@import '~@bluecateng/pelagos/less/modal';
+@import '~@bluecateng/pelagos/less/spacing';
+
+.SideMenu {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: @sp-48; // Height of header
+    bottom: 0;
+    left: 0;
+    border-right: 1px solid var(--border-subtle);
+
+    &__secondaryNavigation {
+        display: flex;
+        flex-direction: column;
+        width: 240px;
+        top: 0;
+        bottom: 0;
+        left: @sp-80;
+        position: absolute;
+        will-change: transform;
+        transform: translateX(-100%);
+        overflow: hidden;
+        background-color: var(--layer);
+        border-right: 1px solid var(--border-subtle);
+        z-index: -1;
+        &[aria-hidden='false'] {
+            box-shadow: var(--shadow-12);
+        }
+    }
+
+    &__categories {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background);
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+
+        &__fromBottom {
+            margin-top: auto;
+        }
+    }
+
+    .SideNav__items {
+        padding: 0;
+    }
+}
+
+@media print {
+    .SideMenu {
+        display: none;
+    }
+}
+
+// The side-menu always uses a theme of g100, but the shadow it creates should be based on the
+// theme of the document. This redefines pelagos's --shadow-umbra, --shadow-penumbra,
+// and --shadow-ambient based on the theme of the document. Without this, the shadow used is always
+// for g100.
+html[data-theme='white'] {
+    .SideMenu__secondaryNavigation {
+        --shadow-umbra: fade(@black, 20%);
+        --shadow-penumbra: fade(@black, 14%);
+        --shadow-ambient: fade(@black, 12%);
+    }
+}
+
+html[data-theme='g100'] {
+    .SideMenu__secondaryNavigation {
+        --shadow-umbra: fade(@black, 30%);
+        --shadow-penumbra: fade(@black, 21%);
+        --shadow-ambient: fade(@black, 18%);
+    }
+}

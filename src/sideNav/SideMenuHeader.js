@@ -1,5 +1,5 @@
 /*
-Copyright 2023-2025 BlueCat Networks Inc.
+Copyright 2025 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,25 +19,14 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import PropTypes from 'prop-types';
-import '../../less/main.less';
-import Header from '../header/Header';
-import SideMenu from '../sideNav/SideMenu';
-import PageContentShell from './PageContentShell';
 
-const PageBody = ({ children }) => {
-    return (
-        <>
-            <Header />
-            <SideMenu />
-            <PageContentShell>{children}</PageContentShell>
-        </>
-    );
-};
+import './SideMenuHeader.less';
 
-PageBody.propTypes = {
-    /** Child content to be rendered inside the PageBody */
-    children: PropTypes.oneOfType([PropTypes.node, PropTypes.array]),
-};
+const SideMenuHeader = ({ title, icon: Icon }) => (
+    <h2 className='SideMenuHeader'>
+        <Icon className='SideMenuHeader__icon' size={24} />
+        <span className='SideMenuHeader__title'>{title}</span>
+    </h2>
+);
 
-export default PageBody;
+export default SideMenuHeader;

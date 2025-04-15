@@ -1,4 +1,4 @@
-// Copyright 2023 BlueCat Networks Inc.
+// Copyright 2023-2025 BlueCat Networks Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,10 +22,9 @@
 @import '~@bluecateng/pelagos/less/fonts';
 @import '~@bluecateng/pelagos/less/colors';
 
-.SideNavMenu__nav {
-    position: fixed;
+.SideNavMenuItem__nav {
     height: 100%;
-    width: 264px;
+    width: inherit;
     background-color: var(--layer);
     border-right: 1px solid var(--border-subtle);
 
@@ -34,28 +33,19 @@
         height: @sp-40; // Override pelagos' decision.
     }
 
-    @levels: {
-        2: @sp-32;
-        3: @sp-48;
-        4: @sp-64;
-        5: @sp-80;
-    };
-    each(@levels, {
-        .SideNavMenu__item--level@{key} > .SideNav__submenu,
-        .SideNavMenu__item--level@{key} > .SideNav__link {
-            padding-left: @value;
-        }
-    })
-
+    .SideNavMenuItem__item--level2 > .SideNav__submenu,
+    .SideNavMenuItem__item--level2 > .SideNav__link {
+        padding-left: @sp-32;
+    }
 
     // Allow links one level deeper than groups.
-    .SideNavMenu__item--level6 > .SideNav__link {
-        padding-left: @sp-96;
+    .SideNavMenuItem__item--level3 > .SideNav__link {
+        padding-left: @sp-48;
     }
 }
 
 @media print {
-    .SideNavMenu__nav {
+    .SideNavMenuItem__nav {
         display: none;
     }
 }

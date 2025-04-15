@@ -1,5 +1,5 @@
 /*
-Copyright 2023-2024 BlueCat Networks Inc.
+Copyright 2023-2025 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -61,18 +61,33 @@ const platformMockValue = {
         home_url: '#',
         nav_links: [
             {
-                'title': 'Administration',
-                'href': null,
+                'title': 'Create a new workflow',
+                'href': '/create_workflow/page',
+                'children': [],
+            },
+            {
+                'title': 'Workflow management',
+                'href': '/workflow_management/page',
+                'children': [],
+            },
+            {
+                'title': 'Configurations',
                 'children': [
                     {
-                        'title': 'Workflow management',
-                        'href': '/admin/workflow_export_import',
+                        'title': 'General configuration',
+                        'href': '/admin/general_configuration',
                         'children': [],
                     },
                     {
-                        'title': 'Create workflow',
-                        'href': '/create_workflow/page',
-                        'children': [],
+                        'title': 'SSO configuration',
+                        'href': '/admin/sso_configuration',
+                        'children': [
+                            {
+                                'title': 'SSO configuration1',
+                                'href': '/admin/sso_configuration1',
+                                'children': [],
+                            },
+                        ],
                     },
                 ],
             },
@@ -88,7 +103,6 @@ const platformMockValue = {
     triggerFetchData: () => {},
     /* eslint-enable camelcase, max-len */
 };
-
 export default {
     title: 'Components/SimplePage',
     component: SimplePage,
@@ -100,10 +114,11 @@ export default {
                 }),
             ],
         },
+        layout: 'fullscreen',
     },
     decorators: [
         (Story) => (
-            <div style={{ height: '380px' }}>
+            <div style={{ height: '600px' }}>
                 <Story />
             </div>
         ),
