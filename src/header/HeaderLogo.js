@@ -25,8 +25,10 @@ import usePlatformData from '../hooks/usePlatformData';
 
 const HeaderLogo = ({ className }) => {
     const { data } = usePlatformData();
-    const headerLogoPath = data?.platform?.header_logo_path;
-    const gatewayVersion = data?.platform?.gateway_version;
+    const {
+        header_logo_path: headerLogoPath,
+        gateway_version: gatewayVersion,
+    } = data?.platform ?? {};
 
     return (
         <>
