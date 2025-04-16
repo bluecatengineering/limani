@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 /*
 Copyright 2025 BlueCat Networks Inc.
 
@@ -20,6 +19,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+/* eslint-disable max-len */
 
 import { t } from '@bluecateng/l10n.macro';
 import DocumentWordProcessor from '@carbon/icons-react/es/DocumentWordProcessor';
@@ -32,7 +32,6 @@ const Category = {
         buttonId: 'homeCategoryButton',
         title: t`Home`,
         icon: Home,
-        href: '/home',
         tooltipText: t`User configured home page`,
     },
     Workflows: {

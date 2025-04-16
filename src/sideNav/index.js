@@ -21,4 +21,3 @@ SOFTWARE.
 */
 export { default as SideMenu } from './SideMenu';
 export { default as SideNavMenuItem } from './SideNavMenuItem';
-export { default as useSideNav } from './useSideNav';

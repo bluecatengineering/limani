@@ -19,39 +19,59 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+/* eslint-disable camelcase, max-len */
+
 import React from 'react';
 import PlatformDataContext from '../src/components/PlatformDataContext';
 import SideMenu from '../src/sideNav/SideMenu';
-import SideNavContext from '../src/sideNav/SideNavContext';
 
 const mockDataValue = {
     data: {
         user: {
-            // eslint-disable-next-line camelcase
-            nav_links: [
-                {
-                    'title': 'Administration',
-                    'href': null,
-                    'children': [
-                        {
-                            'title': 'Workflow management',
-                            'href': '/admin/workflow_export_import',
-                            'children': [],
-                        },
-                        {
-                            'title': 'Create workflow',
-                            'href': '/create_workflow/page',
-                            'children': [],
-                        },
-                    ],
-                },
-            ],
+            nav_links: {
+                custom_workflows: [
+                    {
+                        'title': 'Custom workflow',
+                        'href': '/custom_workflow/page',
+                        'children': [],
+                    },
+                ],
+                default_workflows: [
+                    {
+                        'title': 'Create a new workflow',
+                        'href': '/create_workflow/page',
+                        'children': [],
+                    },
+                    {
+                        'title': 'Workflow management',
+                        'href': '/admin/workflow_export_import',
+                        'children': [],
+                    },
+                    {
+                        'title': 'Configurations',
+                        'children': [
+                            {
+                                'title': 'General configuration',
+                                'href': '/admin/general_configuration',
+                                'children': [],
+                            },
+                            {
+                                'title': 'SSO configuration',
+                                'href': '/admin/sso_configuration',
+                                'children': [
+                                    {
+                                        'title': 'SSO configuration1',
+                                        'href': '/admin/sso_configuration1',
+                                        'children': [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
         },
     },
-};
-
-const mockExpanded = {
-    isExpanded: true,
 };
 
 export default {
@@ -70,9 +90,7 @@ export const Normal = {
         (Story) => (
             <div style={{ transform: 'translate3d(0,0,0)', height: '500px' }}>
                 <PlatformDataContext.Provider value={mockDataValue}>
-                    <SideNavContext.Provider value={mockExpanded}>
-                        <Story />
-                    </SideNavContext.Provider>
+                    <Story />
                 </PlatformDataContext.Provider>
             </div>
         ),

@@ -76,6 +76,18 @@ SOFTWARE.
         }
     }
 
+    &[role='link'] {
+        &[aria-current='true']::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: @sp-04;
+            background-color: var(--border-interactive);
+        }
+    }
+
     &[aria-expanded='false'] {
         &[aria-current='true']::before {
             content: '';

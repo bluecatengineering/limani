@@ -19,13 +19,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+/* eslint-disable camelcase, max-len */
 
 import { http, HttpResponse } from 'msw';
 import { SimplePage } from '../src/pageLayout';
 import './SimplePage.stories.less';
 
 const platformMockValue = {
-    /* eslint-disable camelcase, max-len */
     platform: {
         header_logo_path:
             'https://cdn.pixabay.com/photo/2017/05/09/03/46/alberta-2297204_1280.jpg',
@@ -58,40 +58,49 @@ const platformMockValue = {
                 },
             ],
         },
-        home_url: '#',
-        nav_links: [
-            {
-                'title': 'Create a new workflow',
-                'href': '/create_workflow/page',
-                'children': [],
-            },
-            {
-                'title': 'Workflow management',
-                'href': '/workflow_management/page',
-                'children': [],
-            },
-            {
-                'title': 'Configurations',
-                'children': [
-                    {
-                        'title': 'General configuration',
-                        'href': '/admin/general_configuration',
-                        'children': [],
-                    },
-                    {
-                        'title': 'SSO configuration',
-                        'href': '/admin/sso_configuration',
-                        'children': [
-                            {
-                                'title': 'SSO configuration1',
-                                'href': '/admin/sso_configuration1',
-                                'children': [],
-                            },
-                        ],
-                    },
-                ],
-            },
-        ],
+        home_url: '/landing_page',
+        nav_links: {
+            custom_workflows: [
+                {
+                    'title': 'Custom workflow',
+                    'href': '/custom_workflow/page',
+                    'children': [],
+                },
+            ],
+            default_workflows: [
+                {
+                    'title': 'Create a new workflow',
+                    'href': '/create_workflow/page',
+                    'children': [],
+                },
+                {
+                    'title': 'Workflow management',
+                    'href': '/admin/workflow_export_import',
+                    'children': [],
+                },
+                {
+                    'title': 'Configurations',
+                    'children': [
+                        {
+                            'title': 'General configuration',
+                            'href': '/admin/general_configuration',
+                            'children': [],
+                        },
+                        {
+                            'title': 'SSO configuration',
+                            'href': '/admin/sso_configuration',
+                            'children': [
+                                {
+                                    'title': 'SSO configuration1',
+                                    'href': '/admin/sso_configuration1',
+                                    'children': [],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
+        },
         permissions: {
             download_logs: true,
             view_logs: true,

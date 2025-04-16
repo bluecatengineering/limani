@@ -1,5 +1,5 @@
 /*
-Copyright 2023-2024 BlueCat Networks Inc.
+Copyright 2023-2025 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,11 +22,25 @@ SOFTWARE.
 import { t } from '@bluecateng/l10n.macro';
 import { Layer, SideNav } from '@bluecateng/pelagos';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import usePlatformData from '../hooks/usePlatformData';
 import Category from './Category';
 import './SideMenu.less';
 import SideMenuCategoryButton from './SideMenuCategoryButton';
 import SideMenuHeader from './SideMenuHeader';
 import SideNavMenuItem from './SideNavMenuItem';
+
+const isCurrentPathOfCategory = (pathname, category) => {
+    const flattenedNavLinks = category?.reduce((acc, link) => {
+        if (link.href === pathname) {
+            return true;
+        }
+        if (link.children) {
+            return acc || isCurrentPathOfCategory(pathname, link.children);
+        }
+        return acc;
+    }, false);
+    return flattenedNavLinks;
+};
 
 const getStates = () =>
     JSON.parse(sessionStorage.getItem('gw-leftnav-states')) ?? {};
@@ -40,6 +54,24 @@ const SideMenu = () => {
     const animationRef = useRef(null);
     const menuRef = useRef(null);
     const [, setOpen] = useState(getStates());
+    const { data } = usePlatformData();
+    const homeUrl = data?.user?.home_url;
+    const landingPageActivated = ![null, '', '/', '/home', undefined].includes(
+        homeUrl,
+    );
+    const { custom_workflows: customWorkflows, default_workflows: settings } =
+        data?.user?.nav_links || {
+            'custom_workflows': [],
+            'default_workflows': [],
+        };
+    const customWorkflowsActivated = isCurrentPathOfCategory(
+        window.location.pathname,
+        customWorkflows,
+    );
+    const settingsActivated = isCurrentPathOfCategory(
+        window.location.pathname,
+        settings,
+    );
 
     useEffect(() => {
         if (menuRef?.current) {
@@ -128,11 +160,18 @@ const SideMenu = () => {
     return (
         <div className='SideMenu' data-theme='dark'>
             <div className='SideMenu__categories' aria-label={t`Side menu`}>
-                <SideMenuCategoryButton {...Category['Home']} />
+                {landingPageActivated && (
+                    <SideMenuCategoryButton
+                        {...Category['Home']}
+                        href={homeUrl}
+                        current={homeUrl === window.location.pathname}
+                    />
+                )}
                 <SideMenuCategoryButton {...Category['Workflows']} />
                 <div key={'CustomWorkflows'}>
                     <SideMenuCategoryButton
                         {...Category['CustomWorkflows']}
+                        current={customWorkflowsActivated}
                         expanded={'CustomWorkflows' === expandedCategoryKey}
                         toggleMenu={() =>
                             handleCategoryButtonChange('CustomWorkflows')
@@ -153,7 +192,7 @@ const SideMenu = () => {
                                 <SideMenuHeader
                                     {...Category['CustomWorkflows']}
                                 />
-                                <SideNavMenuItem />
+                                <SideNavMenuItem items={customWorkflows} />
                             </SideNav>
                         </Layer>
                     )}
@@ -163,6 +202,7 @@ const SideMenu = () => {
                     className={'SideMenu__categories__fromBottom'}>
                     <SideMenuCategoryButton
                         {...Category['Settings']}
+                        current={settingsActivated}
                         expanded={'Settings' === expandedCategoryKey}
                         toggleMenu={() =>
                             handleCategoryButtonChange('Settings')
@@ -181,7 +221,7 @@ const SideMenu = () => {
                                 onClick={handleClick}
                                 onKeyDown={handleKeyDown}>
                                 <SideMenuHeader {...Category['Settings']} />
-                                <SideNavMenuItem />
+                                <SideNavMenuItem items={settings} />
                             </SideNav>
                         </Layer>
                     )}

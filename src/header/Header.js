@@ -35,8 +35,6 @@ import './Header.less';
  * Header component presents the top navbar and the side navbar.
  * An example of this component could be found on the index page
  * of gateway after login. <br>
- * This component needs to be wrapped with SideNavContext
- * to set initial expansion setting. <br>
  * This component is intended to be nested inside the PlatformDataContext
  * as it will require access to PlatformData. <br>
  * The component should always be wrapped inside parent element

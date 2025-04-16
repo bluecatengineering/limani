@@ -21,7 +21,6 @@ SOFTWARE.
 */
 import { SideNavItems, SideNavLink, SideNavMenu } from '@bluecateng/pelagos';
 import PropTypes from 'prop-types';
-import usePlatformData from '../hooks/usePlatformData';
 import './SideNavMenuItem.less';
 
 const getStates = () =>
@@ -37,7 +36,7 @@ const keyForState = (title, parents) => {
     return navPath.join('');
 };
 
-const renderItem = (item, parents, isNavActive) => {
+const renderItem = (item, parents) => {
     const classNames = ['SideNavMenuItem__item--level' + (parents.length + 1)];
     const key = keyForState(item.title, parents);
 
@@ -51,7 +50,6 @@ const renderItem = (item, parents, isNavActive) => {
                 title={item.title}
                 expanded={expanded}
                 className={classNames.join(' ')}
-                active={isNavActive}
                 data-state-key={key}
                 key={key}>
                 {renderItems(item.children, newParents)}
@@ -63,7 +61,6 @@ const renderItem = (item, parents, isNavActive) => {
                 href={item.href}
                 current={item.href === window.location.pathname}
                 className={classNames.join(' ')}
-                active={true}
                 key={key}>
                 {item.title}
             </SideNavLink>
@@ -71,21 +68,17 @@ const renderItem = (item, parents, isNavActive) => {
     }
 };
 
-const renderItems = (items, parents, isNavActive) => {
-    return items.map((item) => renderItem(item, parents, isNavActive));
+const renderItems = (items, parents) => {
+    return items.map((item) => renderItem(item, parents));
 };
 
 /**
  * SideNav is a component to display navigation links to the left. <br>
- * This component needs to be wrapped with SideNavContext
- * to set initial expansion setting. <br>
  * This component is intended to be nested inside the PlatformDataContext
  * as it will require access to PlatformData. <br>
  */
 
-const SideNavMenuItem = ({ className }) => {
-    const { data } = usePlatformData();
-    const links = data?.user?.nav_links ?? [];
+const SideNavMenuItem = ({ className, items }) => {
     const classNames = ['SideNavMenuItem__nav'];
     if (className) {
         classNames.push(className);
@@ -93,7 +86,7 @@ const SideNavMenuItem = ({ className }) => {
 
     return (
         <SideNavItems className={classNames.join(' ')}>
-            {renderItems(links, [], true)}
+            {renderItems(items, [])}
         </SideNavItems>
     );
 };
