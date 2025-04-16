@@ -18,11 +18,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 // eslint-disable-next-line max-len
+
+@import '~@bluecateng/pelagos/less/spacing';
+
 .PageContentShell {
     flex-direction: column;
     flex: 1;
     overflow: hidden;
-    margin-left: 80px; // SideNavMenu
+    margin-left: @sp-80; // SideNavMenu
 }
 .PageContentShell--rightPanelIsOpen {
     // NOTE: The right margin matches the width of the element used for side/details panel.
