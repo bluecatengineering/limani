@@ -1,35 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeaderLogo Rendering Render HeaderLogo component with default props 1`] = `
-<a
-  className="HeaderLogo__logo"
-  href="/"
->
-  <img
-    alt="Gateway logo"
-    src="/parent/testpath"
-  />
+<React.Fragment>
+  <a
+    className="HeaderLogo__logo"
+    href="/"
+  >
+    <img
+      alt="Gateway logo"
+      src="/parent/testpath"
+    />
+  </a>
   <span
     className="HeaderLogo__logo__name"
   >
-    Gateway
+    Gateway 
   </span>
-</a>
+</React.Fragment>
 `;
 
 exports[`HeaderLogo Rendering Render HeaderLogo component with props 1`] = `
-<a
-  className="HeaderLogo__logo varClassName"
-  href="/"
->
-  <img
-    alt="Gateway logo"
-    src="/parent/testpath"
-  />
+<React.Fragment>
+  <a
+    className="HeaderLogo__logo varClassName"
+    href="/"
+  >
+    <img
+      alt="Gateway logo"
+      src="/parent/testpath"
+    />
+  </a>
   <span
     className="HeaderLogo__logo__name"
   >
-    Gateway
+    Gateway 
   </span>
-</a>
+</React.Fragment>
 `;
