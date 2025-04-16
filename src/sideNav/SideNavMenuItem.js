@@ -40,7 +40,7 @@ const renderItem = (item, parents) => {
     const classNames = ['SideNavMenuItem__item--level' + (parents.length + 1)];
     const key = keyForState(item.title, parents);
 
-    if (item.children.length > 0) {
+    if (item?.children?.length > 0) {
         const states = getStates();
         const expanded = states[key] === true;
         const newParents = parents.concat([nameForState(item.title)]);
@@ -59,7 +59,7 @@ const renderItem = (item, parents) => {
         return (
             <SideNavLink
                 href={item.href}
-                current={item.href === window.location.pathname}
+                current={item.href === window?.location?.pathname}
                 className={classNames.join(' ')}
                 key={key}>
                 {item.title}
@@ -69,7 +69,7 @@ const renderItem = (item, parents) => {
 };
 
 const renderItems = (items, parents) => {
-    return items.map((item) => renderItem(item, parents));
+    return items?.map((item) => renderItem(item, parents));
 };
 
 /**
