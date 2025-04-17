@@ -48,7 +48,8 @@ const HeaderAuthentication = ({ className }) => {
                             <a
                                 target='_blank'
                                 rel='noreferrer'
-                                href={authenticationLink}>
+                                href={authenticationLink}
+                                title={authenticationAlias}>
                                 {authenticationService}:{' '}
                                 <u>{authenticationAlias}</u>
                             </a>
