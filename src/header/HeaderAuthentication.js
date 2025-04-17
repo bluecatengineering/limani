@@ -45,7 +45,11 @@ const HeaderAuthentication = ({ className }) => {
                     }`}>
                     <span>
                         {authenticationAlias ? (
-                            <a href={authenticationLink}>
+                            <a
+                                target='_blank'
+                                rel='noreferrer'
+                                href={authenticationLink}
+                                title={authenticationAlias}>
                                 {authenticationService}:{' '}
                                 <u>{authenticationAlias}</u>
                             </a>
