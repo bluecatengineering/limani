@@ -8,6 +8,8 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
     <span>
       <a
         href="#"
+        rel="noreferrer"
+        target="_blank"
       >
         BAM
         :
@@ -29,6 +31,8 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
     <span>
       <a
         href="#"
+        rel="noreferrer"
+        target="_blank"
       >
         BAM
         :
@@ -50,6 +54,8 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
     <span>
       <a
         href="#"
+        rel="noreferrer"
+        target="_blank"
       >
         Micetro
         :
