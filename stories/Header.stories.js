@@ -33,6 +33,7 @@ const platformMockValue = {
             header_logo_path:
                 'https://cdn.pixabay.com/photo/2017/05/09/03/46/alberta-2297204_1280.jpg',
             language: 'en',
+            gateway_version: '25.2.1',
         },
         user: {
             authentication_info: {
