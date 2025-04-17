@@ -19,7 +19,7 @@ exports[`SideMenu Rendering Render SideMenu component active highlight 1`] = `
     />
     <SideMenuCategoryButton
       buttonId="workflowsCategoryButton"
-      href="/"
+      href="/index"
       icon={[Function]}
       title="Workflows"
       tooltipText="Quick access to default workflows"
@@ -71,7 +71,7 @@ exports[`SideMenu Rendering Render SideMenu component with default 1`] = `
     />
     <SideMenuCategoryButton
       buttonId="workflowsCategoryButton"
-      href="/"
+      href="/index"
       icon={[Function]}
       title="Workflows"
       tooltipText="Quick access to default workflows"
