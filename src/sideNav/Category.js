@@ -38,7 +38,7 @@ const Category = {
         buttonId: 'workflowsCategoryButton',
         title: t`Workflows`,
         icon: DocumentWordProcessor,
-        href: '/',
+        href: '/index',
         tooltipText: t`Quick access to default workflows`,
     },
     CustomWorkflows: {

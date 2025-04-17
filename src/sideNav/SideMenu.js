@@ -56,9 +56,14 @@ const SideMenu = () => {
     const [, setOpen] = useState(getStates());
     const { data } = usePlatformData();
     const homeUrl = data?.user?.home_url;
-    const landingPageActivated = ![null, '', '/', '/home', undefined].includes(
-        homeUrl,
-    );
+    const landingPageActivated = ![
+        '',
+        '/',
+        '/home',
+        '/index',
+        null,
+        undefined,
+    ].includes(homeUrl);
     const { custom_workflows: customWorkflows, default_workflows: settings } =
         data?.user?.nav_links || {
             'custom_workflows': [],
