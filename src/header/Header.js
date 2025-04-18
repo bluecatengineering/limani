@@ -1,5 +1,5 @@
 /*
-Copyright 2023-2024 BlueCat Networks Inc.
+Copyright 2023-2025 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,17 +19,15 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+import { Layer } from '@bluecateng/pelagos';
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
-import { Layer } from '@bluecateng/pelagos';
+import usePlatformData from '../hooks/usePlatformData';
 import HeaderAccountMenu from './HeaderAccountMenu';
 import HeaderAuthentication from './HeaderAuthentication';
 import HeaderHelpMenu from './HeaderHelpMenu';
 import HeaderLogo from './HeaderLogo';
 import HeaderSystemMenu from './HeaderSystemMenu';
-import SideNavMenu from '../sideNav/SideNavMenu';
-import usePlatformData from '../hooks/usePlatformData';
-import SideNavMenuSwitcher from '../sideNav/SideNavMenuSwitcher';
 
 import './Header.less';
 
@@ -37,8 +35,6 @@ import './Header.less';
  * Header component presents the top navbar and the side navbar.
  * An example of this component could be found on the index page
  * of gateway after login. <br>
- * This component needs to be wrapped with SideNavContext
- * to set initial expansion setting. <br>
  * This component is intended to be nested inside the PlatformDataContext
  * as it will require access to PlatformData. <br>
  * The component should always be wrapped inside parent element
@@ -60,7 +56,6 @@ const Header = ({ className }) => {
                     data-theme='dark'>
                     <Layer className='Header__topNav'>
                         <div className='Header__leftSideMenu'>
-                            <SideNavMenuSwitcher />
                             <div className='Header__leftSideMenu__info'>
                                 <HeaderLogo />
                                 <HeaderAuthentication />
@@ -72,7 +67,6 @@ const Header = ({ className }) => {
                             <HeaderAccountMenu />
                         </div>
                     </Layer>
-                    <SideNavMenu />
                 </header>
             )}
         </>

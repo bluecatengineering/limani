@@ -12,7 +12,6 @@ exports[`Header Rendering Render Header component with default props 1`] = `
       <div
         className="Header__leftSideMenu"
       >
-        <SideNavMenuSwitcher />
         <div
           className="Header__leftSideMenu__info"
         >
@@ -28,7 +27,6 @@ exports[`Header Rendering Render Header component with default props 1`] = `
         <HeaderAccountMenu />
       </div>
     </Layer>
-    <SideNavMenu />
   </header>
 </React.Fragment>
 `;
@@ -45,7 +43,6 @@ exports[`Header Rendering Render Header component with props 1`] = `
       <div
         className="Header__leftSideMenu"
       >
-        <SideNavMenuSwitcher />
         <div
           className="Header__leftSideMenu__info"
         >
@@ -61,7 +58,6 @@ exports[`Header Rendering Render Header component with props 1`] = `
         <HeaderAccountMenu />
       </div>
     </Layer>
-    <SideNavMenu />
   </header>
 </React.Fragment>
 `;

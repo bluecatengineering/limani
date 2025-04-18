@@ -23,7 +23,6 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import PageToolkitBase from './PageToolkitBase';
 import PlatformData from './PlatformData';
-import SideNavContextProvider from '../sideNav/SideNavContextProvider';
 import useLanguage from '../hooks/useLanguage';
 import setLanguage from '../functions/setLanguage';
 import ThemeSwitch from './ThemeSwitch';
@@ -58,10 +57,8 @@ const PageToolkit = ({ onLanguageChange, children }) => {
     return (
         <PageToolkitBase>
             <PlatformData>
-                <SideNavContextProvider>
-                    <ThemeSwitch />
-                    <L10N onLanguageChange={onLanguageChange}>{children}</L10N>
-                </SideNavContextProvider>
+                <ThemeSwitch />
+                <L10N onLanguageChange={onLanguageChange}>{children}</L10N>
             </PlatformData>
         </PageToolkitBase>
     );

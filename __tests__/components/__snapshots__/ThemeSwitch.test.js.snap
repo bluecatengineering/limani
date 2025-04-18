@@ -3,10 +3,8 @@
 exports[`PageToolkit with ThemeSwitch Rendering Render PageToolkit component to verify ThemeSwitch Component 1`] = `
 <PageToolkitBase>
   <PlatformData>
-    <SideNav>
-      <ThemeSwitch />
-      <L10N />
-    </SideNav>
+    <ThemeSwitch />
+    <L10N />
   </PlatformData>
 </PageToolkitBase>
 `;

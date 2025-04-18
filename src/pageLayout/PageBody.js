@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2025 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,14 +20,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 import PropTypes from 'prop-types';
-import Header from '../header/Header';
-import PageContentShell from './PageContentShell';
 import '../../less/main.less';
+import Header from '../header/Header';
+import SideMenu from '../sideNav/SideMenu';
+import PageContentShell from './PageContentShell';
 
 const PageBody = ({ children }) => {
     return (
         <>
             <Header />
+            <SideMenu />
             <PageContentShell>{children}</PageContentShell>
         </>
     );
