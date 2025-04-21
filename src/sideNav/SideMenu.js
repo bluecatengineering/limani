@@ -166,11 +166,7 @@ const SideMenu = () => {
         <div className='SideMenu' data-theme='dark'>
             <div className='SideMenu__categories' aria-label={t`Side menu`}>
                 {landingPageActivated && (
-                    <SideMenuCategoryButton
-                        {...Category['Home']}
-                        href={homeUrl}
-                        current={homeUrl === window.location.pathname}
-                    />
+                    <SideMenuCategoryButton {...Category['Home']} href={'/'} />
                 )}
                 <SideMenuCategoryButton {...Category['Workflows']} />
                 <div key={'CustomWorkflows'}>

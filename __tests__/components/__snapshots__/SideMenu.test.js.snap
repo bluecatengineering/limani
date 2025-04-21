@@ -11,8 +11,7 @@ exports[`SideMenu Rendering Render SideMenu component active highlight 1`] = `
   >
     <SideMenuCategoryButton
       buttonId="homeCategoryButton"
-      current={false}
-      href="/landing_page"
+      href="/"
       icon={[Function]}
       title="Home"
       tooltipText="User configured home page"
@@ -63,8 +62,7 @@ exports[`SideMenu Rendering Render SideMenu component with default 1`] = `
   >
     <SideMenuCategoryButton
       buttonId="homeCategoryButton"
-      current={false}
-      href="/landing_page"
+      href="/"
       icon={[Function]}
       title="Home"
       tooltipText="User configured home page"
