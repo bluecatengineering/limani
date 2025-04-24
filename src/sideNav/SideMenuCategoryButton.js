@@ -21,9 +21,9 @@ SOFTWARE.
 */
 
 import { t } from '@bluecateng/l10n.macro';
+import { useTooltip } from '@bluecateng/pelagos';
 import SidePanelClose from '@carbon/icons-react/es/SidePanelClose';
 import { useMemo } from 'react';
-
 import './SideMenuCategoryButton.less';
 
 const SideMenuCategoryButton = ({
@@ -46,6 +46,7 @@ const SideMenuCategoryButton = ({
         }),
         [expanded, current],
     );
+    const tooltipRef = useTooltip(tooltipText, 'right');
 
     const onClick = href
         ? { onClick: () => window.location.replace(href) }
@@ -56,9 +57,9 @@ const SideMenuCategoryButton = ({
             id={buttonId}
             className='SideMenuCategoryButton'
             onClick={toggleMenu}
-            title={tooltipText}
             {...onClick}
-            {...buttonProps}>
+            {...buttonProps}
+            ref={!expanded ? tooltipRef : null}>
             {expanded ? (
                 <SidePanelClose
                     className='SideMenuCategoryButton__icon'

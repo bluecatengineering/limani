@@ -19,7 +19,12 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import { SideNavItems, SideNavLink, SideNavMenu } from '@bluecateng/pelagos';
+import {
+    SideNavItems,
+    SideNavLink,
+    SideNavMenu,
+    useTooltip,
+} from '@bluecateng/pelagos';
 import PropTypes from 'prop-types';
 import './SideNavMenuItem.less';
 
@@ -39,6 +44,7 @@ const keyForState = (title, parents) => {
 const renderItem = (item, parents) => {
     const classNames = ['SideNavMenuItem__item--level' + (parents.length + 1)];
     const key = keyForState(item.title, parents);
+    const tooltipRef = useTooltip(item?.title, 'right');
 
     if (item?.children?.length > 0) {
         const states = getStates();
@@ -47,21 +53,23 @@ const renderItem = (item, parents) => {
 
         return (
             <SideNavMenu
-                title={item.title}
-                expanded={expanded}
                 className={classNames.join(' ')}
                 data-state-key={key}
-                key={key}>
+                expanded={expanded}
+                key={key}
+                ref={tooltipRef}
+                title={item.title}>
                 {renderItems(item.children, newParents)}
             </SideNavMenu>
         );
     } else {
         return (
             <SideNavLink
-                href={item.href}
-                current={item.href === window?.location?.pathname}
                 className={classNames.join(' ')}
-                key={key}>
+                current={item.href === window?.location?.pathname}
+                href={item.href}
+                key={key}
+                ref={tooltipRef}>
                 {item.title}
             </SideNavLink>
         );

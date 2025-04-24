@@ -1,5 +1,5 @@
 /*
-Copyright 2023-2025 BlueCat Networks Inc.
+Copyright 2025 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -28,48 +28,51 @@ import SideMenu from '../src/sideNav/SideMenu';
 const mockDataValue = {
     data: {
         user: {
-            nav_links: {
-                custom_workflows: [
-                    {
-                        'title': 'Custom workflow',
-                        'href': '/custom_workflow/page',
-                        'children': [],
-                    },
-                ],
-                default_workflows: [
-                    {
-                        'title': 'Create a new workflow',
-                        'href': '/create_workflow/page',
-                        'children': [],
-                    },
-                    {
-                        'title': 'Workflow management',
-                        'href': '/admin/workflow_export_import',
-                        'children': [],
-                    },
-                    {
-                        'title': 'Configurations',
-                        'children': [
-                            {
-                                'title': 'General configuration',
-                                'href': '/admin/general_configuration',
-                                'children': [],
-                            },
-                            {
-                                'title': 'SSO configuration',
-                                'href': '/admin/sso_configuration',
-                                'children': [
-                                    {
-                                        'title': 'SSO configuration1',
-                                        'href': '/admin/sso_configuration1',
-                                        'children': [],
-                                    },
-                                ],
-                            },
-                        ],
-                    },
-                ],
-            },
+            nav_links: [
+                {
+                    'title': 'Custom workflow',
+                    'href': '/custom_workflow/page',
+                    'children': [],
+                    'is_default_workflow': false,
+                },
+                {
+                    'title': 'Create a new workflow',
+                    'href': '/create_workflow/page',
+                    'children': [],
+                    'is_default_workflow': true,
+                },
+                {
+                    'title': 'Workflow management',
+                    'href': '/admin/workflow_export_import',
+                    'children': [],
+                    'is_default_workflow': true,
+                },
+                {
+                    'title': 'Configurations',
+                    'children': [
+                        {
+                            'title': 'General configuration',
+                            'href': '/admin/general_configuration',
+                            'children': [],
+                            'is_default_workflow': true,
+                        },
+                        {
+                            'title': 'SSO configuration',
+                            'href': '/admin/sso_configuration',
+                            'children': [
+                                {
+                                    'title': 'SSO configuration1',
+                                    'href': '/admin/sso_configuration1',
+                                    'children': [],
+                                    'is_default_workflow': true,
+                                },
+                            ],
+                            'is_default_workflow': true,
+                        },
+                    ],
+                    'is_default_workflow': true,
+                },
+            ],
         },
     },
 };

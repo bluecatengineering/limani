@@ -20,12 +20,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import React from 'react';
 import { shallow } from 'enzyme';
 import SideNavMenuItem from '../../src/sideNav/SideNavMenuItem';
 import { SideNavLink, SideNavMenu } from '@bluecateng/pelagos';
 
 jest.mock('@bluecateng/pelagos', () => ({
+    useTooltip: () => [false, jest.fn()],
     SideNavItems: jest.fn(({ children, className }) => (
         <div className={className}>{children}</div>
     )),

@@ -1,5 +1,5 @@
 /*
-Copyright 2023-2025 BlueCat Networks Inc.
+Copyright 2025 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -48,27 +48,40 @@ const getStates = () =>
 const saveStates = (states) =>
     sessionStorage.setItem('gw-leftnav-states', JSON.stringify(states));
 
+const defaultPages = ['', '/', '/home', '/index', null, undefined];
+
+const categorizeWorkflows = (navLinks) => {
+    const result = {
+        customWorkflows: [],
+        settings: [],
+    };
+
+    navLinks?.forEach((link) => {
+        if (link?.is_default_workflow) {
+            result.settings.push(link);
+        } else {
+            result.customWorkflows.push(link);
+        }
+    });
+
+    return result;
+};
+
 const SideMenu = () => {
+    const [, setOpen] = useState(getStates());
+    const [settings, setSettings] = useState([]);
+    const [customWorkflows, setCustomWorkflows] = useState([]);
     const [currentCategoryKey] = useState(null);
     const [expandedCategoryKey, setExpandedCategoryKey] = useState(null);
     const animationRef = useRef(null);
     const menuRef = useRef(null);
-    const [, setOpen] = useState(getStates());
     const { data } = usePlatformData();
+
     const homeUrl = data?.user?.home_url;
-    const landingPageActivated = ![
-        '',
-        '/',
-        '/home',
-        '/index',
-        null,
-        undefined,
-    ].includes(homeUrl);
-    const { custom_workflows: customWorkflows, default_workflows: settings } =
-        data?.user?.nav_links || {
-            'custom_workflows': [],
-            'default_workflows': [],
-        };
+    const landingPageActivated = !defaultPages.includes(homeUrl);
+    const mainPageActivated = defaultPages.some(
+        (path) => path === window.location.pathname,
+    );
     const customWorkflowsActivated = isCurrentPathOfCategory(
         window.location.pathname,
         customWorkflows,
@@ -77,6 +90,12 @@ const SideMenu = () => {
         window.location.pathname,
         settings,
     );
+
+    useEffect(() => {
+        const result = categorizeWorkflows(data?.user?.nav_links);
+        setCustomWorkflows(result.customWorkflows);
+        setSettings(result.settings);
+    }, [data?.user?.nav_links]);
 
     useEffect(() => {
         if (menuRef?.current) {
@@ -161,6 +180,37 @@ const SideMenu = () => {
         },
         [handleCategoryButtonChange, expandedCategoryKey],
     );
+    const renderSideMenuCategoryMenu = (
+        key,
+        current,
+        items,
+        className = null,
+    ) => (
+        <div className={className}>
+            <SideMenuCategoryButton
+                {...Category[key]}
+                current={current}
+                expanded={key === expandedCategoryKey}
+                toggleMenu={() => handleCategoryButtonChange(key)}
+            />
+            {(expandedCategoryKey === key ||
+                (!expandedCategoryKey && currentCategoryKey === key)) && (
+                <Layer>
+                    <SideNav
+                        id='secondaryNavigation'
+                        className='SideMenu__secondaryNavigation'
+                        active={!!expandedCategoryKey}
+                        aria-label={Category[key]?.title}
+                        ref={expandedCategoryKey ? menuRef : undefined}
+                        onClick={handleClick}
+                        onKeyDown={handleKeyDown}>
+                        <SideMenuHeader {...Category[key]} />
+                        <SideNavMenuItem items={items} />
+                    </SideNav>
+                </Layer>
+            )}
+        </div>
+    );
 
     return (
         <div className='SideMenu' data-theme='dark'>
@@ -168,65 +218,22 @@ const SideMenu = () => {
                 {landingPageActivated && (
                     <SideMenuCategoryButton {...Category['Home']} href={'/'} />
                 )}
-                <SideMenuCategoryButton {...Category['Workflows']} />
-                <div key={'CustomWorkflows'}>
-                    <SideMenuCategoryButton
-                        {...Category['CustomWorkflows']}
-                        current={customWorkflowsActivated}
-                        expanded={'CustomWorkflows' === expandedCategoryKey}
-                        toggleMenu={() =>
-                            handleCategoryButtonChange('CustomWorkflows')
-                        }
-                    />
-                    {(expandedCategoryKey === 'CustomWorkflows' ||
-                        (!expandedCategoryKey &&
-                            currentCategoryKey === 'CustomWorkflows')) && (
-                        <Layer>
-                            <SideNav
-                                id='secondaryNavigation'
-                                className='SideMenu__secondaryNavigation'
-                                active={!!expandedCategoryKey}
-                                aria-label={Category['CustomWorkflows'].title}
-                                ref={expandedCategoryKey ? menuRef : undefined}
-                                onClick={handleClick}
-                                onKeyDown={handleKeyDown}>
-                                <SideMenuHeader
-                                    {...Category['CustomWorkflows']}
-                                />
-                                <SideNavMenuItem items={customWorkflows} />
-                            </SideNav>
-                        </Layer>
-                    )}
-                </div>
-                <div
-                    key={'Settings'}
-                    className={'SideMenu__categories__fromBottom'}>
-                    <SideMenuCategoryButton
-                        {...Category['Settings']}
-                        current={settingsActivated}
-                        expanded={'Settings' === expandedCategoryKey}
-                        toggleMenu={() =>
-                            handleCategoryButtonChange('Settings')
-                        }
-                    />
-                    {(expandedCategoryKey === 'Settings' ||
-                        (!expandedCategoryKey &&
-                            currentCategoryKey === 'Settings')) && (
-                        <Layer>
-                            <SideNav
-                                id='secondaryNavigation'
-                                className='SideMenu__secondaryNavigation'
-                                active={!!expandedCategoryKey}
-                                aria-label={Category['Settings'].title}
-                                ref={expandedCategoryKey ? menuRef : undefined}
-                                onClick={handleClick}
-                                onKeyDown={handleKeyDown}>
-                                <SideMenuHeader {...Category['Settings']} />
-                                <SideNavMenuItem items={settings} />
-                            </SideNav>
-                        </Layer>
-                    )}
-                </div>
+                <SideMenuCategoryButton
+                    {...Category['Workflows']}
+                    current={mainPageActivated}
+                />
+                {renderSideMenuCategoryMenu(
+                    'CustomWorkflows',
+                    customWorkflowsActivated,
+                    customWorkflows,
+                    null,
+                )}
+                {renderSideMenuCategoryMenu(
+                    'Settings',
+                    settingsActivated,
+                    settings,
+                    'SideMenu__categories__fromBottom',
+                )}
             </div>
         </div>
     );
