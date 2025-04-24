@@ -94,7 +94,9 @@ describe('SideNavMenuItem Component', () => {
     it('should render SideNavMenu for items with children', () => {
         const wrapper = shallow(<SideNavMenuItem items={items} />);
         expect(wrapper.find(SideNavMenu).exists()).toBeTruthy();
-        expect(wrapper.find(SideNavMenu).prop('title')).toEqual('Item 1');
+        expect(wrapper.find(SideNavMenu).prop('title')).toEqual(
+            <div>Item 1</div>,
+        );
     });
 
     it('should render SideNavLink for items without children', () => {

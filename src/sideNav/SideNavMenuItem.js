@@ -58,7 +58,8 @@ const renderItem = (item, parents) => {
                 expanded={expanded}
                 key={key}
                 ref={tooltipRef}
-                title={item.title}>
+                // Do not use value as string, it will trigger the tooltips
+                title={<div>{item.title}</div>}>
                 {renderItems(item.children, newParents)}
             </SideNavMenu>
         );
@@ -70,7 +71,8 @@ const renderItem = (item, parents) => {
                 href={item.href}
                 key={key}
                 ref={tooltipRef}>
-                {item.title}
+                {/* Do not use value as string, it will trigger the tooltips */}
+                <div>{item.title}</div>
             </SideNavLink>
         );
     }
