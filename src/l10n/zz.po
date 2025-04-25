@@ -1,4 +1,4 @@
-# Copyright 2023 BlueCat Networks Inc.
+# Copyright 2023-2025 BlueCat Networks Inc.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -32,6 +32,10 @@ msgstr ""
 "Mime-Version: 1.0\n"
 "X-Generator: BlueCat pseudo-translation tool v0.0.2\n"
 
+#: 443d
+#~ msgid "{0} pages"
+#~ msgstr ""
+
 #: 85df
 msgid "Account"
 msgstr "ÂÂççççôôùùnt"
@@ -43,6 +47,22 @@ msgstr "ÇÇâânççéél"
 #: bbfa
 msgid "Close"
 msgstr "ÇÇlôôséé"
+
+#: 12d7
+msgid "Close side menu"
+msgstr "ÇÇlôôséé sîîdéé ménûû"
+
+#: b38e
+msgid "Custom workflows"
+msgstr "ÇÇûûstôôm wôôrkflôôws"
+
+#: 8eb6
+msgid "Custom Workflows"
+msgstr ""
+
+#: 397f
+#~ msgid "CustomWorkflows"
+#~ msgstr "ÇÇûûstôômWôôrkflôôws"
 
 #: 3752
 msgid "Download all logs"
@@ -84,6 +104,10 @@ msgstr "Lôôgôôùùt"
 #~ msgid "Path"
 #~ msgstr "Pââth"
 
+#: f106
+msgid "Quick access to default workflows"
+msgstr "Rââpîîd açççéès àû dêéfââùùlt wôôrkflôôws"
+
 #: efc0
 #~ msgid "Save"
 #~ msgstr "Sââvéé"
@@ -92,13 +116,25 @@ msgstr "Lôôgôôùùt"
 msgid "Save changes"
 msgstr "Sââvéé ççhâângéés"
 
+#: c7f7
+msgid "Settings"
+msgstr "Sééttinggs"
+
+#: b657
+msgid "Side menu"
+msgstr "Sîîdéé ménûû"
+
 #: bc07
 msgid "System"
 msgstr "Systéém"
+
+#: b3bf
+msgid "User configured home page"
+msgstr "Uséér côônfîîgurééd hôôméé pââgéé"
 
 #: 4c39
 msgid "View logs"
 msgstr "Vîîééw lôôgs"
 
-#~ msgid "Workflows"
-#~ msgstr "Wôôrkflôôws"
+msgid "Workflows"
+msgstr "Wôôrkflôôws"

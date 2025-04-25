@@ -1,5 +1,5 @@
 /*
-Copyright 2023-2024 BlueCat Networks Inc.
+Copyright 2023-2025 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,13 +19,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+/* eslint-disable camelcase, max-len */
 
 import { http, HttpResponse } from 'msw';
 import { SimplePage } from '../src/pageLayout';
 import './SimplePage.stories.less';
 
 const platformMockValue = {
-    /* eslint-disable camelcase, max-len */
     platform: {
         header_logo_path:
             'https://cdn.pixabay.com/photo/2017/05/09/03/46/alberta-2297204_1280.jpg',
@@ -59,23 +59,50 @@ const platformMockValue = {
                 },
             ],
         },
-        home_url: '#',
+        home_url: '/landing_page',
         nav_links: [
             {
-                'title': 'Administration',
-                'href': null,
+                'title': 'Custom workflow',
+                'href': '/custom_workflow/page',
+                'children': [],
+                'is_default_workflow': false,
+            },
+            {
+                'title': 'Create a new workflow',
+                'href': '/create_workflow/page',
+                'children': [],
+                'is_default_workflow': true,
+            },
+            {
+                'title': 'Workflow management',
+                'href': '/admin/workflow_export_import',
+                'children': [],
+                'is_default_workflow': true,
+            },
+            {
+                'title': 'Configurations',
                 'children': [
                     {
-                        'title': 'Workflow management',
-                        'href': '/admin/workflow_export_import',
+                        'title': 'General configuration',
+                        'href': '/admin/general_configuration',
                         'children': [],
+                        'is_default_workflow': true,
                     },
                     {
-                        'title': 'Create workflow',
-                        'href': '/create_workflow/page',
-                        'children': [],
+                        'title': 'SSO configuration',
+                        'href': '/admin/sso_configuration',
+                        'children': [
+                            {
+                                'title': 'SSO configuration1',
+                                'href': '/admin/sso_configuration1',
+                                'children': [],
+                                'is_default_workflow': true,
+                            },
+                        ],
+                        'is_default_workflow': true,
                     },
                 ],
+                'is_default_workflow': true,
             },
         ],
         permissions: {
@@ -89,7 +116,6 @@ const platformMockValue = {
     triggerFetchData: () => {},
     /* eslint-enable camelcase, max-len */
 };
-
 export default {
     title: 'Components/SimplePage',
     component: SimplePage,
@@ -101,10 +127,11 @@ export default {
                 }),
             ],
         },
+        layout: 'fullscreen',
     },
     decorators: [
         (Story) => (
-            <div style={{ height: '380px' }}>
+            <div style={{ height: '600px' }}>
                 <Story />
             </div>
         ),

@@ -21,8 +21,6 @@ SOFTWARE.
 */
 import Header from '../src/header/Header';
 import PlatformDataContext from '../src/components/PlatformDataContext';
-import SideNavContext from '../src/sideNav/SideNavContext';
-import { useState } from 'react';
 import PageContentShell from '../src/pageLayout/PageContentShell';
 import './Header.stories.less';
 
@@ -99,21 +97,12 @@ export default {
     component: Header,
     decorators: [
         (Story) => {
-            const [isExpanded, setExpanded] = useState(false);
-            const sideNavMockValue = {
-                isExpanded: isExpanded,
-                setExpanded: setExpanded,
-            };
             return (
                 <div style={{ height: '300px' }}>
                     {/* // eslint-disable-next-line max-len */}
                     <PageContentShell className='PageContentShell--leftNavIsOpen--disabled'>
                         <PlatformDataContext.Provider value={platformMockValue}>
-                            <SideNavContext.Provider
-                                value={sideNavMockValue}
-                                className='SideNav--absolute'>
-                                <Story />
-                            </SideNavContext.Provider>
+                            <Story />
                         </PlatformDataContext.Provider>
                     </PageContentShell>
                 </div>

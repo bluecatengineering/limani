@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2023-2025 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -22,17 +22,12 @@ SOFTWARE.
 import PropTypes from 'prop-types';
 import Error from '../error/Error';
 import usePageError from '../error/usePageError';
-import useSideNav from '../sideNav/useSideNav';
 import './PageContentShell.less';
 
 const PageContentShell = ({ className, children }) => {
-    const { isExpanded } = useSideNav();
     const { error } = usePageError();
 
     const classNames = ['PageContentShell'];
-    if (isExpanded) {
-        classNames.push('PageContentShell--leftNavIsOpen');
-    }
     // TODO: Add 'PageContentShell--rightPanelIsOpen' conditionally.
     if (className) {
         classNames.push(className);

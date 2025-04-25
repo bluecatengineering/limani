@@ -1,4 +1,4 @@
-# Copyright 2023-2024 BlueCat Networks Inc.
+# Copyright 2023-2025 BlueCat Networks Inc.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -32,6 +32,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: 443d
+#~ msgid "{0} pages"
+#~ msgstr ""
+
 #: 85df
 msgid "Account"
 msgstr ""
@@ -43,6 +47,22 @@ msgstr ""
 #: bbfa
 msgid "Close"
 msgstr ""
+
+#: 12d7
+msgid "Close side menu"
+msgstr ""
+
+#: b38e
+msgid "Custom workflows"
+msgstr ""
+
+#: 8eb6
+msgid "Custom Workflows"
+msgstr ""
+
+#: 397f
+#~ msgid "CustomWorkflows"
+#~ msgstr ""
 
 #: 3752
 msgid "Download all logs"
@@ -84,6 +104,10 @@ msgstr ""
 #~ msgid "Path"
 #~ msgstr ""
 
+#: f106
+msgid "Quick access to default workflows"
+msgstr ""
+
 #: efc0
 #~ msgid "Save"
 #~ msgstr ""
@@ -92,8 +116,20 @@ msgstr ""
 msgid "Save changes"
 msgstr ""
 
+#: c7f7
+msgid "Settings"
+msgstr ""
+
+#: b657
+msgid "Side menu"
+msgstr ""
+
 #: bc07
 msgid "System"
+msgstr ""
+
+#: b3bf
+msgid "User configured home page"
 msgstr ""
 
 #: 4c39
@@ -101,5 +137,5 @@ msgid "View logs"
 msgstr ""
 
 #: 825c
-#~ msgid "Workflows"
-#~ msgstr ""
+msgid "Workflows"
+msgstr ""
