@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2025 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,9 +19,41 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import { createContext } from 'react';
 
-export default createContext({
-    isExpanded: true,
-    setExpanded: () => {},
-});
+import { t } from '@bluecateng/l10n.macro';
+import {
+    DocumentWordProcessor,
+    DocumentWordProcessorReference,
+    Home,
+    Settings,
+} from '@carbon/icons-react';
+
+const Category = {
+    Home: {
+        buttonId: 'homeCategoryButton',
+        title: t`Home`,
+        icon: Home,
+        tooltipText: t`User configured home page`,
+    },
+    Workflows: {
+        buttonId: 'workflowsCategoryButton',
+        title: t`Workflows`,
+        icon: DocumentWordProcessor,
+        href: '/index',
+        tooltipText: t`Quick access to default workflows`,
+    },
+    CustomWorkflows: {
+        buttonId: 'customWorkflowsCategoryButton',
+        title: t`Custom Workflows`,
+        icon: DocumentWordProcessorReference,
+        tooltipText: t`Custom workflows`,
+    },
+    Settings: {
+        buttonId: 'settingsCategoryButton',
+        title: t`Settings`,
+        icon: Settings,
+        tooltipText: t`Settings`,
+    },
+};
+
+export default Category;

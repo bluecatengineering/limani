@@ -1,5 +1,5 @@
 /*
-Copyright 2023 BlueCat Networks Inc.
+Copyright 2025 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,9 +19,14 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import { useContext } from 'react';
-import SideNavContext from './SideNavContext';
 
-export default () => {
-    return useContext(SideNavContext);
-};
+import './SideMenuHeader.less';
+
+const SideMenuHeader = ({ title, icon: Icon }) => (
+    <h2 className='SideMenuHeader'>
+        <Icon className='SideMenuHeader__icon' size={24} />
+        <span className='SideMenuHeader__title'>{title}</span>
+    </h2>
+);
+
+export default SideMenuHeader;

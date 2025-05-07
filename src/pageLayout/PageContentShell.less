@@ -1,4 +1,4 @@
-// Copyright 2023 BlueCat Networks Inc.
+// Copyright 2023-2025 BlueCat Networks Inc.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -18,15 +18,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 // eslint-disable-next-line max-len
+
+@import '~@bluecateng/pelagos/less/spacing';
+
 .PageContentShell {
     flex-direction: column;
     flex: 1;
     overflow: hidden;
-}
-.PageContentShell--leftNavIsOpen {
-    // NOTE: The left margin matches the width of the element used for navigation.
-    // stylelint-disable-next-line @bluecateng/property-strict-value
-    margin-left: 264px;
+    margin-left: @sp-80; // SideNavMenu
 }
 .PageContentShell--rightPanelIsOpen {
     // NOTE: The right margin matches the width of the element used for side/details panel.

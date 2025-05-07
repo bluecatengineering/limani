@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideMenu Rendering Render SideMenu component active highlight 1`] = `
+<div
+  className="SideMenu"
+  data-theme="dark"
+>
+  <div
+    aria-label="Side menu"
+    className="SideMenu__categories"
+  >
+    <SideMenuCategoryButton
+      buttonId="homeCategoryButton"
+      href="/"
+      icon={[Function]}
+      title="Home"
+      tooltipText="User configured home page"
+    />
+    <SideMenuCategoryButton
+      buttonId="workflowsCategoryButton"
+      current={false}
+      href="/index"
+      icon={[Function]}
+      title="Workflows"
+      tooltipText="Quick access to default workflows"
+    />
+    <div
+      className={null}
+    >
+      <SideMenuCategoryButton
+        buttonId="customWorkflowsCategoryButton"
+        current={false}
+        expanded={false}
+        icon={[Function]}
+        title="Custom Workflows"
+        toggleMenu={[Function]}
+        tooltipText="Custom workflows"
+      />
+    </div>
+    <div
+      className="SideMenu__categories__fromBottom"
+    >
+      <SideMenuCategoryButton
+        buttonId="settingsCategoryButton"
+        current={false}
+        expanded={false}
+        icon={[Function]}
+        title="Settings"
+        toggleMenu={[Function]}
+        tooltipText="Settings"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SideMenu Rendering Render SideMenu component with default 1`] = `
+<div
+  className="SideMenu"
+  data-theme="dark"
+>
+  <div
+    aria-label="Side menu"
+    className="SideMenu__categories"
+  >
+    <SideMenuCategoryButton
+      buttonId="homeCategoryButton"
+      href="/"
+      icon={[Function]}
+      title="Home"
+      tooltipText="User configured home page"
+    />
+    <SideMenuCategoryButton
+      buttonId="workflowsCategoryButton"
+      current={true}
+      href="/index"
+      icon={[Function]}
+      title="Workflows"
+      tooltipText="Quick access to default workflows"
+    />
+    <div
+      className={null}
+    >
+      <SideMenuCategoryButton
+        buttonId="customWorkflowsCategoryButton"
+        current={false}
+        expanded={false}
+        icon={[Function]}
+        title="Custom Workflows"
+        toggleMenu={[Function]}
+        tooltipText="Custom workflows"
+      />
+    </div>
+    <div
+      className="SideMenu__categories__fromBottom"
+    >
+      <SideMenuCategoryButton
+        buttonId="settingsCategoryButton"
+        current={false}
+        expanded={false}
+        icon={[Function]}
+        title="Settings"
+        toggleMenu={[Function]}
+        tooltipText="Settings"
+      />
+    </div>
+  </div>
+</div>
+`;
