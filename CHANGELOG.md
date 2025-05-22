@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.2.1](https://github.com/bluecatengineering/limani/compare/v1.2.0...v1.2.1) (2025-05-22)
+
+### Bug Fixes
+
+-   sidenav to properly show all items when there is an overflow (ENG-62513) ([aab69ea](https://github.com/bluecatengineering/limani/commit/aab69ea8b1a378c55d828003b35127ebdb1465af))
+
 ## [1.2.0](https://github.com/bluecatengineering/limani/compare/v1.1.0...v1.2.0) (2025-01-17)
 
 ### Features
