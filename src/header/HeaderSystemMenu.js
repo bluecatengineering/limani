@@ -1,5 +1,5 @@
 /*
-Copyright 2023-2024 BlueCat Networks Inc.
+Copyright 2023-2025 BlueCat Networks Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21,7 +21,7 @@ SOFTWARE.
 */
 import { t } from '@bluecateng/l10n.macro';
 import { Layer, Menu, MenuItem, useMenuHandler } from '@bluecateng/pelagos';
-import Settings from '@carbon/icons-react/es/Settings';
+import Catalog from '@carbon/icons-react/es/Catalog';
 import PropTypes from 'prop-types';
 import usePlatformData from '../hooks/usePlatformData';
 import { resizeButtonMenu } from '../utils/display';
@@ -70,7 +70,7 @@ const HeaderSystemMenu = ({ className }) => {
                         aria-expanded={expanded}
                         {...buttonProps}>
                         <AppShellIcon
-                            icon={Settings}
+                            icon={Catalog}
                             tooltipText={t`System`}
                             tooltipPlacement='bottom'
                             hideTooltip={expanded}
