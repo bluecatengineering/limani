@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.3.0](https://github.com/bluecatengineering/limani/compare/v1.2.0...v1.3.0) (2025-07-15)
+
+### Features
+
+-   **ui:** update side navigation and header components (ENG-57682) ([122fd7e](https://github.com/bluecatengineering/limani/commit/122fd7edae84fd662b18b034887cfcb132f152e5))
+-   update Gateway UI (ENG-57682) ([56c95a0](https://github.com/bluecatengineering/limani/commit/56c95a00e01ee7b7652f09ddf410f823d37be9c9))
+
 ## [1.2.1](https://github.com/bluecatengineering/limani/compare/v1.2.0...v1.2.1) (2025-05-22)
 
 ### Bug Fixes
