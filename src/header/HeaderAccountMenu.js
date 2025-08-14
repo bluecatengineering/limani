@@ -21,13 +21,13 @@ SOFTWARE.
 */
 import { t } from '@bluecateng/l10n.macro';
 import { Layer, Menu, MenuItem, useMenuHandler } from '@bluecateng/pelagos';
-import UserAvatar from '@carbon/icons-react/es/UserAvatar';
-
+import User from '@carbon/icons-react/es/User';
 import PropTypes from 'prop-types';
+
 import usePlatformData from '../hooks/usePlatformData';
 import { resizeButtonMenu } from '../utils/display';
-import './HeaderAccountMenu.less';
 import AppShellIcon from './AppShellIcon';
+import './HeaderAccountMenu.less';
 
 const doLogout = () => window.open('/logout', '_self');
 
@@ -63,7 +63,7 @@ const HeaderAccountMenu = ({ className }) => {
                 aria-expanded={expanded}
                 {...buttonProps}>
                 <AppShellIcon
-                    icon={UserAvatar}
+                    icon={User}
                     tooltipText={t`Account`}
                     tooltipPlacement='bottom'
                     hideTooltip={expanded}
