@@ -49,7 +49,7 @@
         "prop-types": "^15.8.1"
     },
     "peerDependencies": {
-        "@bluecateng/pelagos": "^12.17.2",
+        "@bluecateng/pelagos": "^12.23.0",
         "@bluecateng/pelagos-forms": "^5.0.1"
     },
     "devDependencies": {

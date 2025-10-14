@@ -23,36 +23,35 @@
 .HeaderAuthentication {
     height: @sp-48;
     width: @sp-48;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
     &__authentication {
-        & span {
-            color: var(--tag-color-teal);
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            font-size: 14px;
-            text-align: left;
+        color: var(--tag-color-teal);
+        align-items: center;
+        font-size: 14px;
+        text-align: left;
 
-            a {
-                text-decoration: none;
-                padding-left: @sp-02;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                color: var(--link-primary);
-            }
+        a {
+            text-decoration: none;
+            padding-left: @sp-02;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            color: var(--link-primary);
         }
 
-        &__linkIcon {
-            color: var(--icon-interactive);
-        }
-
-        & > span::before {
+        & > ::before {
             content: '';
             margin-left: @sp-08;
             margin-right: @sp-08;
             height: 100%;
             border: 1px solid var(--border-subtle);
         }
+    }
+
+    &__readOnlyLabel {
+        margin-left: @sp-08;
     }
 }

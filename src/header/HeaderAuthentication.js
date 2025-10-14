@@ -23,6 +23,7 @@ import PropTypes from 'prop-types';
 import usePlatformData from '../hooks/usePlatformData';
 
 import './HeaderAuthentication.less';
+import { Tag, useTooltip } from '@bluecateng/pelagos';
 
 /**
  * HeaderAuthentication component displays the connected Authentication
@@ -35,15 +36,22 @@ const HeaderAuthentication = ({ className }) => {
     const authenticationAlias = data?.user?.authentication_info?.alias;
     const authenticationLink = data?.user?.authentication_info?.url;
     const authenticationService = data?.user?.authentication_info?.service;
+    const isReadOnly = data?.user?.authentication_info?.is_read_only;
+    const readOnlyTooltipRef = useTooltip(
+        `Connected to Address Manager in read-
+        only mode. Gateway settings aren’t 
+        affected.`,
+        'bottom',
+    );
 
     return (
         <>
             {authenticationService && (
                 <div
-                    className={`HeaderAuthentication__authentication${
+                    className={`HeaderAuthentication${
                         className ? ` ${className}` : ''
                     }`}>
-                    <span>
+                    <span className='HeaderAuthentication__authentication'>
                         {authenticationAlias ? (
                             <a
                                 target='_blank'
@@ -57,6 +65,15 @@ const HeaderAuthentication = ({ className }) => {
                             authenticationService
                         )}
                     </span>
+                    {isReadOnly && (
+                        <Tag
+                            className='HeaderAuthentication__readOnlyLabel'
+                            size='sm'
+                            type='gray'
+                            text='Read-only'
+                            ref={readOnlyTooltipRef}
+                        />
+                    )}
                 </div>
             )}
         </>
