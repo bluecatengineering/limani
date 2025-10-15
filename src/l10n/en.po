@@ -52,6 +52,13 @@ msgstr ""
 msgid "Close side menu"
 msgstr ""
 
+#: e22d
+msgid ""
+"Connected to Address Manager in read-\n"
+"        only mode. Gateway settings aren’t \n"
+"        affected."
+msgstr ""
+
 #: b38e
 msgid "Custom workflows"
 msgstr ""

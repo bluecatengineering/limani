@@ -25,9 +25,12 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
     <Tag
       className="HeaderAuthentication__readOnlyLabel"
       size="sm"
-      text="Read-only"
       type="gray"
-    />
+    >
+      <span>
+        Read-only
+      </span>
+    </Tag>
   </div>
 </React.Fragment>
 `;
@@ -57,9 +60,12 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
     <Tag
       className="HeaderAuthentication__readOnlyLabel"
       size="sm"
-      text="Read-only"
       type="gray"
-    />
+    >
+      <span>
+        Read-only
+      </span>
+    </Tag>
   </div>
 </React.Fragment>
 `;
