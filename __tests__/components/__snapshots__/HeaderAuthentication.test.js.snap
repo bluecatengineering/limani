@@ -3,9 +3,11 @@
 exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with BAM authentication and default props 1`] = `
 <React.Fragment>
   <div
-    className="HeaderAuthentication__authentication"
+    className="HeaderAuthentication"
   >
-    <span>
+    <span
+      className="HeaderAuthentication__authentication"
+    >
       <a
         href="#"
         rel="noreferrer"
@@ -20,6 +22,12 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
         </u>
       </a>
     </span>
+    <Tag
+      className="HeaderAuthentication__readOnlyLabel"
+      size="sm"
+      text="Read-only"
+      type="gray"
+    />
   </div>
 </React.Fragment>
 `;
@@ -27,9 +35,11 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
 exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with BAM authentication and props 1`] = `
 <React.Fragment>
   <div
-    className="HeaderAuthentication__authentication varClassName"
+    className="HeaderAuthentication varClassName"
   >
-    <span>
+    <span
+      className="HeaderAuthentication__authentication"
+    >
       <a
         href="#"
         rel="noreferrer"
@@ -44,6 +54,12 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
         </u>
       </a>
     </span>
+    <Tag
+      className="HeaderAuthentication__readOnlyLabel"
+      size="sm"
+      text="Read-only"
+      type="gray"
+    />
   </div>
 </React.Fragment>
 `;
@@ -51,9 +67,11 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
 exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with Micetro authentication 1`] = `
 <React.Fragment>
   <div
-    className="HeaderAuthentication__authentication"
+    className="HeaderAuthentication"
   >
-    <span>
+    <span
+      className="HeaderAuthentication__authentication"
+    >
       <a
         href="#"
         rel="noreferrer"
@@ -75,9 +93,11 @@ exports[`HeaderAuthentication Rendering Render HeaderAuthentication component wi
 exports[`HeaderAuthentication Rendering Render HeaderAuthentication component with Standalone authentication 1`] = `
 <React.Fragment>
   <div
-    className="HeaderAuthentication__authentication"
+    className="HeaderAuthentication"
   >
-    <span>
+    <span
+      className="HeaderAuthentication__authentication"
+    >
       Standalone
     </span>
   </div>

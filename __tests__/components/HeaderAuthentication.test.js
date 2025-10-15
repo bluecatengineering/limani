@@ -41,6 +41,7 @@ const mockBAM = {
                 alias: 'BAM-9.5.0',
                 url: '#',
                 service: 'BAM',
+                is_read_only: true,
             },
         },
     },
@@ -73,6 +74,8 @@ jest.mock('../../src/hooks/usePlatformData', () => {
     mockUsePlatformData.mockImplementation(() => mockValue);
     return mockUsePlatformData;
 });
+
+jest.mock('@bluecateng/pelagos');
 const mockUsePlatformData = require('../../src/hooks/usePlatformData');
 mockUsePlatformData.mockReturnValueOnce({ ...mockDisable });
 mockUsePlatformData.mockReturnValueOnce({ ...mockMicetro });
