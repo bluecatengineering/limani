@@ -72,7 +72,7 @@ const HeaderAuthentication = ({ className }) => {
                             size='sm'
                             type='gray'
                             ref={readOnlyTooltipRef}>
-                            <span>Read-only</span>
+                            <span>{t`Read-only`}</span>
                         </Tag>
                     )}
                 </div>

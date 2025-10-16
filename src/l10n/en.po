@@ -115,6 +115,10 @@ msgstr ""
 msgid "Quick access to default workflows"
 msgstr ""
 
+#: 9b19
+msgid "Read-only"
+msgstr ""
+
 #: efc0
 #~ msgid "Save"
 #~ msgstr ""

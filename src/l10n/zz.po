@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-13T14:44:45.416Z\n"
-"PO-Revision-Date: 2024-10-22T19:28:49.031786+00:00\n"
+"PO-Revision-Date: 2025-10-16T16:02:32.394339+00:00\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zz\n"
@@ -58,6 +58,9 @@ msgid ""
 "        only mode. Gateway settings aren’t \n"
 "        affected."
 msgstr ""
+"ÇÇôônnééççtééd tôô ÂÂddrééss Mâânââgéér îîn rééââd-\n"
+"        ôônly môôdéé. Gââtééwâây sééttîîngs ââréén’t \n"
+"        ââffééççtééd."
 
 #: b38e
 msgid "Custom workflows"
@@ -114,6 +117,10 @@ msgstr "Lôôgôôùùt"
 #: f106
 msgid "Quick access to default workflows"
 msgstr "Rââpîîd açççéès àû dêéfââùùlt wôôrkflôôws"
+
+#: 9b19
+msgid "Read-only"
+msgstr "Rééââd-ôônly"
 
 #: efc0
 #~ msgid "Save"
