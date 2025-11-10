@@ -30,6 +30,8 @@ const mockBAM = {
                 alias: 'BAM-9.5.0',
                 url: '#',
                 service: 'Address Manager',
+                // eslint-disable-next-line camelcase
+                is_read_only: true,
             },
         },
     },
