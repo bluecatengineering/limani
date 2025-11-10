@@ -1,6 +1,6 @@
 {
     "name": "@bluecateng/limani",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "description": "Gateway shared components",
     "usage": "dev",
     "scripts": {

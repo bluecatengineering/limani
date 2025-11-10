@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.4.0](https://github.com/bluecatengineering/limani/compare/v1.3.0...v1.4.0) (2025-11-10)
+
+### Features
+
+-   **ui:** update header to show read-only status for address manager (ENG-64485) ([eafeb89](https://github.com/bluecatengineering/limani/commit/eafeb893d6da85a83b89582108b14eeb7d96b746))
+
 ## [1.3.0](https://github.com/bluecatengineering/limani/compare/v1.2.0...v1.3.0) (2025-07-15)
 
 ### Features
